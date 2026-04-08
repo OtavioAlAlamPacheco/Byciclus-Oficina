@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://hc2461ptowmv"]
+
+[ext_resource type="PackedScene" uid="uid://bvqts6sg7yfqv" path="res://Scenes/UI/menu_selecao_tipo_peca.tscn" id="2_8re1q"]
+[ext_resource type="PackedScene" uid="uid://dstfkcxtp43od" path="res://Scenes/UI/menu_selecao_variacao_peca.tscn" id="3_8ny7x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yku7w"]
+draw_center = false
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+
+[node name="InterfaceMenuOficina" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MargemPrincipal" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
+
+[node name="BotoesInferiores" type="HBoxContainer" parent="MargemPrincipal"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 80
+
+[node name="BotaoModoLupa" type="Button" parent="MargemPrincipal/BotoesInferiores"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "IMG"
+
+[node name="BotaoBlocoNotas" type="Button" parent="MargemPrincipal/BotoesInferiores"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "IMG"
+
+[node name="BotaoAtributosBike" type="Button" parent="MargemPrincipal/BotoesInferiores"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "IMG"
+
+[node name="PaineisSuperiores" type="HBoxContainer" parent="MargemPrincipal"]
+custom_minimum_size = Vector2(500, 458)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="MenuSelecaoTipoPeca" parent="MargemPrincipal/PaineisSuperiores" instance=ExtResource("2_8re1q")]
+layout_mode = 2
+
+[node name="MenuSelecaoVariacaoPeca" parent="MargemPrincipal/PaineisSuperiores" instance=ExtResource("3_8ny7x")]
+layout_mode = 2
+
+[node name="Visualizacao3D" type="VBoxContainer" parent="MargemPrincipal/PaineisSuperiores"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="BotoesAlterarTipoVisualizacao3D" type="HBoxContainer" parent="MargemPrincipal/PaineisSuperiores/Visualizacao3D"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ButtonVisualizarBicicleta" type="Button" parent="MargemPrincipal/PaineisSuperiores/Visualizacao3D/BotoesAlterarTipoVisualizacao3D"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Visualizar bicicleta"
+
+[node name="ButtonVisualizaPeca" type="Button" parent="MargemPrincipal/PaineisSuperiores/Visualizacao3D/BotoesAlterarTipoVisualizacao3D"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Visualizar peça"
+
+[node name="PainelVisualizacao3D" type="Panel" parent="MargemPrincipal/PaineisSuperiores/Visualizacao3D" groups=["painel_visualizacao_3d"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yku7w")

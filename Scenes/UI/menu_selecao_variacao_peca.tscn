@@ -1,0 +1,194 @@
+[gd_scene load_steps=28 format=3 uid="uid://dstfkcxtp43od"]
+
+[ext_resource type="Texture2D" uid="uid://drr2c1rg3xajx" path="res://Art/Textures/Render/Quadro/Render quadro padrao.png" id="1_7071m"]
+[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://PRECISO MEXER/painel_variacoes_dinamicas.gd" id="1_sienp"]
+[ext_resource type="Texture2D" uid="uid://ddo4vyy3lg1ys" path="res://Art/Textures/Render/Quadro/Render quadro deslocado.png" id="2_2uvrx"]
+[ext_resource type="PackedScene" uid="uid://bw0acmdolj25v" path="res://Scenes/UI/botao_selecao_variacao_peca.tscn" id="2_5emnx"]
+[ext_resource type="Texture2D" uid="uid://doedk6dr23qdv" path="res://Art/Textures/Render/Quadro/Render quadro em S.png" id="3_uohtn"]
+[ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://Scenes/UI/botao_variacao_peca.tscn" id="4_f0sij"]
+[ext_resource type="Texture2D" uid="uid://cxk3eph76ft41" path="res://Art/Textures/Render/Quadro/Render quadro circular.png" id="4_qdijm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukqa1"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qht8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sienp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgvgq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5me8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fahyt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ptyrb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nt1rf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6qhr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqwdv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlat6"]
+
+[sub_resource type="Theme" id="Theme_j43p3"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_qht8s")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_sienp")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_mgvgq")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_j5me8")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_fahyt")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_ptyrb")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_nt1rf")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_t6qhr")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_qqwdv")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_wlat6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5fya"]
+bg_color = Color(0.84537864, 0.85296655, 0.72066444, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jhtwe"]
+texture = ExtResource("1_7071m")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81s4j"]
+bg_color = Color(0.9334808, 0.8142932, 0.7207653, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wp1qi"]
+texture = ExtResource("3_uohtn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyg8g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ig4ia"]
+texture = ExtResource("4_qdijm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sln8d"]
+texture = ExtResource("2_2uvrx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7k0ym"]
+
+[node name="MenuSelecaoVariacaoPeca" type="Panel"]
+custom_minimum_size = Vector2(370, 0)
+offset_right = 370.0
+offset_bottom = 364.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukqa1")
+script = ExtResource("1_sienp")
+
+[node name="Margem" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margem"]
+layout_mode = 2
+theme = SubResource("Theme_j43p3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margem/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="VBoxContainerEsquerdo" type="VBoxContainer" parent="Margem/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="Panel" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5fya")
+
+[node name="BotaoSelecaoPeca2" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo/Panel" instance=ExtResource("2_5emnx")]
+layout_mode = 0
+anchors_preset = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_jhtwe")
+
+[node name="FundoBegeBotao2" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
+
+[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo/FundoBegeBotao2" instance=ExtResource("4_f0sij")]
+layout_mode = 0
+anchors_preset = 0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_wp1qi")
+imagem_fundo = ExtResource("3_uohtn")
+
+[node name="FundoBegeBotao3" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
+
+[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo/FundoBegeBotao3" instance=ExtResource("4_f0sij")]
+layout_mode = 0
+anchors_preset = 0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_oyg8g")
+
+[node name="VBoxContainerDireito" type="VBoxContainer" parent="Margem/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="FundoBegeBotao2" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
+
+[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito/FundoBegeBotao2" instance=ExtResource("4_f0sij")]
+layout_mode = 0
+anchors_preset = 0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_ig4ia")
+imagem_fundo = ExtResource("4_qdijm")
+
+[node name="FundoBegeBotao3" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
+
+[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito/FundoBegeBotao3" instance=ExtResource("4_f0sij")]
+layout_mode = 0
+anchors_preset = 0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_sln8d")
+imagem_fundo = ExtResource("2_2uvrx")
+
+[node name="FundoBegeBotao4" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
+
+[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito/FundoBegeBotao4" instance=ExtResource("4_f0sij")]
+layout_mode = 0
+anchors_preset = 0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_7k0ym")

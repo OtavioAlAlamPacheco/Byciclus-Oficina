@@ -1,0 +1,183 @@
+[gd_scene load_steps=25 format=3 uid="uid://bvqts6sg7yfqv"]
+
+[ext_resource type="PackedScene" uid="uid://ylu13k621j2c" path="res://Scenes/UI/botao_tipo_peca.tscn" id="1_2h50s"]
+[ext_resource type="Texture2D" uid="uid://c2ylxfmdl6cto" path="res://Art/Textures/Silhuetas partes/Quadro.png" id="1_ob3on"]
+[ext_resource type="Texture2D" uid="uid://m0oelc7bqeog" path="res://Art/Textures/Silhuetas partes/Garfo.png" id="2_xgjhw"]
+[ext_resource type="Texture2D" uid="uid://cbtomjk2rewu3" path="res://Art/Textures/Silhuetas partes/Guidao.png" id="3_do04u"]
+[ext_resource type="Texture2D" uid="uid://bxcjhljb0nl2j" path="res://Art/Textures/Silhuetas partes/Catraca traseira.png" id="5_fojha"]
+[ext_resource type="Texture2D" uid="uid://b24lahbqeoyaf" path="res://Art/Textures/Silhuetas partes/Roda.png" id="5_yh7rl"]
+[ext_resource type="Texture2D" uid="uid://cq3ooba1qx217" path="res://Art/Textures/Silhuetas partes/Pedal.png" id="7_yh7rl"]
+[ext_resource type="Texture2D" uid="uid://duabn1dnn0fxq" path="res://Art/Textures/Silhuetas partes/Selim.png" id="8_ktk4g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkrve"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1c3m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2sri"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ia6wt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gj186"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wmo6"]
+
+[sub_resource type="Theme" id="Theme_yteoy"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_b1c3m")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_g2sri")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ia6wt")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_gj186")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_5wmo6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwcay"]
+bg_color = Color(0.84537864, 0.85296655, 0.72066444, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4yd33"]
+texture = ExtResource("1_ob3on")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp45h"]
+bg_color = Color(0.9334808, 0.8142932, 0.7207653, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jhp0j"]
+texture = ExtResource("2_xgjhw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cplk"]
+texture = ExtResource("3_do04u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3dtr5"]
+texture = ExtResource("5_yh7rl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bog81"]
+texture = ExtResource("5_fojha")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hqsvu"]
+texture = ExtResource("7_yh7rl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qj424"]
+texture = ExtResource("8_ktk4g")
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 458.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fkrve")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = SubResource("Theme_yteoy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hwcay")
+
+[node name="BotaoSelecaoPeca2" parent="MarginContainer/ScrollContainer/VBoxContainer/Panel" instance=ExtResource("1_2h50s")]
+layout_mode = 0
+anchors_preset = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4yd33")
+
+[node name="FundoBegeBotao2" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp45h")
+
+[node name="BotaoSelecaoPeca2" parent="MarginContainer/ScrollContainer/VBoxContainer/FundoBegeBotao2" instance=ExtResource("1_2h50s")]
+layout_mode = 0
+anchors_preset = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_jhp0j")
+tipo_do_botao = "Garfo"
+imagem_fundo = ExtResource("2_xgjhw")
+
+[node name="FundoBegeBotao3" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp45h")
+
+[node name="BotaoSelecaoPeca2" parent="MarginContainer/ScrollContainer/VBoxContainer/FundoBegeBotao3" instance=ExtResource("1_2h50s")]
+layout_mode = 0
+anchors_preset = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_2cplk")
+tipo_do_botao = "Guidao"
+imagem_fundo = ExtResource("3_do04u")
+
+[node name="FundoBegeBotao4" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp45h")
+
+[node name="BotaoSelecaoPeca2" parent="MarginContainer/ScrollContainer/VBoxContainer/FundoBegeBotao4" instance=ExtResource("1_2h50s")]
+layout_mode = 0
+anchors_preset = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3dtr5")
+tipo_do_botao = "Roda"
+imagem_fundo = ExtResource("5_yh7rl")
+
+[node name="FundoBegeBotao5" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp45h")
+
+[node name="BotaoSelecaoPeca2" parent="MarginContainer/ScrollContainer/VBoxContainer/FundoBegeBotao5" instance=ExtResource("1_2h50s")]
+layout_mode = 0
+anchors_preset = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bog81")
+tipo_do_botao = "Catraca traseira"
+imagem_fundo = ExtResource("5_fojha")
+
+[node name="FundoBegeBotao6" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp45h")
+
+[node name="BotaoSelecaoPeca2" parent="MarginContainer/ScrollContainer/VBoxContainer/FundoBegeBotao6" instance=ExtResource("1_2h50s")]
+layout_mode = 0
+anchors_preset = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_hqsvu")
+tipo_do_botao = "Pedal"
+imagem_fundo = ExtResource("7_yh7rl")
+
+[node name="FundoBegeBotao7" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp45h")
+
+[node name="BotaoSelecaoPeca2" parent="MarginContainer/ScrollContainer/VBoxContainer/FundoBegeBotao7" instance=ExtResource("1_2h50s")]
+layout_mode = 0
+anchors_preset = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_qj424")
+tipo_do_botao = "Selim"
+imagem_fundo = ExtResource("8_ktk4g")

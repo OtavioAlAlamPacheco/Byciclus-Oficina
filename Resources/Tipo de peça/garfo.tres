@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://i0yqpx1k8n5t"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_n3ihe"]
+[ext_resource type="Texture2D" uid="uid://m0oelc7bqeog" path="res://Art/Textures/Silhuetas partes/Garfo.png" id="2_ouedg"]
+
+[resource]
+script = ExtResource("1_n3ihe")
+id = "Garfo"
+silhueta_texture = ExtResource("2_ouedg")
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

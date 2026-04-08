@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp00ux5jxvbmn"]
+
+[ext_resource type="Script" uid="uid://7falhxosfypi" path="res://Scripts/botao_variacao_peca.gd" id="1_ogns3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq25c"]
+
+[node name="BotaoSelecaoVariacaoDePeca" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_aq25c")
+script = ExtResource("1_ogns3")

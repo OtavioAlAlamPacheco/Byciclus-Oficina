@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=3 format=3 uid="uid://pniq45sy3ktf"]
+
+[ext_resource type="PackedScene" uid="uid://bgnfwp6rfans6" path="res://GLB/Partes bike/Fios/Fios padrao.glb" id="1_xvtms"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="2_lb0te"]
+
+[resource]
+script = ExtResource("2_lb0te")
+id = "Fios padrão"
+glb = ExtResource("1_xvtms")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

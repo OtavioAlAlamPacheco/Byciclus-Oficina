@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://dlcuwrgx7xt4b"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_jc6i1"]
+[ext_resource type="Texture2D" uid="uid://b6lyyjbp6p7in" path="res://Art/Textures/Silhuetas partes/Pedivela.png" id="2_hepqg"]
+
+[resource]
+script = ExtResource("1_jc6i1")
+id = "Pedivela"
+silhueta_texture = ExtResource("2_hepqg")
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

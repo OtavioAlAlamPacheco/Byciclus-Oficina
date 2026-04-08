@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://ce5dgsohss5nh"]
+
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_b6s7v"]
+[ext_resource type="PackedScene" uid="uid://h8dw84hd6c5" path="res://GLB/Partes bike/Guidao/Guidao padrao.glb" id="1_tqxs4"]
+[ext_resource type="Resource" uid="uid://co0br50flxnhr" path="res://Resources/Tipo de peça/guidao.tres" id="2_tqxs4"]
+
+[resource]
+script = ExtResource("1_b6s7v")
+id = "Guidão padrão"
+tipo = ExtResource("2_tqxs4")
+glb = ExtResource("1_tqxs4")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

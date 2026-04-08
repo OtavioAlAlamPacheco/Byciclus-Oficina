@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://dkdawpjs500v0"]
+
+[ext_resource type="PackedScene" uid="uid://cedfkd0xomo0q" path="res://GLB/Partes bike/Catracas/Catracas padrao.glb" id="1_3815y"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_qaeem"]
+[ext_resource type="Resource" uid="uid://cd23eindmtjct" path="res://Resources/Tipo de peça/catraca.tres" id="2_3815y"]
+
+[resource]
+script = ExtResource("1_qaeem")
+id = "Catraca padrão"
+tipo = ExtResource("2_3815y")
+glb = ExtResource("1_3815y")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"
