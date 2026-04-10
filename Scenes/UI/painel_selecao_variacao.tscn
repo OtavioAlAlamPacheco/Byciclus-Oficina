@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqn781jst63vw"]
+
+[ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://Scenes/UI/botao_variacao_peca.tscn" id="1_q452x"]
+[ext_resource type="Texture2D" uid="uid://doedk6dr23qdv" path="res://Art/Textures/Render/Quadro/Render quadro em S.png" id="2_q3i0u"]
+[ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://Resources/Variação de peça/quadro_em_s.tres" id="3_mdcaa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81s4j"]
+bg_color = Color(0.9334808, 0.8142932, 0.7207653, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c5ois"]
+texture = ExtResource("2_q3i0u")
+
+[node name="FundoBegeBotao2" type="Panel"]
+custom_minimum_size = Vector2(140, 140)
+theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
+
+[node name="BotaoSelecaoVariacaoDePeca" parent="." instance=ExtResource("1_q452x")]
+layout_mode = 0
+anchors_preset = 0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_c5ois")
+resource_variacao = ExtResource("3_mdcaa")

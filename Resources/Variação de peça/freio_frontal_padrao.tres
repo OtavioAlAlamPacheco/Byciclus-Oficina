@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=5 format=3 uid="uid://dl5m3vgn37akr"]
+
+[ext_resource type="PackedScene" uid="uid://cmlxrnxj7jk5f" path="res://Scenes/Pecas/freio_frontal.tscn" id="1_ae37u"]
+[ext_resource type="Texture2D" uid="uid://dultxl0xvblkm" path="res://Art/Textures/Silhuetas partes/Freio.png" id="2_3qmwn"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="2_ae37u"]
+[ext_resource type="Resource" uid="uid://cqce0jfse2885" path="res://Resources/Tipo de peça/freio_frontal.tres" id="3_3qmwn"]
+
+[resource]
+script = ExtResource("2_ae37u")
+id = "Freio frontal padrão"
+tipo = ExtResource("3_3qmwn")
+cena_mesh = ExtResource("1_ae37u")
+render_texture = ExtResource("2_3qmwn")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

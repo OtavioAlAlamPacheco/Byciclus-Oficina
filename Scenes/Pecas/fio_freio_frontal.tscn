@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://4dcael5ohwmm"]
+
+[ext_resource type="PackedScene" uid="uid://bo1j5n6gacd0s" path="res://GLB/Partes bike/Fios/Fio freio frontal.glb" id="1_2fd5j"]
+
+[node name="Fio freio frontal2" instance=ExtResource("1_2fd5j")]

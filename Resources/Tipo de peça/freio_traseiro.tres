@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://dwjs0veqyu4cc"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_lhamw"]
+[ext_resource type="Texture2D" uid="uid://dultxl0xvblkm" path="res://Art/Textures/Silhuetas partes/Freio.png" id="2_ai21s"]
+
+[resource]
+script = ExtResource("1_lhamw")
+id = "Freio traseiro"
+silhueta_texture = ExtResource("2_ai21s")
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

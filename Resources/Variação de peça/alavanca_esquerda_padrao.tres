@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://djrj5s2oe26bx"]
+
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_b5xxf"]
+[ext_resource type="PackedScene" uid="uid://3b3g4hkmnwfi" path="res://Scenes/Pecas/alavanca_da_esquerda.tscn" id="1_qt2e6"]
+[ext_resource type="Resource" uid="uid://drchybiado277" path="res://Resources/Tipo de peça/alavanca_esquerda.tres" id="3_qt2e6"]
+
+[resource]
+script = ExtResource("1_b5xxf")
+id = "Alavanca esquerda padrão"
+tipo = ExtResource("3_qt2e6")
+cena_mesh = ExtResource("1_qt2e6")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

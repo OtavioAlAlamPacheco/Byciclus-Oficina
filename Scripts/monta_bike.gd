@@ -1,3 +1,5 @@
+
+
 extends Node3D
 
 var selecao_multipla: bool = false
@@ -12,11 +14,23 @@ var instancias_ativas: Dictionary = {
 }
 
 
+func _on_oficina_variacao_foi_selecionada(id: String) -> void:
+	seleciona_peca(id)
+
+
+func seleciona_todas_pecas():
+	selecao_multipla = true
+	for id in CatalogoPecas.resource_das_variacoes:
+		seleciona_peca(id)
+	
+	_montar_bike()
+	selecao_multipla = false
+
+
 func seleciona_pecas(ids: Array):
 	selecao_multipla = true
 	for id in ids:
-		if id is String:
-			seleciona_peca(id)
+		seleciona_peca(id)
 	
 	_montar_bike()
 	selecao_multipla = false
@@ -26,7 +40,7 @@ func seleciona_peca(id: String):
 	var id_tipo
 	if CatalogoPecas.resource_das_variacoes[id].tipo:
 		id_tipo = CatalogoPecas.resource_das_variacoes[id].tipo.id
-	var glb = CatalogoPecas.resource_das_variacoes[id].glb
+	var cena_mesh = CatalogoPecas.resource_das_variacoes[id].cena_mesh
 	
 	# remover antiga instância
 	if instancias_ativas.has(id_tipo) and instancias_ativas[id_tipo] != null:
@@ -34,8 +48,8 @@ func seleciona_peca(id: String):
 		var peca_antiga = instancias_ativas[id_tipo]
 		peca_antiga.queue_free()
 		instancias_ativas.erase(id_tipo)
-		
-	var nova_instancia = glb.instantiate()
+	
+	var nova_instancia = cena_mesh.instantiate()
 	
 	add_child(nova_instancia)
 	instancias_ativas[id_tipo] = nova_instancia
@@ -49,6 +63,7 @@ func _montar_bike():
 	mapa_de_sockets.clear()
 	_mapear_sockets()
 	_posiciona_as_pecas()
+	print("TODAS AS PEÇAS ATIVAS: ", instancias_ativas)
 
 
 func _mapear_sockets():
@@ -93,9 +108,7 @@ func _posiciona_as_pecas() -> void:
 						
 						print("Peça ", peca.name, " \t\tconectada ao socket \t\t ", alvo)
 					else:
-						# os quadros são posicionados na origem da cena. Por isso eles não tem socket_da_origem
-						if tipo != "Quadro":
-							print("Socket alvo '", alvo, "' não encontrado no mapa atual.")
+						print("Socket alvo '", alvo, "' não encontrado no mapa atual.")
 				else:
 					if extras is Dictionary and extras.has("proxy"):
 						print("Encontrou um proxy em: ", filho)

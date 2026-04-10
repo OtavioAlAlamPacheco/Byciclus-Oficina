@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlpwgq5vw1q34"]
+
+[ext_resource type="PackedScene" uid="uid://deidbggdfme7h" path="res://GLB/Partes bike/Garfo/Garfo padrao.glb" id="1_mocu8"]
+
+[node name="Garfo padrao" instance=ExtResource("1_mocu8")]

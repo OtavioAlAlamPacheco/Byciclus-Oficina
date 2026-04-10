@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=5 format=3 uid="uid://c36758oawh6sp"]
+
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_0u1jh"]
+[ext_resource type="PackedScene" uid="uid://vv8h4f1rg1yx" path="res://Scenes/Pecas/pedal_direito_padrao.tscn" id="1_7cpwn"]
+[ext_resource type="Texture2D" uid="uid://cq3ooba1qx217" path="res://Art/Textures/Silhuetas partes/Pedal.png" id="2_xa423"]
+[ext_resource type="Resource" uid="uid://drepygvytgw25" path="res://Resources/Tipo de peça/pedal_direito.tres" id="4_4ndk0"]
+
+[resource]
+script = ExtResource("1_0u1jh")
+id = "Pedal direito padrão"
+tipo = ExtResource("4_4ndk0")
+cena_mesh = ExtResource("1_7cpwn")
+render_texture = ExtResource("2_xa423")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

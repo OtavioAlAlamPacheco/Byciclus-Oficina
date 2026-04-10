@@ -39,3 +39,5 @@ script = ExtResource("1_2uqby")
 [node name="MontaBike" type="Node3D" parent="." groups=["bike"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
 script = ExtResource("3_2uqby")
+
+[connection signal="variacao_foi_selecionada" from="." to="MontaBike" method="_on_oficina_variacao_foi_selecionada"]

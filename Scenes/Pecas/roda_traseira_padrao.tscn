@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1xd0ofi7fj84"]
+
+[ext_resource type="PackedScene" uid="uid://jymeqw61pwv8" path="res://GLB/Partes bike/Roda/Roda padrao.glb" id="1_asapx"]
+
+[node name="Roda padrao" instance=ExtResource("1_asapx")]
+
+[node name="Roda" parent="." index="0"]
+metadata/extras = {
+"socket_da_origem": "roda_traseira"
+}

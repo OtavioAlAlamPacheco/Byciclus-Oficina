@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="TipoPecaData" load_steps=2 format=3 uid="uid://ckchwar4eyj1j"]
-
-[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_7h6gs"]
-
-[resource]
-script = ExtResource("1_7h6gs")
-id = "Fio"
-metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

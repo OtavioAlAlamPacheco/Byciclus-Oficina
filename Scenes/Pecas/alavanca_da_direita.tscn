@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3gfus34vetdc"]
+
+[ext_resource type="PackedScene" uid="uid://bnxqikrkkhbnl" path="res://GLB/Partes bike/Alavancas/Alavanca da direita.glb" id="1_x0t3x"]
+
+[node name="Alavanca da direita2" instance=ExtResource("1_x0t3x")]

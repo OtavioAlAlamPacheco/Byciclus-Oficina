@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7falhxosfypi" path="res://Scripts/botao_variacao_peca.gd" id="1_ogns3"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq25c"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ykb4"]
 
 [node name="BotaoSelecaoVariacaoDePeca" type="Button"]
 anchors_preset = 15
@@ -12,5 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_aq25c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1ykb4")
 script = ExtResource("1_ogns3")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

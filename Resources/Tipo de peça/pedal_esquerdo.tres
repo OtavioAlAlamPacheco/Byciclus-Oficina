@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://bkdqwckx8fekh"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_u3lxt"]
+[ext_resource type="Texture2D" uid="uid://cq3ooba1qx217" path="res://Art/Textures/Silhuetas partes/Pedal.png" id="2_u5bd0"]
+
+[resource]
+script = ExtResource("1_u3lxt")
+id = "Pedal esquerdo"
+silhueta_texture = ExtResource("2_u5bd0")
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

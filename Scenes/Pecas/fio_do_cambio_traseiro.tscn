@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://boqa1kclxbl8o"]
+
+[ext_resource type="PackedScene" uid="uid://dkr18sqkae0hm" path="res://GLB/Partes bike/Fios/Fio do cambio traseiro.glb" id="1_gmoea"]
+
+[node name="Fio do cambio traseiro2" instance=ExtResource("1_gmoea")]

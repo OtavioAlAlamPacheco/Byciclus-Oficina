@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://x16oacp8ugal"]
+[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=5 format=3 uid="uid://x16oacp8ugal"]
 
 [ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_k4617"]
-[ext_resource type="PackedScene" uid="uid://b05vle0m6mxb0" path="res://GLB/Partes bike/Quadro/Quadro em S.glb" id="1_s0d3n"]
+[ext_resource type="PackedScene" uid="uid://ck0qmo60g76t" path="res://Scenes/Pecas/quadro_em_s.tscn" id="1_t4fvt"]
+[ext_resource type="Texture2D" uid="uid://doedk6dr23qdv" path="res://Art/Textures/Render/Quadro/Render quadro em S.png" id="2_hand8"]
 [ext_resource type="Resource" uid="uid://unevuvai4bwo" path="res://Resources/Tipo de peça/quadro.tres" id="2_i18es"]
 
 [resource]
 script = ExtResource("1_k4617")
 id = "Quadro em S"
 tipo = ExtResource("2_i18es")
-glb = ExtResource("1_s0d3n")
+cena_mesh = ExtResource("1_t4fvt")
+render_texture = ExtResource("2_hand8")
 metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

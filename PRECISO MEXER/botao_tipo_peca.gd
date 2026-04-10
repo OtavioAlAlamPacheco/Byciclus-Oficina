@@ -1,19 +1,23 @@
 
 @tool
-extends botao_peca
+extends Button
 
-@export_enum (
-		"Alavanca", "Cambio traseiro", "Catraca frontal", "Catraca traseira",
-		"Corrente", "Freio", "Garfo", "Guidao", "Pedal", "Pedivela", "Roda",
-		"Quadro", "Selim"
-	) var tipo_do_botao: String = "Quadro"
+@export var resource_tipo: TipoPecaData
 
-static var tipo_selecionado: String = "Quadro"
+static var id_tipo_selecionado: String = "Quadro"
+
+func _ready() -> void:
+	if resource_tipo and resource_tipo.silhueta_texture:
+		var novo_style = StyleBoxTexture.new()
+		novo_style.texture = resource_tipo.silhueta_texture
+		
+		add_theme_stylebox_override("normal", novo_style)
+		set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
 func _on_pressed() -> void:
-	tipo_selecionado = tipo_do_botao
-	print("BOTÃO PRESSIONADO. TIPO_SELECIONADO: ", tipo_selecionado)
+	id_tipo_selecionado = resource_tipo.id
+	print("BOTÃO PRESSIONADO. TIPO_SELECIONADO: ", id_tipo_selecionado)
 	
 	var nodo_oficina = get_tree().current_scene
 	if nodo_oficina and nodo_oficina.has_signal("tipo_foi_selecionado"):
-		nodo_oficina.tipo_foi_selecionado.emit(tipo_do_botao)
+		nodo_oficina.tipo_foi_selecionado.emit(id_tipo_selecionado)
