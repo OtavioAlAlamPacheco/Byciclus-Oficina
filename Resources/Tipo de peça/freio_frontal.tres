@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://cqce0jfse2885"]
 
-[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_lhj30"]
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_lhj30"]
 [ext_resource type="Texture2D" uid="uid://dultxl0xvblkm" path="res://Art/Textures/Silhuetas partes/Freio.png" id="2_h52p1"]
 
 [resource]

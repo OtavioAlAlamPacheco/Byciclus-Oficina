@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TipoPecaData" load_steps=2 format=3 uid="uid://dv6oyw5ced8bg"]
 
-[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_xsvjc"]
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_xsvjc"]
 
 [resource]
 script = ExtResource("1_xsvjc")

@@ -14,6 +14,8 @@ extends Button
 # signal pra fazer a peça ser instanciada
 
 func _ready() -> void:
+	print("-------------------- READY DO BOTAO_VARIACAO_PECA --------------------")
+	
 	if resource_variacao and resource_variacao.render_texture:
 		var novo_style = StyleBoxTexture.new()
 		novo_style.texture = resource_variacao.render_texture

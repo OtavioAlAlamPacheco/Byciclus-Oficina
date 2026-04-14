@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://b07je13rptcqw"]
 
-[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_obnoc"]
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_obnoc"]
 [ext_resource type="Texture2D" uid="uid://cpki6a4i4g5s0" path="res://Art/Textures/Silhuetas partes/Cambio traseiro.png" id="2_cnfiq"]
 
 [resource]

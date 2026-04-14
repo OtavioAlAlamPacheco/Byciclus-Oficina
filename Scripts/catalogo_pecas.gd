@@ -20,6 +20,9 @@ var resource_dos_tipos: Dictionary = {
 	# "id_tipo": resource_tipo
 }
 
+func _ready() -> void:
+	print("-------------------- READY DO CATALOGO_PECAS --------------------")
+
 
 func catalogar_tipos():
 	var dir = DirAccess.open(path_dos_tipos)

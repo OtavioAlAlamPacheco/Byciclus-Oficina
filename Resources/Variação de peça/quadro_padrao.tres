@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=5 format=3 uid="uid://b2wnxsmdowjfq"]
 
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_qcips"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_qcips"]
 [ext_resource type="PackedScene" uid="uid://c812niwcbrlf6" path="res://Scenes/Pecas/quadro_padrao.tscn" id="1_xvsd1"]
 [ext_resource type="Texture2D" uid="uid://drr2c1rg3xajx" path="res://Art/Textures/Render/Quadro/Render quadro padrao.png" id="2_fnu4a"]
 [ext_resource type="Resource" uid="uid://unevuvai4bwo" path="res://Resources/Tipo de peça/quadro.tres" id="2_uvfo3"]

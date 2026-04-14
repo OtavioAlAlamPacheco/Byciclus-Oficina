@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=5 format=3 uid="uid://dk0ssnhjh1cm7"]
+[gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://dk0ssnhjh1cm7"]
 
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_4uui7"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_4uui7"]
 [ext_resource type="PackedScene" uid="uid://b28filaa7agwh" path="res://Scenes/Pecas/freio_traseiro.tscn" id="1_vqjup"]
-[ext_resource type="Texture2D" uid="uid://dultxl0xvblkm" path="res://Art/Textures/Silhuetas partes/Freio.png" id="2_vsw78"]
 [ext_resource type="Resource" uid="uid://dwjs0veqyu4cc" path="res://Resources/Tipo de peça/freio_traseiro.tres" id="4_vsw78"]
 
 [resource]
@@ -10,5 +9,4 @@ script = ExtResource("1_4uui7")
 id = "Freio traseiro padrão"
 tipo = ExtResource("4_vsw78")
 cena_mesh = ExtResource("1_vqjup")
-render_texture = ExtResource("2_vsw78")
 metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

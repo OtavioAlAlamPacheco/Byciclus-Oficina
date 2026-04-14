@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://d1lvw53k61lyf"]
 
-[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_56b1t"]
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_56b1t"]
 [ext_resource type="Texture2D" uid="uid://duabn1dnn0fxq" path="res://Art/Textures/Silhuetas partes/Selim.png" id="2_y8uva"]
 
 [resource]

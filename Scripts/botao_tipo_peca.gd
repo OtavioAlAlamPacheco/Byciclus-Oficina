@@ -7,6 +7,8 @@ extends Button
 static var id_tipo_selecionado: String = "Quadro"
 
 func _ready() -> void:
+	print("-------------------- READY DO BOTA_TIPO_PECA --------------------")
+	
 	if resource_tipo and resource_tipo.silhueta_texture:
 		var novo_style = StyleBoxTexture.new()
 		novo_style.texture = resource_tipo.silhueta_texture

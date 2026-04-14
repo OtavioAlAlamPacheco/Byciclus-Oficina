@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://lwjg5wfd40k1"]
 
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_45hc5"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_45hc5"]
 [ext_resource type="PackedScene" uid="uid://cayd4v6wpbrk2" path="res://Scenes/Pecas/cambio_traseiro_padrao.tscn" id="1_djpwr"]
 [ext_resource type="Resource" uid="uid://b07je13rptcqw" path="res://Resources/Tipo de peça/cambio.tres" id="2_h206y"]
 

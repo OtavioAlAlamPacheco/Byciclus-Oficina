@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpvea336oo531"]
+
+[ext_resource type="Script" uid="uid://pmt7qlvk0t3v" path="res://PRECISO MEXER/botoes_modo_visualizacao.gd" id="1_ugbns"]
+
+[node name="ButtonVisualizarBicicleta" type="Button"]
+size_flags_horizontal = 3
+text = "Visualizar bicicleta"
+script = ExtResource("1_ugbns")
+modo_do_botao = "Visualizar bicicleta"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

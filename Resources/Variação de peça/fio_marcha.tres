@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://chta7ndi8rgsb"]
 
 [ext_resource type="PackedScene" uid="uid://cfbuc35t3d8am" path="res://Scenes/Pecas/fio_da_marcha.tscn" id="1_wo1mu"]
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="2_6e170"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="2_6e170"]
 [ext_resource type="Resource" uid="uid://dv6oyw5ced8bg" path="res://Resources/Tipo de peça/fio_marcha.tres" id="3_6e170"]
 
 [resource]

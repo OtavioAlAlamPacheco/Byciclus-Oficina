@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://bsk6lf7g4i6x3"]
 
 [ext_resource type="PackedScene" uid="uid://c3gfus34vetdc" path="res://Scenes/Pecas/alavanca_da_direita.tscn" id="1_jrird"]
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="2_p2lat"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="2_p2lat"]
 [ext_resource type="Resource" uid="uid://47qck2qwxnbf" path="res://Resources/Tipo de peça/alavanca_direita.tres" id="3_8eugk"]
 
 [resource]

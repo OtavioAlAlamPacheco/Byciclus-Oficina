@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=5 format=3 uid="uid://dwwnpritsbg1c"]
 
 [ext_resource type="PackedScene" uid="uid://cbxjldg4eibxm" path="res://Scenes/Pecas/quadro_circular.tscn" id="1_0stya"]
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_wv6lu"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_wv6lu"]
 [ext_resource type="Resource" uid="uid://unevuvai4bwo" path="res://Resources/Tipo de peça/quadro.tres" id="2_4to3x"]
 [ext_resource type="Texture2D" uid="uid://cxk3eph76ft41" path="res://Art/Textures/Render/Quadro/Render quadro circular.png" id="2_umro1"]
 

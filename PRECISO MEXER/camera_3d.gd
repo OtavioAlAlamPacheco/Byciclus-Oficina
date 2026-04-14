@@ -4,7 +4,11 @@ extends Camera3D
 @export var distancia_da_bike: float = 2.5
 
 @onready var painel_visualizacao: Panel = get_tree().get_first_node_in_group("painel_visualizacao_3d")
-@onready var coord_objeto_observado = get_tree().get_first_node_in_group("bike").global_position
+
+@onready var coord_objeto_observado: Vector3 = get_tree().get_first_node_in_group("bike").global_position:
+	set(valor):
+		coord_objeto_observado = valor
+		_movimenta_a_camera()
 
 var peca_selecionada
 var is_rotating: bool = false
@@ -35,12 +39,11 @@ func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion and is_rotating:
 		mouse_delta += event.relative
 
-
 func _movimenta_a_camera():
 	var offset_rotacao = _define_offset_rotacao_camera()
 	
 	global_position = coord_objeto_observado + offset_rotacao
-	look_at(coord_objeto_observado, Vector3.UP)
+	#look_at(coord_objeto_observado, Vector3.UP)
 	self.h_offset = offset_painel
 
 
@@ -48,7 +51,9 @@ func _movimenta_a_camera():
 func _define_offset_rotacao_camera() -> Vector3:
 	var angulo_y = deg_to_rad(-mouse_delta.x * sensibilidade_movimento)
 	var angulo_x = deg_to_rad(-mouse_delta.y * sensibilidade_movimento)
-	mouse_delta = Vector2.ZERO
+	
+	if is_rotating:
+		mouse_delta = Vector2.ZERO
 	
 	var vetor_direcao = (global_position - coord_objeto_observado).normalized() * distancia_da_bike
 	
@@ -83,3 +88,12 @@ func _define_offset_painel() -> void:
 	var distancia_pixels = centro_painel - centro_tela
 	
 	offset_painel = -(distancia_pixels / largura_tela) * 7.0
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	
+	# SEGUIR MEXENDO AQUI. Essa função é só pra teste
+	
+	if event.is_action_pressed("teste2"):
+		print("x")
+		coord_objeto_observado += Vector3(1, 1, 1)

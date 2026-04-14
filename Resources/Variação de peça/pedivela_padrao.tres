@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://c2y6ddds0euiy"]
 
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_2lcy6"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_2lcy6"]
 [ext_resource type="PackedScene" uid="uid://3gybc2l40tpl" path="res://Scenes/Pecas/pedivela_padrao.tscn" id="1_cdh3b"]
 [ext_resource type="Resource" uid="uid://dlcuwrgx7xt4b" path="res://Resources/Tipo de peça/pedivela.tres" id="2_qcaxg"]
 

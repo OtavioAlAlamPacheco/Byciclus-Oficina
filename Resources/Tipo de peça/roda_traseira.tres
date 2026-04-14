@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://c66wsm2gv4efu"]
 
-[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_erqeg"]
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_erqeg"]
 [ext_resource type="Texture2D" uid="uid://b24lahbqeoyaf" path="res://Art/Textures/Silhuetas partes/Roda.png" id="2_tx3sn"]
 
 [resource]

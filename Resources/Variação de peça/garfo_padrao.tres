@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=4 format=3 uid="uid://bxpnwd2s7rli0"]
 
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_hiers"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_hiers"]
 [ext_resource type="PackedScene" uid="uid://dlpwgq5vw1q34" path="res://Scenes/Pecas/garfo_padrao.tscn" id="1_qmg7o"]
 [ext_resource type="Resource" uid="uid://i0yqpx1k8n5t" path="res://Resources/Tipo de peça/garfo.tres" id="2_f71cn"]
 

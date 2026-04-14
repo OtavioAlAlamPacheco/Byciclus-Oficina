@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TipoPecaData" load_steps=3 format=3 uid="uid://co0br50flxnhr"]
 
-[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/tipo_peca_data.gd" id="1_vt86p"]
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_vt86p"]
 [ext_resource type="Texture2D" uid="uid://cbtomjk2rewu3" path="res://Art/Textures/Silhuetas partes/Guidao.png" id="2_3fmro"]
 
 [resource]

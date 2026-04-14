@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=5 format=3 uid="uid://4wlx0iuonxs2"]
 
 [ext_resource type="PackedScene" uid="uid://wl16s3vyx3qb" path="res://Scenes/Pecas/roda_frontal_padrao.tscn" id="1_mba6x"]
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="2_e0ufd"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="2_e0ufd"]
 [ext_resource type="Texture2D" uid="uid://b24lahbqeoyaf" path="res://Art/Textures/Silhuetas partes/Roda.png" id="2_rorso"]
 [ext_resource type="Resource" uid="uid://4t8ccptjn2jb" path="res://Resources/Tipo de peça/roda_frontal.tres" id="4_qy8d0"]
 

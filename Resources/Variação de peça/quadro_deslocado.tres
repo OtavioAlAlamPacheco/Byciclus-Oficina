@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" load_steps=5 format=3 uid="uid://h63n8c7x812"]
 
 [ext_resource type="PackedScene" uid="uid://c8kvjsc35egwb" path="res://Scenes/Pecas/quadro_deslocado.tscn" id="1_jwc6k"]
-[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/variacao_peca_data.gd" id="1_mpr0i"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_mpr0i"]
 [ext_resource type="Texture2D" uid="uid://ddo4vyy3lg1ys" path="res://Art/Textures/Render/Quadro/Render quadro deslocado.png" id="2_j1is1"]
 [ext_resource type="Resource" uid="uid://unevuvai4bwo" path="res://Resources/Tipo de peça/quadro.tres" id="2_kqt4m"]
 
