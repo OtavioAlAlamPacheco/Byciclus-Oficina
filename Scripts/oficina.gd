@@ -1,3 +1,4 @@
+
 extends Node3D
 
 signal tipo_foi_selecionado(id: String)
@@ -7,7 +8,7 @@ signal variacao_foi_selecionada(id: String)
 @onready var menu_dinamico: Panel = %MenuSelecaoVariacaoPeca
 @onready var botao_modo_visualizacao: Button = %ButtonVisualizarBike
 
-var modo_visualizacao: String = "Visualizar bicicleta"	# AQUI (Problema 4)
+var modo_visualizacao: String = "Visualizar bicicleta"
 
 
 func _ready():
@@ -21,14 +22,14 @@ func _ready():
 	bike.seleciona_todas_pecas()
 
 
-func solicitar_selecao_tipo(id: String) -> void:	# AQUI (Problema 2)
-	tipo_foi_selecionado.emit(id)	# AQUI (Problema 2)
+func solicitar_selecao_tipo(id: String) -> void:
+	tipo_foi_selecionado.emit(id)
 
 
-func solicitar_selecao_variacao(id: String) -> void:	# AQUI (Problema 2)
-	variacao_foi_selecionada.emit(id)	# AQUI (Problema 2)
+func solicitar_selecao_variacao(id: String) -> void:
+	variacao_foi_selecionada.emit(id)
 
 
-func alterar_modo_visualizacao(novo_modo: String) -> void:	# AQUI (Problema 4)
-	modo_visualizacao = novo_modo	# AQUI (Problema 4)
-	get_tree().call_group("botao_modo_visualizacao", "_atualizar_painel", novo_modo)	# AQUI (Problema 4)
+func alterar_modo_visualizacao(novo_modo: String) -> void:
+	modo_visualizacao = novo_modo
+	get_tree().call_group("botao_modo_visualizacao", "_atualizar_painel", novo_modo)

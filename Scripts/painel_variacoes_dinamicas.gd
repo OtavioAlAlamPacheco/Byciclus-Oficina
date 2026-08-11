@@ -1,3 +1,4 @@
+
 @tool
 extends Panel
 
@@ -5,13 +6,12 @@ extends Panel
 @onready var bike: Node3D = get_tree().get_first_node_in_group("bike")
 
 const BOTAO_VARIACAO_PECA = preload("uid://bp00ux5jxvbmn")
-const THEME_BOTAO_NAO_SELECIONADO = preload("uid://btfmvlloabut6")	# AQUI
-const THEME_BOTAO_SELECIONADO = preload("uid://cexiw2525vqhn")	# AQUI
+const THEME_BOTAO_NAO_SELECIONADO = preload("uid://btfmvlloabut6")
+const THEME_BOTAO_SELECIONADO = preload("uid://cexiw2525vqhn")
 
 var id_tipo_selecionado: String
 var id_variacao_selecionada: String
 
-# Arraste um TipoPecaData.tres para gerar o menu no editor
 @export var preview_tipo: TipoPecaData:
 	set(valor):
 		preview_tipo = valor
@@ -66,7 +66,7 @@ func atualizar_paineis():
 		var resource_variacao = CatalogoPecas.resource_das_variacoes[variacoes[i]]
 		botao.resource_variacao = resource_variacao
 		
-		botao.icon = null	# AQUI
+		botao.icon = null
 		
 		if resource_variacao.id == id_variacao_selecionada:
 			botao.theme = THEME_BOTAO_SELECIONADO
@@ -90,7 +90,7 @@ func _atualizar_paineis_editor() -> void:
 			var botao = BOTAO_VARIACAO_PECA.instantiate()
 			botao.resource_variacao = variacao
 			
-			botao.icon = null	# AQUI
+			botao.icon = null
 			botao.theme = THEME_BOTAO_NAO_SELECIONADO
 			
 			grid_variacoes.add_child(botao)

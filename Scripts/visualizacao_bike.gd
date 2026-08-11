@@ -53,7 +53,6 @@ func seleciona_peca(id: String):
 			peca_data.instancia.reparent(self)
 			peca_data.instancia.transform = Transform3D.IDENTITY
 	
-	# remover tipo antigo (agora com segurança, pois está sem filhos presos)
 	var i = 0
 	while i < pecas_instanciadas.size():
 		peca = pecas_instanciadas[i]
@@ -170,18 +169,18 @@ func _posiciona_as_pecas() -> void:
 
 
 
-func obter_coordenada_da_peca(id_variacao: String) -> Variant:	# AQUI (Problema 5)
-	for peca_data in pecas_instanciadas:	# AQUI
-		if peca_data.resource_variacao.id == id_variacao:	# AQUI
-			if is_instance_valid(peca_data.instancia):	# AQUI
-				return peca_data.instancia.global_position	# AQUI
-	return null	# AQUI
+func obter_coordenada_da_peca(id_variacao: String) -> Variant:
+	for peca_data in pecas_instanciadas:
+		if peca_data.resource_variacao.id == id_variacao:
+			if is_instance_valid(peca_data.instancia):
+				return peca_data.instancia.global_position
+	return null
 
-func obter_variacao_ativa_do_tipo(id_tipo: String) -> String:	# AQUI (Problema 5)
-	for peca_data in pecas_instanciadas:	# AQUI
-		if peca_data.resource_tipo.id == id_tipo:	# AQUI
-			return peca_data.resource_variacao.id	# AQUI
-	return ""	# AQUI
+func obter_variacao_ativa_do_tipo(id_tipo: String) -> String:
+	for peca_data in pecas_instanciadas:
+		if peca_data.resource_tipo.id == id_tipo:
+			return peca_data.resource_variacao.id
+	return ""
 
 
 
@@ -200,7 +199,7 @@ func _imprimir_relatorio_debug() -> void:
 	print("\n--- Filhos Diretos (Visuais) ---")
 	for filho in get_children():
 		print("- ", filho.name)
-		
+	
 	print("\n--- Registro Lógico de Peças ---")
 	for peca in pecas_instanciadas:
 		if is_instance_valid(peca.instancia):

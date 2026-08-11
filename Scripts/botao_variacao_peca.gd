@@ -1,3 +1,4 @@
+
 @tool
 extends Button
 
@@ -35,10 +36,10 @@ func _atualizar_malha_3d() -> void:
 			camera.rotation = resource_variacao.tipo.rotacao_camera
 			camera.keep_aspect = Camera3D.KEEP_WIDTH
 		
-		viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS	# AQUI
-		await get_tree().process_frame	# AQUI
-		await get_tree().process_frame	# AQUI
-		viewport.render_target_update_mode = SubViewport.UPDATE_ONCE	# AQUI
+		viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+		await get_tree().process_frame
+		await get_tree().process_frame
+		viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 
 
 func _on_pressed() -> void:

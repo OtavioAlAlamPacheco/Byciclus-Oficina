@@ -1,3 +1,4 @@
+
 extends Node3D
 
 @export var sensibilidade: float = 0.2
@@ -21,12 +22,12 @@ var offset_painel: float
 
 
 func _ready() -> void:
-	call_deferred("_inicializar_posicao_camera")	# AQUI (Problema 6)
+	call_deferred("_inicializar_posicao_camera")
 
-func _inicializar_posicao_camera() -> void:	# AQUI (Problema 6)
-	global_position = coord_objeto_observado	# AQUI (Problema 6)
-	camera.position = Vector3(0, 0, distancia)	# AQUI (Problema 6)
-	_define_offset_painel()	# AQUI (Problema 6)
+func _inicializar_posicao_camera() -> void:
+	global_position = coord_objeto_observado
+	camera.position = Vector3(0, 0, distancia)
+	_define_offset_painel()
 
 func _process(_delta: float) -> void:
 	camera.look_at(global_position, Vector3.UP)
