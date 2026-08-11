@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c3ekvg83ew5fh"]
+
+[ext_resource type="PackedScene" uid="uid://deshwta3don55" path="res://Scenes/Pecas/Alavancas/alavanca_direita.tscn" id="1_thgdi"]
+[ext_resource type="PackedScene" uid="uid://0p130geti3x2" path="res://Scenes/Pecas/Alavancas/alavanca_esquerda.tscn" id="2_2uhro"]
+[ext_resource type="PackedScene" uid="uid://bhh3pk0b3f3pb" path="res://Scenes/Pecas/Cambio traseiro/cambio_traseiro.tscn" id="3_osk7c"]
+[ext_resource type="PackedScene" uid="uid://cmm0jsogbft7x" path="res://Scenes/Pecas/Catracas/catraca_frontal.tscn" id="4_hjn25"]
+[ext_resource type="PackedScene" uid="uid://gidd5345gq68" path="res://Scenes/Pecas/Catracas/catraca_traseira.tscn" id="5_xpcik"]
+[ext_resource type="PackedScene" uid="uid://bsam5jj4wscwc" path="res://Scenes/Pecas/Corrente/corrente.tscn" id="6_v2yn7"]
+[ext_resource type="PackedScene" uid="uid://crets4awchsja" path="res://Scenes/Pecas/Freios/freio_frontal.tscn" id="7_qiqmw"]
+[ext_resource type="PackedScene" uid="uid://d0jrnwhgdhtj1" path="res://Scenes/Pecas/Freios/freio_traseiro.tscn" id="8_jucrn"]
+[ext_resource type="PackedScene" uid="uid://d2xdtscbq24pb" path="res://Scenes/Pecas/Garfo/garfo.tscn" id="9_ise5e"]
+[ext_resource type="PackedScene" uid="uid://gg1yki6krrc7" path="res://Scenes/Pecas/Guidão/guidao_padrao.tscn" id="10_1anj7"]
+[ext_resource type="PackedScene" uid="uid://wdyv5ga76mlk" path="res://GLB/Partes bike/Pedal/pedal.glb" id="11_08qt7"]
+[ext_resource type="PackedScene" uid="uid://c8bckgyu0vapp" path="res://Scenes/Pecas/Pedivela/pedivela.tscn" id="12_rhumb"]
+[ext_resource type="PackedScene" uid="uid://bhqbgdks2vyvo" path="res://Scenes/Pecas/Roda/roda_frontal.tscn" id="13_hjjt3"]
+[ext_resource type="PackedScene" uid="uid://cld5sxijgs2nx" path="res://Scenes/Pecas/Selim/selim.tscn" id="14_b2hf2"]
+[ext_resource type="PackedScene" uid="uid://cbxjldg4eibxm" path="res://Scenes/Pecas/quadro_circular.tscn" id="15_3q3fo"]
+
+[node name="Node3D" type="Node3D" unique_id=609550354]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1358858499]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.040912777, 0.06438705, 0)
+
+[node name="alavanca_direita" parent="." unique_id=1996989404 instance=ExtResource("1_thgdi")]
+visible = false
+
+[node name="alavanca_esquerda" parent="." unique_id=1254500143 instance=ExtResource("2_2uhro")]
+visible = false
+
+[node name="cambio_traseiro" parent="." unique_id=838738366 instance=ExtResource("3_osk7c")]
+visible = false
+
+[node name="catraca_frontal" parent="." unique_id=2116173987 instance=ExtResource("4_hjn25")]
+visible = false
+
+[node name="catraca_traseira" parent="." unique_id=741210275 instance=ExtResource("5_xpcik")]
+visible = false
+
+[node name="corrente" parent="." unique_id=98718184 instance=ExtResource("6_v2yn7")]
+visible = false
+
+[node name="freio_frontal" parent="." unique_id=799081632 instance=ExtResource("7_qiqmw")]
+visible = false
+
+[node name="freio_traseiro" parent="." unique_id=227805804 instance=ExtResource("8_jucrn")]
+visible = false
+
+[node name="garfo" parent="." unique_id=1405551527 instance=ExtResource("9_ise5e")]
+visible = false
+
+[node name="guidao_padrao" parent="." unique_id=1882186964 instance=ExtResource("10_1anj7")]
+visible = false
+
+[node name="pedal" parent="." unique_id=970615099 instance=ExtResource("11_08qt7")]
+
+[node name="pedivela" parent="." unique_id=2083407756 instance=ExtResource("12_rhumb")]
+visible = false
+
+[node name="roda" parent="." unique_id=612213225 instance=ExtResource("13_hjjt3")]
+visible = false
+
+[node name="selim" parent="." unique_id=579831119 instance=ExtResource("14_b2hf2")]
+visible = false
+
+[node name="quadro_circular" parent="." unique_id=1829563495 instance=ExtResource("15_3q3fo")]
+visible = false

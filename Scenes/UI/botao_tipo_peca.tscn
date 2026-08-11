@@ -1,19 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ylu13k621j2c"]
+[gd_scene format=3 uid="uid://ylu13k621j2c"]
 
-[ext_resource type="Texture2D" uid="uid://c2ylxfmdl6cto" path="res://Art/Textures/Silhuetas partes/Quadro.png" id="1_avyp4"]
+[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/theme_botao_nao_selecionado_oficina.tres" id="1_nnegq"]
 [ext_resource type="Script" uid="uid://cg4g80ljatk8v" path="res://Scripts/botao_tipo_peca.gd" id="2_qn1pb"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avyp4"]
-texture = ExtResource("1_avyp4")
-
-[node name="BotaoSelecaoPeca2" type="Button"]
+[node name="BotaoSelecaoPeca2" type="Button" unique_id=451800664]
+custom_minimum_size = Vector2(60, 60)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_avyp4")
+theme = ExtResource("1_nnegq")
+expand_icon = true
 script = ExtResource("2_qn1pb")
-imagem_fundo = ExtResource("1_avyp4")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

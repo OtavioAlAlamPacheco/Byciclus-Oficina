@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MaterialBikeData" format=3 uid="uid://dhla3tk5kqh4v"]
+
+[ext_resource type="Script" uid="uid://c55n4b02j0hri" path="res://Scripts/Data/material_bike_data.gd" id="1_2eyk3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4ysv"]
+
+[resource]
+script = ExtResource("1_2eyk3")
+material_3d = SubResource("StandardMaterial3D_k4ysv")
+metadata/_custom_type_script = "uid://c55n4b02j0hri"

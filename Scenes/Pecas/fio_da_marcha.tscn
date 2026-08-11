@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfbuc35t3d8am"]
-
-[ext_resource type="PackedScene" uid="uid://de56oqgt8nh5h" path="res://GLB/Partes bike/Fios/Fio da marcha.glb" id="1_7vgfi"]
-
-[node name="Fio da marcha2" instance=ExtResource("1_7vgfi")]

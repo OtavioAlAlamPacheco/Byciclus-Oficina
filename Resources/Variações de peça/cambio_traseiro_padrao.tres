@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://lwjg5wfd40k1"]
+
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_45hc5"]
+[ext_resource type="PackedScene" uid="uid://bhh3pk0b3f3pb" path="res://Scenes/Pecas/Cambio traseiro/cambio_traseiro.tscn" id="1_djpwr"]
+[ext_resource type="Resource" uid="uid://dm0on1ousno3d" path="res://Resources/Tipos de peça/cambio_novo.tres" id="3_mlc0a"]
+
+[resource]
+script = ExtResource("1_45hc5")
+id = "Cambio traseiro padrão"
+tipo = ExtResource("3_mlc0a")
+cena_mesh = ExtResource("1_djpwr")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

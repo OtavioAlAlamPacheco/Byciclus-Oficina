@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://b3ytn4axxhufe"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_xhwm0"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_xiub8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xhwm0"]
+load_path = "res://.godot/imported/Selim.png-0a6b359f1d7badc7b1658df093c0b88a.ctex"
+
+[resource]
+script = ExtResource("1_xhwm0")
+id = "Selim"
+silhueta_texture = SubResource("CompressedTexture2D_xhwm0")
+posicao_camera = Vector3(0.25667143, 0.092066936, 0.023714185)
+rotacao_camera = Vector3(-0.3102981, 1.5707964, -1.4016327e-08)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

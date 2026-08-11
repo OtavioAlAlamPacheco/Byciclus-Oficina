@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b28filaa7agwh"]
-
-[ext_resource type="PackedScene" uid="uid://d2p3twusqmyjw" path="res://GLB/Partes bike/Freios/Freio traseiro.glb" id="1_pf3ce"]
-
-[node name="Freio traseiro2" instance=ExtResource("1_pf3ce")]

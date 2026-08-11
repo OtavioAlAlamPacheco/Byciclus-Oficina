@@ -1,14 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://dstfkcxtp43od"]
+[gd_scene format=3 uid="uid://dstfkcxtp43od"]
 
-[ext_resource type="Texture2D" uid="uid://drr2c1rg3xajx" path="res://Art/Textures/Render/Quadro/Render quadro padrao.png" id="1_7071m"]
 [ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://Scripts/painel_variacoes_dinamicas.gd" id="1_sienp"]
-[ext_resource type="Texture2D" uid="uid://ddo4vyy3lg1ys" path="res://Art/Textures/Render/Quadro/Render quadro deslocado.png" id="2_2uvrx"]
-[ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://Scenes/UI/botao_variacao_peca.tscn" id="4_f0sij"]
-[ext_resource type="Texture2D" uid="uid://cxk3eph76ft41" path="res://Art/Textures/Render/Quadro/Render quadro circular.png" id="4_qdijm"]
-[ext_resource type="Resource" uid="uid://b2wnxsmdowjfq" path="res://Resources/Variação de peça/quadro_padrao.tres" id="4_xu3k4"]
-[ext_resource type="PackedScene" uid="uid://cqn781jst63vw" path="res://Scenes/UI/painel_selecao_variacao.tscn" id="5_1bgc5"]
-[ext_resource type="Resource" uid="uid://dwwnpritsbg1c" path="res://Resources/Variação de peça/quadro_circular.tres" id="8_dsd3b"]
-[ext_resource type="Resource" uid="uid://h63n8c7x812" path="res://Resources/Variação de peça/quadro_deslocado.tres" id="10_e84oe"]
+[ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://Scenes/UI/botao_variacao_peca.tscn" id="2_ro3l0"]
+[ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://Resources/Variações de peça/quadro_em_s.tres" id="4_6lkyn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukqa1"]
 border_width_left = 6
@@ -49,43 +43,14 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_t6qhr")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_qqwdv")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_wlat6")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5fya"]
-bg_color = Color(0.84537864, 0.85296655, 0.72066444, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bgc5"]
-texture = ExtResource("1_7071m")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81s4j"]
-bg_color = Color(0.9334808, 0.8142932, 0.7207653, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21f00"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xu3k4"]
-texture = ExtResource("4_qdijm")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c5ois"]
-texture = ExtResource("2_2uvrx")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mgooc"]
-
-[node name="MenuSelecaoVariacaoPeca" type="Panel"]
+[node name="MenuSelecaoVariacaoPeca" type="Panel" unique_id=43907126]
 custom_minimum_size = Vector2(370, 0)
 offset_right = 370.0
 offset_bottom = 364.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ukqa1")
 script = ExtResource("1_sienp")
 
-[node name="Margem" type="MarginContainer" parent="."]
+[node name="Margem" type="MarginContainer" parent="." unique_id=1390293182]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,102 +58,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 30
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Margem"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Margem" unique_id=1159255786]
 layout_mode = 2
 theme = SubResource("Theme_j43p3")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Margem/ScrollContainer"]
+[node name="GridVariacoes" type="GridContainer" parent="Margem/ScrollContainer" unique_id=237405316]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-theme_override_constants/separation = 24
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
 
-[node name="VBoxContainerEsquerdo" type="VBoxContainer" parent="Margem/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 12
-
-[node name="FundoBegeBotao1" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo"]
+[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("2_ro3l0")]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_u5fya")
+resource_variacao = ExtResource("4_6lkyn")
 
-[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo/FundoBegeBotao1" instance=ExtResource("4_f0sij")]
-layout_mode = 0
-anchors_preset = 0
-grow_horizontal = 1
-grow_vertical = 1
-theme_override_styles/normal = SubResource("StyleBoxTexture_1bgc5")
-resource_variacao = ExtResource("4_xu3k4")
-
-[node name="FundoBegeBotao2" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo" instance=ExtResource("5_1bgc5")]
-layout_mode = 2
-
-[node name="FundoBegeBotao3" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo"]
+[node name="BotaoSelecaoVariacaoDePeca2" parent="Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("2_ro3l0")]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
-
-[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo/FundoBegeBotao3" instance=ExtResource("4_f0sij")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 1
-grow_vertical = 1
-theme_override_styles/normal = SubResource("StyleBoxTexture_21f00")
-
-[node name="VBoxContainerDireito" type="VBoxContainer" parent="Margem/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-theme_override_constants/separation = 12
-
-[node name="FundoBegeBotao2" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
-
-[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito/FundoBegeBotao2" instance=ExtResource("4_f0sij")]
-layout_mode = 0
-anchors_preset = 0
-grow_horizontal = 1
-grow_vertical = 1
-theme_override_styles/normal = SubResource("StyleBoxTexture_xu3k4")
-resource_variacao = ExtResource("8_dsd3b")
-
-[node name="FundoBegeBotao3" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
-
-[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito/FundoBegeBotao3" instance=ExtResource("4_f0sij")]
-layout_mode = 0
-anchors_preset = 0
-grow_horizontal = 1
-grow_vertical = 1
-theme_override_styles/normal = SubResource("StyleBoxTexture_c5ois")
-resource_variacao = ExtResource("10_e84oe")
-
-[node name="FundoBegeBotao4" type="Panel" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_81s4j")
-
-[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito/FundoBegeBotao4" instance=ExtResource("4_f0sij")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 1
-grow_vertical = 1
-theme_override_styles/normal = SubResource("StyleBoxTexture_mgooc")
+resource_variacao = ExtResource("4_6lkyn")

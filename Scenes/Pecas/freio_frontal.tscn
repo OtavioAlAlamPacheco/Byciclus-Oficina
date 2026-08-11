@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmlxrnxj7jk5f"]
-
-[ext_resource type="PackedScene" uid="uid://dr06t2dmj5ve4" path="res://GLB/Partes bike/Freios/Freio frontal.glb" id="1_un3hv"]
-
-[node name="Freio frontal2" instance=ExtResource("1_un3hv")]

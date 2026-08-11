@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://gg1yki6krrc7"]
+
+[ext_resource type="PackedScene" uid="uid://dy2kpnx0qfn22" path="res://GLB/Partes bike/Guidao/guidao_padrao.glb" id="1_ncs3p"]
+
+[node name="guidao_padrao" instance=ExtResource("1_ncs3p")]

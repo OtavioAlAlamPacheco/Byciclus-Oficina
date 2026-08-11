@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://dukl8y7o6vchy"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_aep7r"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_a6jwb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aep7r"]
+load_path = "res://.godot/imported/Alavanca.png-2efb8e4fb5e989372023848ec5351c15.ctex"
+
+[resource]
+script = ExtResource("1_aep7r")
+id = "Alavanca esquerda"
+silhueta_texture = SubResource("CompressedTexture2D_aep7r")
+posicao_camera = Vector3(-0.018274978, 0.007858256, -0.09849428)
+rotacao_camera = Vector3(-0.33925128, -3.1415925, -3.085103e-08)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

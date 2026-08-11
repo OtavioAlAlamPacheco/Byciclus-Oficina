@@ -1,12 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://u3n4mrh5ol24"]
+[gd_scene load_steps=21 format=3 uid="uid://u3n4mrh5ol24"]
 
-[ext_resource type="Script" uid="uid://ckbavvvq4hlii" path="res://PRECISO MEXER/camera_3d.gd" id="1_2uqby"]
 [ext_resource type="Script" uid="uid://cumbmuctq17x6" path="res://Scripts/oficina.gd" id="1_klroo"]
+[ext_resource type="Script" uid="uid://bdeuj15iwvsbx" path="res://Scripts/pivo_camera.gd" id="2_nnosv"]
 [ext_resource type="Script" uid="uid://pp12ejelclfn" path="res://Scripts/visualizacao_bike.gd" id="3_2uqby"]
+[ext_resource type="Texture2D" uid="uid://c0ot01lofwxgl" path="res://Textures/UI/magnifying-glass.png" id="3_etqxk"]
 [ext_resource type="PackedScene" uid="uid://bvqts6sg7yfqv" path="res://Scenes/UI/menu_selecao_tipo_peca.tscn" id="3_w85mf"]
+[ext_resource type="Texture2D" uid="uid://bnns3rdagccdr" path="res://Textures/UI/notes.png" id="4_jrffh"]
 [ext_resource type="PackedScene" uid="uid://dstfkcxtp43od" path="res://Scenes/UI/menu_selecao_variacao_peca.tscn" id="4_nnosv"]
+[ext_resource type="Texture2D" uid="uid://bnslbml3oxras" path="res://Textures/UI/determination.png" id="5_jh5r5"]
 [ext_resource type="PackedScene" uid="uid://dpvea336oo531" path="res://Scenes/UI/botao_modo_visualizacao.tscn" id="5_nnosv"]
-[ext_resource type="Script" uid="uid://b001oqhh85cln" path="res://Scenes/visualizacao_peca.gd" id="5_oyckb"]
+[ext_resource type="Script" uid="uid://b001oqhh85cln" path="res://Scripts/visualizacao_peca.gd" id="5_oyckb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vsai"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,6 +24,36 @@ sky = SubResource("Sky_fwo5d")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrffh"]
+bg_color = Color(0.918317, 0.8345609, 0.6379462, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jh5r5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnosv"]
+bg_color = Color(0.84537864, 0.85296655, 0.72066444, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etqxk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jj7tw"]
+bg_color = Color(0.9334808, 0.8142932, 0.7207653, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jrffh"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yku7w"]
 draw_center = false
 border_width_left = 6
@@ -29,7 +62,7 @@ border_width_right = 6
 border_width_bottom = 6
 border_color = Color(0, 0, 0, 1)
 
-[node name="Oficina" type="Node3D"]
+[node name="Oficina" type="Node3D" groups=["oficina"]]
 script = ExtResource("1_klroo")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -39,9 +72,11 @@ environment = SubResource("Environment_mxkdn")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0068505406, -0.070867, 2.207948)
-script = ExtResource("1_2uqby")
+[node name="PivoCamera" type="Node3D" parent="."]
+script = ExtResource("2_nnosv")
+
+[node name="Camera3D" type="Camera3D" parent="PivoCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -73,26 +108,101 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 80
 
-[node name="BotaoModoLupa" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores"]
+[node name="PanelLupa" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores"]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-text = "IMG"
+theme_override_styles/panel = SubResource("StyleBoxFlat_jrffh")
 
-[node name="BotaoBlocoNotas" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores"]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-text = "IMG"
+[node name="BotaoModoLupa" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelLupa"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
 
-[node name="BotaoAtributosBike" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelLupa"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelLupa/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_etqxk")
+expand_mode = 1
+
+[node name="PanelBlocoNotas" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores"]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-text = "IMG"
+theme_override_styles/panel = SubResource("StyleBoxFlat_jrffh")
+
+[node name="BotaoModoLupa" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelBlocoNotas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelBlocoNotas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelBlocoNotas/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_jrffh")
+expand_mode = 1
+
+[node name="PanelAtributos" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jrffh")
+
+[node name="BotaoAtributos" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelAtributos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelAtributos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/BotoesInferiores/PanelAtributos/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_jh5r5")
+expand_mode = 1
 
 [node name="PaineisSuperiores" type="HBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal"]
 custom_minimum_size = Vector2(500, 458)
@@ -104,6 +214,7 @@ theme_override_constants/separation = 30
 layout_mode = 2
 
 [node name="MenuSelecaoVariacaoPeca" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores" instance=ExtResource("4_nnosv")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Visualizacao3D" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores"]
@@ -114,22 +225,52 @@ theme_override_constants/separation = 15
 [node name="BotoesAlterarTipoVisualizacao3D" type="HBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores/Visualizacao3D"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+mouse_filter = 0
 theme_override_constants/separation = 15
 
-[node name="ButtonVisualizarBicicleta" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" instance=ExtResource("5_nnosv")]
+[node name="PanelBike" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores/Visualizacao3D/BotoesAlterarTipoVisualizacao3D"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnosv")
 
-[node name="ButtonVisualizarBicicleta2" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" instance=ExtResource("5_nnosv")]
+[node name="ButtonVisualizarBike" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores/Visualizacao3D/BotoesAlterarTipoVisualizacao3D/PanelBike" node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["botao_modo_visualizacao"] instance=ExtResource("5_nnosv")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_etqxk")
+pivo_camera = NodePath("../../../../../../../../PivoCamera")
+menu_variacao = NodePath("../../../../MenuSelecaoVariacaoPeca")
+
+[node name="PanelPeca" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores/Visualizacao3D/BotoesAlterarTipoVisualizacao3D"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jj7tw")
+
+[node name="ButtonVisualizarPeca" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores/Visualizacao3D/BotoesAlterarTipoVisualizacao3D/PanelPeca" node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["botao_modo_visualizacao"] instance=ExtResource("5_nnosv")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_jrffh")
 text = "Visualizar peça
 "
 modo_do_botao = "Visualizar peça"
+pivo_camera = NodePath("../../../../../../../../PivoCamera")
+menu_variacao = NodePath("../../../../MenuSelecaoVariacaoPeca")
 
 [node name="PainelVisualizacao3D" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/PaineisSuperiores/Visualizacao3D" groups=["painel_visualizacao_3d"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_yku7w")
 
 [node name="Bike" type="Node3D" parent="." groups=["bike"]]

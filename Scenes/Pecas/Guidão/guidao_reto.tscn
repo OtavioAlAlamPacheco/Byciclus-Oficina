@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://7yf32gyhavp8"]
+
+[ext_resource type="PackedScene" uid="uid://bu3rlfdedeltw" path="res://GLB/Partes bike/Guidao/guidao_reto.glb" id="1_xl2fa"]
+
+[node name="guidao_reto" instance=ExtResource("1_xl2fa")]

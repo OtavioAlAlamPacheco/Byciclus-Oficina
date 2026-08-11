@@ -1,3 +1,4 @@
+
 extends Node3D
 
 var selecao_multipla: bool = false
@@ -21,8 +22,11 @@ func _on_oficina_variacao_foi_selecionada(id: String) -> void:
 
 func seleciona_todas_pecas():
 	selecao_multipla = true
-	for id in CatalogoPecas.resource_das_variacoes:
-		seleciona_peca(id)
+	
+	for id_tipo in CatalogoPecas.variacoes_por_tipo:
+		var variacoes = CatalogoPecas.variacoes_por_tipo[id_tipo]
+		if variacoes.size() > 0:
+			seleciona_peca(variacoes[0])
 	
 	_montar_bike()
 	selecao_multipla = false
@@ -43,8 +47,13 @@ func seleciona_peca(id: String):
 	var id_tipo = ""
 	if resource_variacao.tipo:
 		id_tipo = resource_variacao.tipo.id
+		
+	for peca_data in pecas_instanciadas:
+		if is_instance_valid(peca_data.instancia) and peca_data.instancia.get_parent() != self:
+			peca_data.instancia.reparent(self)
+			peca_data.instancia.transform = Transform3D.IDENTITY
 	
-	# remover tipo antigo
+	# remover tipo antigo (agora com segurança, pois está sem filhos presos)
 	var i = 0
 	while i < pecas_instanciadas.size():
 		peca = pecas_instanciadas[i]
@@ -58,21 +67,35 @@ func seleciona_peca(id: String):
 			pecas_instanciadas.remove_at(i)
 		else:
 			i += 1
-	
-	var cena_mesh = resource_variacao.cena_mesh
-	var nova_instancia = cena_mesh.instantiate()
-	add_child(nova_instancia)
-	
-	print("\n\nNova_instancia: ", nova_instancia)
-	
-	peca = PecaInstanciada.new()
-	peca.instancia = nova_instancia
-	peca.resource_tipo = CatalogoPecas.resource_dos_tipos[id_tipo]
-	peca.resource_variacao = resource_variacao
-	pecas_instanciadas.append(peca)
+			
+	if id_tipo == "Roda":
+		_instanciar_nova_peca(resource_variacao, "roda_frontal")
+		_instanciar_nova_peca(resource_variacao, "roda_traseira")
+	else:
+		_instanciar_nova_peca(resource_variacao)
 	
 	if not selecao_multipla:
 		_montar_bike()
+
+
+func _instanciar_nova_peca(resource_variacao, alvo_roda: String = "") -> void:
+	var cena_mesh = resource_variacao.cena_mesh
+	print("Vou tentar instanciar. Self: ", self, ". Resource_variacao: ", resource_variacao.id)
+	var nova_instancia = cena_mesh.instantiate()
+	add_child(nova_instancia)
+	
+	if alvo_roda != "" and nova_instancia.get_child_count() > 0:
+		var mesh = nova_instancia.get_child(0)
+		if mesh.has_meta("extras"):
+			var extras = mesh.get_meta("extras").duplicate()
+			extras["socket_da_origem"] = alvo_roda
+			mesh.set_meta("extras", extras)
+	
+	var peca = PecaInstanciadaData.new()
+	peca.instancia = nova_instancia
+	peca.resource_tipo = CatalogoPecas.resource_dos_tipos[resource_variacao.tipo.id]
+	peca.resource_variacao = resource_variacao
+	pecas_instanciadas.append(peca)
 
 
 func _montar_bike():
@@ -84,8 +107,8 @@ func _montar_bike():
 	print("TODAS AS PEÇAS ATIVAS:")
 	for peca in pecas_instanciadas:
 		print("\n- Tipo: ", peca.resource_tipo.id)
-		print("  Instancia: ", peca.instancia)
-		print("  Variação: ", peca.resource_variacao.id)
+		print("	 Instancia: ", peca.instancia)
+		print("	 Variação: ", peca.resource_variacao.id)
 
 
 func _escanear_sockets():
@@ -144,3 +167,45 @@ func _posiciona_as_pecas() -> void:
 				print("O primeiro filho não tem o meta 'extras'. O filho é: ", filho)
 		else:
 			print("Essa peça não tem filhos. Peça: ", instancia)
+
+
+
+func obter_coordenada_da_peca(id_variacao: String) -> Variant:	# AQUI (Problema 5)
+	for peca_data in pecas_instanciadas:	# AQUI
+		if peca_data.resource_variacao.id == id_variacao:	# AQUI
+			if is_instance_valid(peca_data.instancia):	# AQUI
+				return peca_data.instancia.global_position	# AQUI
+	return null	# AQUI
+
+func obter_variacao_ativa_do_tipo(id_tipo: String) -> String:	# AQUI (Problema 5)
+	for peca_data in pecas_instanciadas:	# AQUI
+		if peca_data.resource_tipo.id == id_tipo:	# AQUI
+			return peca_data.resource_variacao.id	# AQUI
+	return ""	# AQUI
+
+
+
+
+# ======================= Pra debug ==========================
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed("teste"):
+		_imprimir_relatorio_debug()
+
+func _imprimir_relatorio_debug() -> void:
+	print("\n========== RELATÓRIO DE DEBUG ==========")
+	print("Total de nós filhos diretos da cena Bike: ", get_child_count())
+	print("Total de peças na Array 'pecas_instanciadas': ", pecas_instanciadas.size())
+	
+	print("\n--- Filhos Diretos (Visuais) ---")
+	for filho in get_children():
+		print("- ", filho.name)
+		
+	print("\n--- Registro Lógico de Peças ---")
+	for peca in pecas_instanciadas:
+		if is_instance_valid(peca.instancia):
+			var nome_pai = peca.instancia.get_parent().name if peca.instancia.get_parent() else "NENHUM"
+			print("- [Válida] Tipo: ", peca.resource_tipo.id, " | Variação: ", peca.resource_variacao.id, " | Nó: ", peca.instancia.name, " | Pai atual: ", nome_pai)
+		else:
+			print("- [ALERTA - FANTASMA] Tipo: ", peca.resource_tipo.id, " (Instância foi deletada, mas segue no Array!)")
+	print("========================================\n")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://c33s0eu8vu5lm"]
+
+[ext_resource type="PackedScene" uid="uid://co51yknlpfpk5" path="res://Scenes/Pecas/Pedal/pedal_esquerdo.tscn" id="1_1di35"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="2_qap4d"]
+[ext_resource type="Resource" uid="uid://ckah60fv0km1j" path="res://Resources/Tipos de peça/pedal_esquerdo_novo.tres" id="3_8gm40"]
+
+[resource]
+script = ExtResource("2_qap4d")
+id = "Pedal esquerdo padrão"
+tipo = ExtResource("3_8gm40")
+cena_mesh = ExtResource("1_1di35")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://cjmhjf3jeyq3x"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_i40ti"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_xbmdm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i40ti"]
+load_path = "res://.godot/imported/Roda.png-de1e0dd11945450900119a93a55657b1.ctex"
+
+[resource]
+script = ExtResource("1_i40ti")
+id = "Roda frontal"
+silhueta_texture = SubResource("CompressedTexture2D_i40ti")
+posicao_camera = Vector3(0.6, 0, 0)
+rotacao_camera = Vector3(0, 1.5707964, 0)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

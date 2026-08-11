@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://mvsidns63sta"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_wrrc4"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_nfjsr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wrrc4"]
+load_path = "res://.godot/imported/Garfo.png-85f1877831b2485023c8af00583c6cbc.ctex"
+
+[resource]
+script = ExtResource("1_wrrc4")
+id = "Garfo"
+silhueta_texture = SubResource("CompressedTexture2D_wrrc4")
+posicao_camera = Vector3(0, 0.022624984, -0.4055625)
+rotacao_camera = Vector3(-0.59545654, -3.1415925, -5.922783e-08)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

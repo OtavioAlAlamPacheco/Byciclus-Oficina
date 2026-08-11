@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://5i45hi6sws6d"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_002rk"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_u3os2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_002rk"]
+load_path = "res://.godot/imported/Catraca traseira.png-a566d635f12b1577f2134ee6c014605b.ctex"
+
+[resource]
+script = ExtResource("1_002rk")
+id = "Catraca traseira"
+silhueta_texture = SubResource("CompressedTexture2D_002rk")
+posicao_camera = Vector3(0.08100122, 0, 0)
+rotacao_camera = Vector3(0, 1.5707964, 0)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

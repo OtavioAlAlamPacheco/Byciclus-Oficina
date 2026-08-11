@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2xdtscbq24pb"]
+
+[ext_resource type="PackedScene" uid="uid://d3wxs572ceheb" path="res://GLB/Partes bike/Garfo/garfo.glb" id="1_hjiln"]
+
+[node name="garfo" instance=ExtResource("1_hjiln")]

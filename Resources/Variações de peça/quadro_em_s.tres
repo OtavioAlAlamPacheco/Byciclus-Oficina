@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://x16oacp8ugal"]
+
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_k4617"]
+[ext_resource type="PackedScene" uid="uid://ck0qmo60g76t" path="res://Scenes/Pecas/quadro_em_s.tscn" id="1_t4fvt"]
+[ext_resource type="Resource" uid="uid://s2yc3qesd6q8" path="res://Resources/Tipos de peça/quadro_novo.tres" id="3_22pjt"]
+
+[resource]
+script = ExtResource("1_k4617")
+id = "Quadro em S"
+tipo = ExtResource("3_22pjt")
+cena_mesh = ExtResource("1_t4fvt")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

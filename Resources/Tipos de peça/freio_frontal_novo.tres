@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://c3vcni2tgp0gr"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_s40e8"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_khw82"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s40e8"]
+load_path = "res://.godot/imported/Freio.png-fa4f2286c081d78c36abaff52030b998.ctex"
+
+[resource]
+script = ExtResource("1_s40e8")
+id = "Freio frontal"
+silhueta_texture = SubResource("CompressedTexture2D_s40e8")
+posicao_camera = Vector3(-0.06259695, 0.061489042, -0.15178376)
+rotacao_camera = Vector3(-0.2512647, -3.1415925, -2.244051e-08)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

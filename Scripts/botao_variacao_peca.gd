@@ -1,32 +1,50 @@
-
 @tool
 extends Button
 
-@export var resource_variacao: VariacaoPecaData
+@export var resource_variacao: VariacaoPecaData:
+	set(valor):
+		resource_variacao = valor
+		if is_inside_tree():
+			_atualizar_malha_3d()
 
-# vai acessar as variações de peça usando o CatalogoPecas.
-# Penso em duas formas de fazer esse menu:
-	# a) Cria um menu pra cada tipo de peça, mostrando de forma estática
-	#    as variações disponíveis
-	# b) Usa script pra criar o menu
-	#		-> vou usar o b. É o "menu_dinamico", mas ainda não trabalhei nele
+@onready var viewport: SubViewport = $SubViewportContainer/SubViewport
+@onready var camera: Camera3D = $SubViewportContainer/SubViewport/Camera3D
 
-# signal pra fazer a peça ser instanciada
+var malha_instanciada: Node3D
 
 func _ready() -> void:
 	print("-------------------- READY DO BOTAO_VARIACAO_PECA --------------------")
-	
-	if resource_variacao and resource_variacao.render_texture:
-		var novo_style = StyleBoxTexture.new()
-		novo_style.texture = resource_variacao.render_texture
+	if resource_variacao:
+		_atualizar_malha_3d()
+
+
+func _atualizar_malha_3d() -> void:
+	if is_instance_valid(malha_instanciada):
+		malha_instanciada.queue_free()
 		
-		add_theme_stylebox_override("normal", novo_style)
-		set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	for filho in viewport.get_children():
+		if not (filho is Camera3D or filho is DirectionalLight3D or filho is WorldEnvironment):
+			filho.queue_free()
+			
+	if resource_variacao and resource_variacao.cena_mesh:
+		malha_instanciada = resource_variacao.cena_mesh.instantiate()
+		viewport.add_child(malha_instanciada)
+		
+		if resource_variacao.tipo:
+			camera.position = resource_variacao.tipo.posicao_camera
+			camera.rotation = resource_variacao.tipo.rotacao_camera
+			camera.keep_aspect = Camera3D.KEEP_WIDTH
+		
+		viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS	# AQUI
+		await get_tree().process_frame	# AQUI
+		await get_tree().process_frame	# AQUI
+		viewport.render_target_update_mode = SubViewport.UPDATE_ONCE	# AQUI
+
 
 func _on_pressed() -> void:
 	print("\nApertou o botão de seleção de variação.")
 	print("Resource_variacao: ", resource_variacao)
 	
-	var nodo_oficina = get_tree().current_scene
-	if nodo_oficina and nodo_oficina.has_signal("variacao_foi_selecionada"):
-		nodo_oficina.variacao_foi_selecionada.emit(resource_variacao.id)
+	var nodo_oficina = get_tree().get_first_node_in_group("oficina")
+	if nodo_oficina and nodo_oficina.has_method("solicitar_selecao_variacao"):
+		nodo_oficina.solicitar_selecao_variacao(resource_variacao.id)

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvmfa254irnwa"]
-
-[ext_resource type="PackedScene" uid="uid://bvc7ws28k6giu" path="res://GLB/Partes bike/Fios/Fio da frente do freio traseiro.glb" id="1_rjpc7"]
-
-[node name="Fio da frente do freio traseiro2" instance=ExtResource("1_rjpc7")]

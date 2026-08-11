@@ -1,80 +1,96 @@
-
+@tool
 extends Panel
 
-@onready var vbox_esquerdo: VBoxContainer = $Margem/ScrollContainer/HBoxContainer/VBoxContainerEsquerdo
-@onready var vbox_direito: VBoxContainer = $Margem/ScrollContainer/HBoxContainer/VBoxContainerDireito
+@onready var grid_variacoes: GridContainer = $Margem/ScrollContainer/GridVariacoes
 @onready var bike: Node3D = get_tree().get_first_node_in_group("bike")
 
-const PAINEL_SELECAO_VARIACAO: PackedScene = preload("uid://cqn781jst63vw")
+const BOTAO_VARIACAO_PECA = preload("uid://bp00ux5jxvbmn")
+const THEME_BOTAO_NAO_SELECIONADO = preload("uid://btfmvlloabut6")	# AQUI
+const THEME_BOTAO_SELECIONADO = preload("uid://cexiw2525vqhn")	# AQUI
 
 var id_tipo_selecionado: String
 var id_variacao_selecionada: String
 
+# Arraste um TipoPecaData.tres para gerar o menu no editor
+@export var preview_tipo: TipoPecaData:
+	set(valor):
+		preview_tipo = valor
+		if Engine.is_editor_hint() and is_inside_tree() and valor:
+			_on_tipo_foi_selecionado(valor.id)
+
 
 func _ready() -> void:
-	await get_tree().process_frame
-	print("-------------------- READY DO PAINEL_VARIACOES_DINAMICAS (com await) --------------------")
-	_on_tipo_foi_selecionado("Quadro")
+	if Engine.is_editor_hint():
+		if preview_tipo:
+			_on_tipo_foi_selecionado(preview_tipo.id)
+	else:
+		call_deferred("_on_tipo_foi_selecionado", "Quadro")
 
 
 func _on_tipo_foi_selecionado(id: String) -> void:
-	print("Ativou a função _on_tipo_foi_selecionado!")
-	if CatalogoPecas.variacoes_por_tipo.has(id):
-		id_tipo_selecionado = id
+	id_tipo_selecionado = id
+	
+	if Engine.is_editor_hint():
 		limpar_paineis()
-		atualizar_paineis()
+		_atualizar_paineis_editor()
 	else:
-		print("ERRO! Tipo ", id, " inexistente em CatalogoPecas.variacoes_por_tipo. \n",
-			  "Variacoes_por_tipo: ", CatalogoPecas.variacoes_por_tipo)
+		if CatalogoPecas.variacoes_por_tipo.has(id):
+			limpar_paineis()
+			atualizar_paineis()
+		else:
+			print("ERRO! Tipo ", id, " inexistente.")
 
-func _on_variacao_foi_selecionada(id: String):
-	print("Ativou o _on_variacao_foi_selecionada dentro de ", self)
+
+func _on_variacao_foi_selecionada(_id: String):
+	if Engine.is_editor_hint():
+		return
+	
 	limpar_paineis()
 	atualizar_paineis()
 
 
 func limpar_paineis():
-	for painel in vbox_esquerdo.get_children():
-		painel.queue_free()
-	
-	for painel in vbox_direito.get_children():
+	for painel in grid_variacoes.get_children():
 		painel.queue_free()
 
 
 func atualizar_paineis():
-	print("\nCatalogoPecas.variacoes_por_tipo: ", CatalogoPecas.variacoes_por_tipo)
-	print("\nid_tipo_selecionado: ", id_tipo_selecionado)
 	var variacoes: Array = CatalogoPecas.variacoes_por_tipo[id_tipo_selecionado]
 	
-	var num_variacoes = variacoes.size()
-	print("NUM_VARIACOES: ", num_variacoes)
-	
-	var var_esquerda: int = ceil(num_variacoes / 2.0)
-	print("Var_esquerda: ", var_esquerda)
-	
-	var novo_painel
-	
-	for data in bike.pecas_instanciadas:
-		if id_tipo_selecionado == data.resource_tipo.id:
-			print("\nEncontrou o tipo selecionado em pecas_instanciadas!")
-			print("Instância: ", data.instancia)
-			
-			id_variacao_selecionada = data.resource_variacao.id
+	if is_instance_valid(bike):
+		id_variacao_selecionada = bike.obter_variacao_ativa_do_tipo(id_tipo_selecionado)
 	
 	for i in range(variacoes.size()):
-		novo_painel = PAINEL_SELECAO_VARIACAO.instantiate()
-		var botao = novo_painel.get_child(0)
+		var botao = BOTAO_VARIACAO_PECA.instantiate()
 		
 		var resource_variacao = CatalogoPecas.resource_das_variacoes[variacoes[i]]
 		botao.resource_variacao = resource_variacao
 		
-		if resource_variacao.id == id_variacao_selecionada:
-			print("Essa é a peça selecionada atualmente: ", resource_variacao.id, ", ", id_variacao_selecionada)
-			var style_box = novo_painel.get_theme_stylebox("panel").duplicate()
-			style_box.bg_color = Color("d8dab8")
-			novo_painel.add_theme_stylebox_override("panel", style_box)
+		botao.icon = null	# AQUI
 		
-		if i < var_esquerda:
-			vbox_esquerdo.add_child(novo_painel)
+		if resource_variacao.id == id_variacao_selecionada:
+			botao.theme = THEME_BOTAO_SELECIONADO
 		else:
-			vbox_direito.add_child(novo_painel)
+			botao.theme = THEME_BOTAO_NAO_SELECIONADO
+		
+		grid_variacoes.add_child(botao)
+
+
+func _atualizar_paineis_editor() -> void:
+	var banco_de_dados = preload("res://Resources/banco_de_pecas.tres")
+	if not banco_de_dados:
+		return
+		
+	for variacao in banco_de_dados.variacoes_disponiveis:
+		var eh_valido = false
+		if variacao and variacao.tipo and variacao.tipo.id == id_tipo_selecionado:
+			eh_valido = true
+			
+		if eh_valido:
+			var botao = BOTAO_VARIACAO_PECA.instantiate()
+			botao.resource_variacao = variacao
+			
+			botao.icon = null	# AQUI
+			botao.theme = THEME_BOTAO_NAO_SELECIONADO
+			
+			grid_variacoes.add_child(botao)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://co51yknlpfpk5"]
+
+[ext_resource type="PackedScene" uid="uid://wdyv5ga76mlk" path="res://GLB/Partes bike/Pedal/pedal.glb" id="1_qp4l2"]
+
+[node name="pedal" instance=ExtResource("1_qp4l2")]
+
+[node name="Pedal" parent="." index="0"]
+metadata/extras = {
+"socket_da_origem": "pedal_esquerda"
+}

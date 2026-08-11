@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmm0jsogbft7x"]
+
+[ext_resource type="PackedScene" uid="uid://bs37xm8gexdc4" path="res://GLB/Partes bike/Catracas/catraca_frontal.glb" id="1_fv0v8"]
+
+[node name="catraca_frontal" instance=ExtResource("1_fv0v8")]

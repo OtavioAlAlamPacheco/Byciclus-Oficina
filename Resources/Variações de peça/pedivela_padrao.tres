@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://c2y6ddds0euiy"]
+
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_2lcy6"]
+[ext_resource type="PackedScene" uid="uid://c8bckgyu0vapp" path="res://Scenes/Pecas/Pedivela/pedivela.tscn" id="1_cdh3b"]
+[ext_resource type="Resource" uid="uid://b1g1t3tx2j0cg" path="res://Resources/Tipos de peça/pedivela_nova.tres" id="3_y244r"]
+
+[resource]
+script = ExtResource("1_2lcy6")
+id = "Pedivela padrão"
+tipo = ExtResource("3_y244r")
+cena_mesh = ExtResource("1_cdh3b")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

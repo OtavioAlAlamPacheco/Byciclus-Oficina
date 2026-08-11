@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr2ncwawj44na"]
-
-[ext_resource type="PackedScene" uid="uid://ddfphtsws7e27" path="res://GLB/Partes bike/Selim/Selim padrao.glb" id="1_2nvhj"]
-
-[node name="Selim padrao" instance=ExtResource("1_2nvhj")]

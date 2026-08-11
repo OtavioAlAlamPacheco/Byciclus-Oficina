@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://s2yc3qesd6q8"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_o31fq"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_7q4at"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o31fq"]
+load_path = "res://.godot/imported/Quadro.png-ff6b4bb000d62aac455c322ef198b50e.ctex"
+
+[resource]
+script = ExtResource("1_o31fq")
+id = "Quadro"
+silhueta_texture = SubResource("CompressedTexture2D_o31fq")
+posicao_camera = Vector3(0.8610965, 0.22578879, 0)
+rotacao_camera = Vector3(0, 1.5707964, 0)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

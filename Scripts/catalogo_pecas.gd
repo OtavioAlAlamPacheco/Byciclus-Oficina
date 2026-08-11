@@ -1,16 +1,12 @@
 
-
 extends Node
 
-var path_das_variacoes: String = "res://Resources/Variação de peça/"
-var path_dos_tipos: String = "res://Resources/Tipo de peça/"
+var banco_de_dados: BancoDePecasData = preload("res://Resources/banco_de_pecas.tres")
+const BancoDePecasData = preload("uid://cvsj3i3wqb7ui")
 
 var variacoes_por_tipo: Dictionary = {
 	#	"id_tipo": ["resource_variacao_1", "resource_variacao_2", ...]
 }
-
-# os resources já tem o id. Porém, vou criar esses dict pra poder fazer acesso
-# direto por valor
 
 var resource_das_variacoes: Dictionary = {
 	# "id_variacao": resource_variacao
@@ -22,44 +18,22 @@ var resource_dos_tipos: Dictionary = {
 
 func _ready() -> void:
 	print("-------------------- READY DO CATALOGO_PECAS --------------------")
+	_carregar_pecas_do_banco()
 
-
-func catalogar_tipos():
-	var dir = DirAccess.open(path_dos_tipos)
-	if not dir:
-		print("ERRO: não foi possível abrir o diretório '", path_dos_tipos, "'")
+func _carregar_pecas_do_banco() -> void:
+	if not banco_de_dados:
+		print("ERRO: Banco de peças não configurado no Autoload CatalogoPecas!")
 		return
 	
-	dir.list_dir_begin()
-	var arquivo = dir.get_next()
-	
-	while arquivo != "":
-		if arquivo.get_extension() == "tres":
-			var tipo_res = load(path_dos_tipos + arquivo + "/")
-			if tipo_res:
-				var id_t = tipo_res.id
-				resource_dos_tipos[id_t] = tipo_res
-				
-				variacoes_por_tipo[id_t] = []
-				for var_res in resource_das_variacoes.values():
-					if var_res.tipo and var_res.tipo.id == id_t:
-						variacoes_por_tipo[id_t].append(var_res.id)
-		
-		arquivo = dir.get_next()
-
-func catalogar_variacoes():
-	var dir = DirAccess.open(path_das_variacoes)
-	if not dir:
-		print("ERRO: não foi possível abrir o diretório '", path_das_variacoes, "'")
-		return
-	
-	dir.list_dir_begin()
-	var arquivo = dir.get_next()
-	
-	while arquivo != "":
-		if arquivo.get_extension() == "tres":
-			var variacao = load(path_das_variacoes + arquivo + "/")
-			if variacao:
-				resource_das_variacoes[variacao.id] = variacao
-				
-		arquivo = dir.get_next()
+	for tipo in banco_de_dados.tipos_disponiveis:
+		if tipo:
+			var id_t = tipo.id
+			resource_dos_tipos[id_t] = tipo
+			variacoes_por_tipo[id_t] = []
+			
+	for variacao in banco_de_dados.variacoes_disponiveis:
+		if variacao:
+			resource_das_variacoes[variacao.id] = variacao
+			
+			if variacao.tipo and variacao.tipo.id in variacoes_por_tipo:
+				variacoes_por_tipo[variacao.tipo.id].append(variacao.id)

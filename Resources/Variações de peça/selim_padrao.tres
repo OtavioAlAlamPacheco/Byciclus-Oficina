@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://gbn36khimk1g"]
+
+[ext_resource type="PackedScene" uid="uid://cld5sxijgs2nx" path="res://Scenes/Pecas/Selim/selim.tscn" id="1_h64uq"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_t5ul3"]
+[ext_resource type="Resource" uid="uid://b3ytn4axxhufe" path="res://Resources/Tipos de peça/selim_novo.tres" id="3_eatuy"]
+
+[resource]
+script = ExtResource("1_t5ul3")
+id = "Selim padrão"
+tipo = ExtResource("3_eatuy")
+cena_mesh = ExtResource("1_h64uq")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

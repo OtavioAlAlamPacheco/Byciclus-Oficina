@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8bckgyu0vapp"]
+
+[ext_resource type="PackedScene" uid="uid://v2qy4tkhf772" path="res://GLB/Partes bike/Pedivela/pedivela.glb" id="1_ucu8e"]
+
+[node name="pedivela" instance=ExtResource("1_ucu8e")]
