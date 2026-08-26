@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dbb2s100lr7oq"]
+
+[ext_resource type="Texture2D" uid="uid://c8qwo0cehgee3" path="res://Textures/Materials/arboform_color.png" id="1_lkckw"]
+[ext_resource type="Texture2D" uid="uid://dmldkgremppp6" path="res://Textures/Materials/arboform_roughness.png" id="2_3dcpo"]
+
+[resource]
+albedo_texture = ExtResource("1_lkckw")
+roughness_texture = ExtResource("2_3dcpo")

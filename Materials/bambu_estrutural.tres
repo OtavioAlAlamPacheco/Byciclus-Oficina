@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmaiungqq67mn"]
+
+[ext_resource type="Texture2D" uid="uid://j48pqnby1xaw" path="res://Textures/Materials/bambu_estrutural_color.png" id="1_1xp2o"]
+[ext_resource type="Texture2D" uid="uid://dfd48h4sff4vj" path="res://Textures/Materials/zero_metallic.png" id="2_cul2j"]
+[ext_resource type="Texture2D" uid="uid://61s643qkqtfn" path="res://Textures/Materials/bambu_estrutural_roughness.png" id="3_8whre"]
+
+[resource]
+albedo_texture = ExtResource("1_1xp2o")
+metallic = 1.0
+metallic_texture = ExtResource("2_cul2j")
+roughness_texture = ExtResource("3_8whre")

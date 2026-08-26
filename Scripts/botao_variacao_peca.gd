@@ -14,7 +14,6 @@ extends Button
 var malha_instanciada: Node3D
 
 func _ready() -> void:
-	print("-------------------- READY DO BOTAO_VARIACAO_PECA --------------------")
 	if resource_variacao:
 		_atualizar_malha_3d()
 
@@ -43,9 +42,6 @@ func _atualizar_malha_3d() -> void:
 
 
 func _on_pressed() -> void:
-	print("\nApertou o botão de seleção de variação.")
-	print("Resource_variacao: ", resource_variacao)
-	
 	var nodo_oficina = get_tree().get_first_node_in_group("oficina")
 	if nodo_oficina and nodo_oficina.has_method("solicitar_selecao_variacao"):
 		nodo_oficina.solicitar_selecao_variacao(resource_variacao.id)

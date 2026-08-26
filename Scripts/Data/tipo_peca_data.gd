@@ -10,3 +10,8 @@ extends Resource
 @export_group("Configuracao para os botões")
 @export var posicao_camera: Vector3 = Vector3.ZERO
 @export var rotacao_camera: Vector3 = Vector3.ZERO
+
+@export_group("Sincronizacao")
+@export var tipo_sincronizado: TipoPecaData
+@export var sincronizar_material_com_tipo: TipoPecaData
+@export var offset_de_slot_sincronizado: int = 0

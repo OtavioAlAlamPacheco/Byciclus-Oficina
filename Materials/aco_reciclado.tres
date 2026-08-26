@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nri8qbfh0nmw"]
+
+[ext_resource type="Texture2D" uid="uid://d4m8e5pfej5up" path="res://Textures/Materials/aco_reciclado_color.png" id="1_i1prf"]
+[ext_resource type="Texture2D" uid="uid://tduiiuwpg1lf" path="res://Textures/Materials/aco_reciclado_metallic.png" id="2_a584s"]
+[ext_resource type="Texture2D" uid="uid://1lf8f8iql3jb" path="res://Textures/Materials/aluminio_reciclado_roughness.png" id="3_i1prf"]
+
+[resource]
+albedo_texture = ExtResource("1_i1prf")
+metallic = 1.0
+metallic_texture = ExtResource("2_a584s")
+roughness_texture = ExtResource("3_i1prf")

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_o31fq"]
 [ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_7q4at"]
+[ext_resource type="Resource" uid="uid://d05kqo36qap4s" path="res://Resources/Slots de Material/estrutura_quadro_garfo_guidao.tres" id="3_j5bxr"]
+[ext_resource type="Resource" uid="uid://bb632kqb5lax4" path="res://Resources/Slots de Material/liga_quadro_garfo.tres" id="4_14n7a"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o31fq"]
 load_path = "res://.godot/imported/Quadro.png-ff6b4bb000d62aac455c322ef198b50e.ctex"
@@ -10,6 +12,7 @@ load_path = "res://.godot/imported/Quadro.png-ff6b4bb000d62aac455c322ef198b50e.c
 script = ExtResource("1_o31fq")
 id = "Quadro"
 silhueta_texture = SubResource("CompressedTexture2D_o31fq")
+slots_e_materiais = Array[ExtResource("2_7q4at")]([ExtResource("3_j5bxr"), ExtResource("4_14n7a")])
 posicao_camera = Vector3(0.8610965, 0.22578879, 0)
 rotacao_camera = Vector3(0, 1.5707964, 0)
 metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

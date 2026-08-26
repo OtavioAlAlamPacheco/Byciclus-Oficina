@@ -17,12 +17,11 @@ var resource_dos_tipos: Dictionary = {
 }
 
 func _ready() -> void:
-	print("-------------------- READY DO CATALOGO_PECAS --------------------")
 	_carregar_pecas_do_banco()
 
 func _carregar_pecas_do_banco() -> void:
 	if not banco_de_dados:
-		print("ERRO: Banco de peças não configurado no Autoload CatalogoPecas!")
+		push_error("Banco de peças não configurado no Autoload CatalogoPecas")
 		return
 	
 	for tipo in banco_de_dados.tipos_disponiveis:

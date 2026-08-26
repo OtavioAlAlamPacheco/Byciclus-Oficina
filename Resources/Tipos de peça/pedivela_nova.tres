@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_vdec8"]
 [ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_kf1ig"]
+[ext_resource type="Resource" uid="uid://dnjryo5o5ig6q" path="res://Resources/Slots de Material/estrutura_pedivela.tres" id="3_kf1ig"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vdec8"]
 load_path = "res://.godot/imported/Pedivela.png-b8f38ef5267f6c09d89d5acb7c200126.ctex"
@@ -10,6 +11,7 @@ load_path = "res://.godot/imported/Pedivela.png-b8f38ef5267f6c09d89d5acb7c200126
 script = ExtResource("1_vdec8")
 id = "Pedivela"
 silhueta_texture = SubResource("CompressedTexture2D_vdec8")
+slots_e_materiais = Array[ExtResource("2_kf1ig")]([ExtResource("3_kf1ig")])
 posicao_camera = Vector3(0, 0.23904681, 0.033598892)
 rotacao_camera = Vector3(-1.3395766, 0, 0)
 metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

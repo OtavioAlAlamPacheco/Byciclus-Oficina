@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blsyobkackj3u"]
+
+[ext_resource type="Texture2D" uid="uid://cchkph3s46e7m" path="res://Textures/Materials/borracha_taraxagum_color.png" id="1_w322e"]
+[ext_resource type="Texture2D" uid="uid://bhuqe7m6c8uo0" path="res://Textures/Materials/borracha_taraxagum_roughness.png" id="2_4fj3v"]
+
+[resource]
+albedo_texture = ExtResource("1_w322e")
+roughness_texture = ExtResource("2_4fj3v")

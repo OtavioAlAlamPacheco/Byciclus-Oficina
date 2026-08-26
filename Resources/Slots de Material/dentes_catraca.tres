@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://bobxe4vgm05cp"]
+
+[ext_resource type="Material" uid="uid://nri8qbfh0nmw" path="res://Materials/aco_reciclado.tres" id="1_rjufa"]
+[ext_resource type="Material" uid="uid://l2f7bbo2i80q" path="res://Materials/aluninio_reciclado.tres" id="2_fd7lp"]
+[ext_resource type="Material" uid="uid://c4lgm271n1eo3" path="res://Materials/carbono_forjado_reciclado.tres" id="3_lcahh"]
+[ext_resource type="Material" uid="uid://2658qp16aksi" path="res://Materials/ferro_reciclado.tres" id="4_yr71s"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="7_5215v"]
+
+[resource]
+script = ExtResource("7_5215v")
+nome_do_slot = "Dentes"
+materiais_disponiveis = Array[Material]([ExtResource("1_rjufa"), ExtResource("2_fd7lp"), ExtResource("3_lcahh"), ExtResource("4_yr71s")])
+metadata/_custom_type_script = "uid://40uqmfcprus7"

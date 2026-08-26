@@ -19,7 +19,6 @@ func _on_pressed() -> void:
 	oficina.alterar_modo_visualizacao(modo_do_botao)
 	
 	if oficina.modo_visualizacao == "Visualizar bicicleta":
-		print("\n\nEstá no modo de visualização de bike. Observando a coord", bike.global_position)
 		pivo_camera.coord_objeto_observado = bike.global_position
 	else:
 		_definir_novo_objeto_observado()

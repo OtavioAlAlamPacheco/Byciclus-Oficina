@@ -8,12 +8,7 @@ var mapa_de_sockets: Dictionary = {
 	#	"socket_selim": pai_do_socket
 }
 
-# armazena PecaInstanciada (que tem 'instancia', 'resource_tipo' e 'resource_variacao')
-var pecas_instanciadas: Array
-
-
-func _ready() -> void:
-	print("-------------------- READY DO VISUALIZACAO_BIKE --------------------")
+var pecas_instanciadas: Array[PecaInstanciadaData]
 
 
 func _on_oficina_variacao_foi_selecionada(id: String) -> void:
@@ -73,13 +68,25 @@ func seleciona_peca(id: String):
 	else:
 		_instanciar_nova_peca(resource_variacao)
 	
+	var tipo_atual = resource_variacao.tipo
+	if tipo_atual and "tipo_sincronizado" in tipo_atual and tipo_atual.tipo_sincronizado != null:
+		var id_tipo_origem = tipo_atual.id
+		var id_tipo_destino = tipo_atual.tipo_sincronizado.id
+		if CatalogoPecas.variacoes_por_tipo.has(id_tipo_origem) and CatalogoPecas.variacoes_por_tipo.has(id_tipo_destino):
+			var index = CatalogoPecas.variacoes_por_tipo[id_tipo_origem].find(id)
+			if index != -1 and index < CatalogoPecas.variacoes_por_tipo[id_tipo_destino].size():
+				var id_variacao_destino = CatalogoPecas.variacoes_por_tipo[id_tipo_destino][index]
+				var era_multipla = selecao_multipla
+				selecao_multipla = true
+				seleciona_peca(id_variacao_destino)
+				selecao_multipla = era_multipla
+	
 	if not selecao_multipla:
 		_montar_bike()
 
 
 func _instanciar_nova_peca(resource_variacao, alvo_roda: String = "") -> void:
 	var cena_mesh = resource_variacao.cena_mesh
-	print("Vou tentar instanciar. Self: ", self, ". Resource_variacao: ", resource_variacao.id)
 	var nova_instancia = cena_mesh.instantiate()
 	add_child(nova_instancia)
 	
@@ -98,16 +105,9 @@ func _instanciar_nova_peca(resource_variacao, alvo_roda: String = "") -> void:
 
 
 func _montar_bike():
-	print("MONTANDO BIKE:")
 	mapa_de_sockets.clear()
 	_escanear_sockets()
 	_posiciona_as_pecas()
-	
-	print("TODAS AS PEÇAS ATIVAS:")
-	for peca in pecas_instanciadas:
-		print("\n- Tipo: ", peca.resource_tipo.id)
-		print("	 Instancia: ", peca.instancia)
-		print("	 Variação: ", peca.resource_variacao.id)
 
 
 func _escanear_sockets():
@@ -136,8 +136,6 @@ func _posiciona_as_pecas() -> void:
 		
 		if not is_instance_valid(instancia):
 			continue
-			
-		print("\nPOSICIONANDO A PECA ", instancia)
 		
 		if instancia.get_child_count() > 0:
 			var filho = instancia.get_child(0)
@@ -159,13 +157,9 @@ func _posiciona_as_pecas() -> void:
 						print("Socket alvo '", alvo, "' não encontrado no mapa atual.")
 				else:
 					if extras is Dictionary and extras.has("proxy"):
-						print("Encontrou um proxy em: ", filho)
+						print("Encontrou um proxy em: ", filho, " (os proxys eram para os fios, mas precisei remover eles)")
 					else:
-						print("PROBLEMA: A parte ", filho, " não tinha um extra 'socket_da_origem' e nem um 'proxy'.")
-			else:
-				print("O primeiro filho não tem o meta 'extras'. O filho é: ", filho)
-		else:
-			print("Essa peça não tem filhos. Peça: ", instancia)
+						push_error("A parte da bike '", filho, "' não tinha um extra 'socket_da_origem' e nem um 'proxy'")
 
 
 
@@ -176,35 +170,88 @@ func obter_coordenada_da_peca(id_variacao: String) -> Variant:
 				return peca_data.instancia.global_position
 	return null
 
+
 func obter_variacao_ativa_do_tipo(id_tipo: String) -> String:
 	for peca_data in pecas_instanciadas:
 		if peca_data.resource_tipo.id == id_tipo:
 			return peca_data.resource_variacao.id
 	return ""
 
-
-
-
-# ======================= Pra debug ==========================
-
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed("teste"):
-		_imprimir_relatorio_debug()
-
-func _imprimir_relatorio_debug() -> void:
-	print("\n========== RELATÓRIO DE DEBUG ==========")
-	print("Total de nós filhos diretos da cena Bike: ", get_child_count())
-	print("Total de peças na Array 'pecas_instanciadas': ", pecas_instanciadas.size())
-	
-	print("\n--- Filhos Diretos (Visuais) ---")
-	for filho in get_children():
-		print("- ", filho.name)
-	
-	print("\n--- Registro Lógico de Peças ---")
+func obter_backup_peca(id_tipo: String) -> Dictionary:
+	var backup = {}
 	for peca in pecas_instanciadas:
-		if is_instance_valid(peca.instancia):
-			var nome_pai = peca.instancia.get_parent().name if peca.instancia.get_parent() else "NENHUM"
-			print("- [Válida] Tipo: ", peca.resource_tipo.id, " | Variação: ", peca.resource_variacao.id, " | Nó: ", peca.instancia.name, " | Pai atual: ", nome_pai)
+		if peca.resource_tipo.id == id_tipo:
+			backup["id_variacao"] = peca.resource_variacao.id
+			backup["materiais"] = peca.materiais_aplicados.duplicate()
+			return backup
+	return backup
+
+
+func restaurar_materiais_do_backup(backup: Dictionary) -> void:
+	if not backup.has("id_variacao") or not backup.has("materiais"):
+		return
+		
+	for slot_idx in backup["materiais"]:
+		aplicar_material(backup["id_variacao"], backup["materiais"][slot_idx], slot_idx)
+
+func aplicar_material(id_variacao: String, material: Material, slot_index: int) -> void:
+	for peca_data in pecas_instanciadas:
+		if peca_data.resource_variacao.id == id_variacao:
+			peca_data.materiais_aplicados[slot_index] = material
+			if is_instance_valid(peca_data.instancia):
+				_aplicar_material_no_nodo(peca_data.instancia, material, slot_index)
+				
+	var resource_var = CatalogoPecas.resource_das_variacoes.get(id_variacao)
+	if resource_var and resource_var.tipo:
+		if "tipo_sincronizado" in resource_var.tipo and resource_var.tipo.tipo_sincronizado != null:
+			var id_tipo_destino = resource_var.tipo.tipo_sincronizado.id
+			var id_variacao_alvo = obter_variacao_ativa_do_tipo(id_tipo_destino)
+			if id_variacao_alvo != "":
+				aplicar_material(id_variacao_alvo, material, slot_index)
+				
+		if "sincronizar_material_com_tipo" in resource_var.tipo and resource_var.tipo.sincronizar_material_com_tipo != null:
+			var id_tipo_alvo = resource_var.tipo.sincronizar_material_com_tipo.id
+			var id_variacao_alvo = obter_variacao_ativa_do_tipo(id_tipo_alvo)
+			if id_variacao_alvo != "":
+				var slot_calculado = slot_index + resource_var.tipo.offset_de_slot_sincronizado
+				aplicar_material(id_variacao_alvo, material, slot_calculado)
+
+func _aplicar_material_no_nodo(nodo: Node, material: Material, slot_idx: int) -> void:
+	for filho in nodo.get_children():
+		if filho is MeshInstance3D:
+			if slot_idx < filho.mesh.get_surface_count():
+				filho.set_surface_override_material(slot_idx, material)
 		else:
-			print("- [ALERTA - FANTASMA] Tipo: ", peca.resource_tipo.id, " (Instância foi deletada, mas segue no Array!)")
-	print("========================================\n")
+			_aplicar_material_no_nodo(filho, material, slot_idx)
+
+
+func obter_dados_da_bike() -> Dictionary:
+	var dados = {}
+	for peca in pecas_instanciadas:
+		if not is_instance_valid(peca.instancia):
+			continue
+			
+		var id_tipo = peca.resource_tipo.id
+		dados[id_tipo] = {
+			"variacao": peca.resource_variacao.id,
+			"materiais": peca.materiais_aplicados.duplicate()
+		}
+		
+	return dados
+
+func carregar_dados_da_bike(dados: Dictionary) -> void:
+	var ids_variacoes = []
+	for id_tipo in dados:
+		if dados[id_tipo].has("variacao"):
+			ids_variacoes.append(dados[id_tipo]["variacao"])
+			
+	seleciona_pecas(ids_variacoes)
+	
+	for id_tipo in dados:
+		if dados[id_tipo].has("variacao") and dados[id_tipo].has("materiais"):
+			var id_variacao = dados[id_tipo]["variacao"]
+			var materiais_salvos = dados[id_tipo]["materiais"]
+			
+			for slot_idx in materiais_salvos:
+				var material = materiais_salvos[slot_idx]
+				aplicar_material(id_variacao, material, int(slot_idx))

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://dykmn6xic42cl"]
+
+[ext_resource type="Material" uid="uid://dbb2s100lr7oq" path="res://Materials/arboform.tres" id="1_xu7o2"]
+[ext_resource type="Material" uid="uid://cmaiungqq67mn" path="res://Materials/bambu_estrutural.tres" id="2_ym1g7"]
+[ext_resource type="Material" uid="uid://blsyobkackj3u" path="res://Materials/borracha_taraxagum.tres" id="3_dmjeu"]
+[ext_resource type="Material" uid="uid://bqu7vb3838e27" path="res://Materials/cortica_expandida.tres" id="4_imxml"]
+[ext_resource type="Material" uid="uid://mt5alj3q1p28" path="res://Materials/madeira_de_demolicao_laminada.tres" id="5_su4ua"]
+[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://Materials/plastico_reciclado_bege.tres" id="6_nas8g"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="7_80nqr"]
+[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://Materials/plastico_reciclado_preto.tres" id="7_k1hv7"]
+
+[resource]
+script = ExtResource("7_80nqr")
+nome_do_slot = "Banco"
+materiais_disponiveis = Array[Material]([ExtResource("1_xu7o2"), ExtResource("2_ym1g7"), ExtResource("3_dmjeu"), ExtResource("4_imxml"), ExtResource("5_su4ua"), ExtResource("6_nas8g"), ExtResource("7_k1hv7")])
+metadata/_custom_type_script = "uid://40uqmfcprus7"

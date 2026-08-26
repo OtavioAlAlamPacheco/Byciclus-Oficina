@@ -23,6 +23,9 @@ var offset_painel: float
 
 func _ready() -> void:
 	call_deferred("_inicializar_posicao_camera")
+	
+	if painel_visualizacao:
+		painel_visualizacao.item_rect_changed.connect(_define_offset_painel)
 
 func _inicializar_posicao_camera() -> void:
 	global_position = coord_objeto_observado
@@ -65,22 +68,48 @@ func _unhandled_input(event: InputEvent):
 
 
 func _define_offset_painel() -> void:
-	if not painel_visualizacao or not painel_visualizacao.is_visible_in_tree():
-		if camera:
-			camera.h_offset = 0.0
+	if not painel_visualizacao or not painel_visualizacao.is_visible_in_tree() or not camera:
 		return
 	
-	var largura_tela = get_viewport().get_visible_rect().size.x
-	var centro_tela = largura_tela / 2.0
-	var rect_painel = painel_visualizacao.get_global_rect()
-	
-	if rect_painel.size.x <= 0:
+	var viewport_size = get_viewport().get_visible_rect().size
+	if viewport_size.x <= 0 or viewport_size.y <= 0:
 		return
 		
-	var centro_painel = rect_painel.position.x + (rect_painel.size.x / 2.0)
-	var distancia_pixels = centro_painel - centro_tela
+	var rect_painel = painel_visualizacao.get_global_rect()
+	var centro_painel_x = rect_painel.position.x + (rect_painel.size.x / 2.0)
+	var centro_tela_x = viewport_size.x / 2.0
 	
-	offset_painel = -(distancia_pixels / largura_tela) * (distancia * 2.6)
+	var distancia_pixels_x = centro_painel_x - centro_tela_x
 	
-	if camera:
-		camera.h_offset = offset_painel
+	var fov_rad = deg_to_rad(camera.fov)
+	var altura_mundo = 2.0 * distancia * tan(fov_rad / 2.0)
+	var largura_mundo = altura_mundo * (viewport_size.x / viewport_size.y)
+	
+	offset_painel = -(distancia_pixels_x / viewport_size.x) * largura_mundo
+	camera.h_offset = offset_painel
+
+
+func focar_em_nodo(nodo: Node3D) -> void:
+	var malhas = nodo.find_children("*", "VisualInstance3D", true, false)
+	
+	# se não tiver malha, volta pro comportamento padrão
+	if malhas.is_empty():
+		coord_objeto_observado = nodo.global_position
+		return
+		
+	var min_global = Vector3(INF, INF, INF)
+	var max_global = Vector3(-INF, -INF, -INF)
+	
+	for malha in malhas:
+		var aabb = malha.get_aabb()
+		
+		for i in range(8):
+			var vertice_local = aabb.get_endpoint(i)
+			var vertice_global = malha.global_transform * vertice_local
+			
+			min_global = min_global.min(vertice_global)
+			max_global = max_global.max(vertice_global)
+			
+	var centro_real = (min_global + max_global) / 2.0
+	
+	coord_objeto_observado = centro_real

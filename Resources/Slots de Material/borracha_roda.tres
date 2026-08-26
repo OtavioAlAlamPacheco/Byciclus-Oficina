@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://nq8dbqe7yibw"]
+
+[ext_resource type="Material" uid="uid://blsyobkackj3u" path="res://Materials/borracha_taraxagum.tres" id="1_6xrf6"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="7_62o2o"]
+
+[resource]
+script = ExtResource("7_62o2o")
+nome_do_slot = "Borracha"
+materiais_disponiveis = Array[Material]([ExtResource("1_6xrf6")])
+metadata/_custom_type_script = "uid://40uqmfcprus7"

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqu7vb3838e27"]
+
+[ext_resource type="Texture2D" uid="uid://dxapt1evnnw5q" path="res://Textures/Materials/cortica_expandida_color.png" id="1_tu0gl"]
+[ext_resource type="Texture2D" uid="uid://cb1ul0rngiylv" path="res://Textures/Materials/cortica_expandida_roughness.png" id="2_x5g2v"]
+
+[resource]
+albedo_texture = ExtResource("1_tu0gl")
+roughness_texture = ExtResource("2_x5g2v")

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4lgm271n1eo3"]
+
+[ext_resource type="Texture2D" uid="uid://b0gex53xq1aft" path="res://Textures/Materials/carbono_forjado_reciclado_color.png" id="1_iwkxr"]
+[ext_resource type="Texture2D" uid="uid://xe48c2nngp84" path="res://Textures/Materials/carbono_forjado_reciclado_metallic.png" id="2_trikl"]
+[ext_resource type="Texture2D" uid="uid://da7ev85s0vwd6" path="res://Textures/Materials/carbono_forjado_reciclado_roughness.png" id="3_pkmym"]
+
+[resource]
+albedo_texture = ExtResource("1_iwkxr")
+metallic = 1.0
+metallic_texture = ExtResource("2_trikl")
+roughness_texture = ExtResource("3_pkmym")

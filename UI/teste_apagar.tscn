@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bpojom68ri8iu"]
-
-[ext_resource type="Script" uid="uid://cg4g80ljatk8v" path="res://Scripts/botao_tipo_peca.gd" id="1_hyi8x"]
-
-[node name="Button" type="Button" unique_id=367585002]
-offset_right = 8.0
-offset_bottom = 8.0
-script = ExtResource("1_hyi8x")

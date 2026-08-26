@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://fp8j5x4muiac"]
+
+[node name="BotoesAlterarTipoVisualizacao3D" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+theme_override_constants/separation = 15
+
+[node name="ButtonVisualizarBicicleta" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Visualizar bicicleta"
+
+[node name="ButtonVisualizaPeca" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Visualizar peça"

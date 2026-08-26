@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_kfnar"]
 [ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_bftwf"]
+[ext_resource type="Resource" uid="uid://q34b6qv421ns" path="res://Resources/Slots de Material/estrutura_alavancas_cambio_freio.tres" id="3_m6yfm"]
+[ext_resource type="Resource" uid="uid://68u5bgnk80uk" path="res://Resources/Slots de Material/alavancas.tres" id="4_2clj4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kfnar"]
 load_path = "res://.godot/imported/Alavanca.png-2efb8e4fb5e989372023848ec5351c15.ctex"
@@ -10,6 +12,7 @@ load_path = "res://.godot/imported/Alavanca.png-2efb8e4fb5e989372023848ec5351c15
 script = ExtResource("1_kfnar")
 id = "Alavanca direita"
 silhueta_texture = SubResource("CompressedTexture2D_kfnar")
+slots_e_materiais = Array[ExtResource("2_bftwf")]([ExtResource("3_m6yfm"), ExtResource("4_2clj4")])
 posicao_camera = Vector3(0.018737882, 0.008412212, -0.11345105)
 rotacao_camera = Vector3(-0.33925128, -3.1415925, -3.085103e-08)
 metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

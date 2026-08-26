@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://dj0ka44aha0wp"]
+
+[ext_resource type="Material" uid="uid://blsyobkackj3u" path="res://Materials/borracha_taraxagum.tres" id="1_7dich"]
+[ext_resource type="Material" uid="uid://bqu7vb3838e27" path="res://Materials/cortica_expandida.tres" id="2_ei1ls"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="3_2tvyq"]
+
+[resource]
+script = ExtResource("3_2tvyq")
+nome_do_slot = "Freio"
+materiais_disponiveis = Array[Material]([ExtResource("1_7dich"), ExtResource("2_ei1ls")])
+metadata/_custom_type_script = "uid://40uqmfcprus7"

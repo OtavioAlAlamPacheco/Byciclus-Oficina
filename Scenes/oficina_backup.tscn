@@ -1,0 +1,642 @@
+[gd_scene format=3 uid="uid://bb2ka1r6hsxmd"]
+
+[ext_resource type="Script" uid="uid://cumbmuctq17x6" path="res://Scripts/oficina.gd" id="1_i0vjn"]
+[ext_resource type="Script" uid="uid://pp12ejelclfn" path="res://Scripts/visualizacao_bike.gd" id="2_73812"]
+[ext_resource type="Script" uid="uid://b001oqhh85cln" path="res://Scripts/visualizacao_peca.gd" id="3_i81lf"]
+[ext_resource type="Script" uid="uid://bdeuj15iwvsbx" path="res://Scripts/pivo_camera.gd" id="4_opj41"]
+[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/theme_cinza_com_borda_preta.tres" id="5_t7sgw"]
+[ext_resource type="Script" uid="uid://dx5a5rbopr8xj" path="res://UI/Scenes/menu_selecao_tipo_peca.gd" id="6_qkcaj"]
+[ext_resource type="PackedScene" uid="uid://ylu13k621j2c" path="res://UI/Scenes/botao_tipo_peca.tscn" id="7_tlep3"]
+[ext_resource type="Resource" uid="uid://s2yc3qesd6q8" path="res://Resources/Tipos de peça/quadro_novo.tres" id="8_tc2bh"]
+[ext_resource type="Resource" uid="uid://mvsidns63sta" path="res://Resources/Tipos de peça/garfo_novo.tres" id="9_77eio"]
+[ext_resource type="Resource" uid="uid://c7iqj3w4ps6r8" path="res://Resources/Tipos de peça/guidao_novo.tres" id="10_fwks1"]
+[ext_resource type="Resource" uid="uid://ckah60fv0km1j" path="res://Resources/Tipos de peça/pedal_esquerdo_novo.tres" id="11_u3dym"]
+[ext_resource type="Resource" uid="uid://ciw7ybt0cvt4g" path="res://Resources/Tipos de peça/roda_traseira_nova.tres" id="12_70esu"]
+[ext_resource type="Resource" uid="uid://dm0on1ousno3d" path="res://Resources/Tipos de peça/cambio_novo.tres" id="13_gin0u"]
+[ext_resource type="Resource" uid="uid://5i45hi6sws6d" path="res://Resources/Tipos de peça/catraca_traseira_nova.tres" id="14_u5wph"]
+[ext_resource type="Resource" uid="uid://dukl8y7o6vchy" path="res://Resources/Tipos de peça/alavanca_esquerda_nova.tres" id="15_efag6"]
+[ext_resource type="Resource" uid="uid://b3ytn4axxhufe" path="res://Resources/Tipos de peça/selim_novo.tres" id="16_h0md0"]
+[ext_resource type="Resource" uid="uid://cioyaq3f1qwh0" path="res://Resources/Tipos de peça/corrente_nova.tres" id="17_pp4un"]
+[ext_resource type="Resource" uid="uid://uctaaa1psnra" path="res://Resources/Tipos de peça/freio_traseiro_novo.tres" id="18_w627t"]
+[ext_resource type="Resource" uid="uid://b1g1t3tx2j0cg" path="res://Resources/Tipos de peça/pedivela_nova.tres" id="19_42w6l"]
+[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://Scripts/painel_variacoes_dinamicas.gd" id="20_er2p6"]
+[ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://UI/Scenes/botao_variacao_peca.tscn" id="21_ofkrb"]
+[ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://Resources/Variações de peça/quadro_em_s.tres" id="22_aufig"]
+[ext_resource type="PackedScene" uid="uid://dpvea336oo531" path="res://UI/Scenes/botao_modo_visualizacao.tscn" id="23_5panh"]
+[ext_resource type="Theme" uid="uid://cexiw2525vqhn" path="res://UI/Themes/theme_botao_selecionado_oficina.tres" id="24_5ydcl"]
+[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/Themes/theme_botao_nao_selecionado_oficina.tres" id="25_7bncc"]
+[ext_resource type="Theme" uid="uid://qtijxohbyamw" path="res://UI/Themes/theme_painel_amarelo_claro.tres" id="26_dd2gs"]
+[ext_resource type="Texture2D" uid="uid://c0ot01lofwxgl" path="res://Textures/UI/magnifying-glass.png" id="27_tajte"]
+[ext_resource type="Texture2D" uid="uid://bnns3rdagccdr" path="res://Textures/UI/notes.png" id="28_q787v"]
+[ext_resource type="Texture2D" uid="uid://bnslbml3oxras" path="res://Textures/UI/determination.png" id="29_4h502"]
+[ext_resource type="Script" uid="uid://bp50mw2d7wiu7" path="res://Scenes/botao_salvar_customizacao_bike.gd" id="30_qba74"]
+[ext_resource type="Texture2D" uid="uid://22rnsxb5ugc1" path="res://UI/Icons/check.png" id="31_nvxic"]
+[ext_resource type="PackedScene" uid="uid://cnevchmk1o1pq" path="res://UI/Scenes/popup_selecao_material.tscn" id="32_llryr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vsai"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fwo5d"]
+sky_material = SubResource("ProceduralSkyMaterial_2vsai")
+
+[sub_resource type="Environment" id="Environment_mxkdn"]
+background_mode = 2
+sky = SubResource("Sky_fwo5d")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o31fq"]
+load_path = "res://.godot/imported/Quadro.png-ff6b4bb000d62aac455c322ef198b50e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wrrc4"]
+load_path = "res://.godot/imported/Garfo.png-85f1877831b2485023c8af00583c6cbc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h2uy1"]
+load_path = "res://.godot/imported/Guidao.png-788696042aae6ef256a402e50a0ec484.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nnjhb"]
+load_path = "res://.godot/imported/Pedal.png-34a831030f93fb8d93d3ab7e3a20c80e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3u33l"]
+load_path = "res://.godot/imported/Roda.png-de1e0dd11945450900119a93a55657b1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1h2ha"]
+load_path = "res://.godot/imported/Cambio traseiro.png-89594382759889a8d2e806fe1977c1ec.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_002rk"]
+load_path = "res://.godot/imported/Catraca traseira.png-a566d635f12b1577f2134ee6c014605b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aep7r"]
+load_path = "res://.godot/imported/Alavanca.png-2efb8e4fb5e989372023848ec5351c15.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xhwm0"]
+load_path = "res://.godot/imported/Selim.png-0a6b359f1d7badc7b1658df093c0b88a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aeeor"]
+load_path = "res://.godot/imported/Corrente.png-b3257e43d5181425c118feea66197a63.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mc6ok"]
+load_path = "res://.godot/imported/Freio.png-fa4f2286c081d78c36abaff52030b998.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vdec8"]
+load_path = "res://.godot/imported/Pedivela.png-b8f38ef5267f6c09d89d5acb7c200126.ctex"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hvkim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qrwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o0i5b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rk7pc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10bgh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_by0dw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k8lh8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ranvg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfmyc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u06l"]
+
+[sub_resource type="Theme" id="Theme_j43p3"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_hvkim")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_8qrwp")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_o0i5b")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_rk7pc")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_10bgh")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_by0dw")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_k8lh8")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ranvg")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_rfmyc")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_8u06l")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yku7w"]
+draw_center = false
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jh5r5"]
+
+[node name="Oficina" type="Node3D" unique_id=1388177298 node_paths=PackedStringArray("popup_materiais") groups=["oficina"]]
+script = ExtResource("1_i0vjn")
+popup_materiais = NodePath("PopupMateriais")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1882850000]
+environment = SubResource("Environment_mxkdn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1683239417]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Bike" type="Node3D" parent="." unique_id=1697718453 groups=["bike"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
+script = ExtResource("2_73812")
+
+[node name="PivoPeca" type="Node3D" parent="." unique_id=789801644 groups=["bike"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
+script = ExtResource("3_i81lf")
+
+[node name="PivoCamera" type="Node3D" parent="." unique_id=68613680]
+script = ExtResource("4_opj41")
+
+[node name="Camera3D" type="Camera3D" parent="PivoCamera" unique_id=254777566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=137711791]
+
+[node name="InterfaceMenuOficina" type="Control" parent="CanvasLayer" unique_id=928568082]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MargemPrincipal" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina" unique_id=1055665180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
+
+[node name="DivisaoPrincipal" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal" unique_id=346794815]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="AreaSuperior" type="HBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal" unique_id=856749768]
+custom_minimum_size = Vector2(500, 458)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="MenuSelecaoTipoPeca" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=798792866]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_t7sgw")
+script = ExtResource("6_qkcaj")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca" unique_id=682090662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer" unique_id=1173948448]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer" unique_id=720291616]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer" unique_id=1675111944]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Quadro" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1637356588]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Quadro2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=1620895171]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quadro"
+
+[node name="Quadro" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=451800664 instance=ExtResource("7_tlep3")]
+custom_maximum_size = Vector2(176, 176)
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_o31fq")
+icon_alignment = 1
+resource_tipo = ExtResource("8_tc2bh")
+
+[node name="Garfo" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1810630001]
+layout_mode = 2
+
+[node name="Garfo2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1899287797]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Garfo"
+
+[node name="Garfo" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1067882421 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_wrrc4")
+icon_alignment = 1
+resource_tipo = ExtResource("9_77eio")
+
+[node name="Guidão" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=8070582]
+layout_mode = 2
+
+[node name="Guidão2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=1011995977]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Guidão"
+
+[node name="Guidão" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=790913136 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_h2uy1")
+icon_alignment = 1
+resource_tipo = ExtResource("10_fwks1")
+
+[node name="Pedal" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2046690431]
+layout_mode = 2
+
+[node name="Pedal2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=1073041156]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pedal"
+
+[node name="Pedal" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=929645557 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_nnjhb")
+icon_alignment = 1
+resource_tipo = ExtResource("11_u3dym")
+
+[node name="Roda" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1553360370]
+layout_mode = 2
+
+[node name="Roda2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212998335]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Roda"
+
+[node name="Roda" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212161176 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_3u33l")
+icon_alignment = 1
+resource_tipo = ExtResource("12_70esu")
+
+[node name="Câmbio" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1106046786]
+layout_mode = 2
+
+[node name="Câmbio2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=1010545121]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Câmbio"
+
+[node name="Câmbio" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=628305299 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_1h2ha")
+icon_alignment = 1
+resource_tipo = ExtResource("13_gin0u")
+
+[node name="Catraca" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1280315097]
+layout_mode = 2
+
+[node name="Catraca2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=1178198159]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Catraca"
+
+[node name="Catraca" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=645934491 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_002rk")
+icon_alignment = 1
+resource_tipo = ExtResource("14_u5wph")
+
+[node name="Alavanca" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=859758012]
+layout_mode = 2
+
+[node name="Alavanca2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1685294366]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Alavanca"
+
+[node name="Alavanca" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1428046115 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_aep7r")
+icon_alignment = 1
+resource_tipo = ExtResource("15_efag6")
+
+[node name="Selim" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1141458803]
+layout_mode = 2
+
+[node name="Selim2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1326810294]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Selim"
+
+[node name="Selim" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1343198177 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_xhwm0")
+icon_alignment = 1
+resource_tipo = ExtResource("16_h0md0")
+
+[node name="Corrente" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=283767529]
+layout_mode = 2
+
+[node name="Corrente2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=358638198]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Corrente"
+
+[node name="Corrente" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=1625112760 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_aeeor")
+icon_alignment = 1
+resource_tipo = ExtResource("17_pp4un")
+
+[node name="Freio" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=664904858]
+layout_mode = 2
+
+[node name="Freio2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1623279412]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Freio"
+
+[node name="Freio" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1880325115 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_mc6ok")
+icon_alignment = 1
+resource_tipo = ExtResource("18_w627t")
+
+[node name="Pedivela" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=103455557]
+layout_mode = 2
+
+[node name="Pedivela2" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=214751637]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pedivela"
+
+[node name="Pedivela" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=1496953184 instance=ExtResource("7_tlep3")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_vdec8")
+icon_alignment = 1
+resource_tipo = ExtResource("19_42w6l")
+
+[node name="MenuSelecaoVariacaoPeca" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1900549066]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme = ExtResource("5_t7sgw")
+script = ExtResource("20_er2p6")
+
+[node name="Margem" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca" unique_id=1390293182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem" unique_id=1159255786]
+layout_mode = 2
+theme = SubResource("Theme_j43p3")
+
+[node name="GridVariacoes" type="GridContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer" unique_id=237405316]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="BotaoSelecaoVariacaoDePeca" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("21_ofkrb")]
+layout_mode = 2
+resource_variacao = ExtResource("22_aufig")
+
+[node name="BotaoSelecaoVariacaoDePeca2" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("21_ofkrb")]
+layout_mode = 2
+resource_variacao = ExtResource("22_aufig")
+
+[node name="Visualizacao3D" type="VBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1583975849]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_constants/separation = 15
+
+[node name="BotoesAlterarTipoVisualizacao3D" type="HBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=482891790]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 0
+theme_override_constants/separation = 15
+
+[node name="ButtonVisualizarBike" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=1645765011 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("23_5panh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("24_5ydcl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+pivo_camera = NodePath("../../../../../../../../PivoCamera")
+menu_variacao = NodePath("../../../MenuSelecaoVariacaoPeca")
+
+[node name="ButtonVisualizarPeca" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=975566529 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("23_5panh")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("25_7bncc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Visualizar peça
+"
+modo_do_botao = "Visualizar peça"
+pivo_camera = NodePath("../../../../../../../../PivoCamera")
+menu_variacao = NodePath("../../../MenuSelecaoVariacaoPeca")
+
+[node name="PainelVisualizacao3D" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=553341729 groups=["area_do_popup", "painel_visualizacao_3d"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_yku7w")
+
+[node name="AreaInferior" type="HBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal" unique_id=1080940939]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 80
+
+[node name="Control" type="Control" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=557879658]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=1882818258]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelLupa" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1355493149]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("26_dd2gs")
+
+[node name="BotaoModoLupa" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelLupa" unique_id=1727145433]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelLupa" unique_id=1945201828]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelLupa/MarginContainer" unique_id=767604641]
+layout_mode = 2
+texture = ExtResource("27_tajte")
+expand_mode = 1
+
+[node name="PanelBlocoNotas" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1140895590]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("26_dd2gs")
+
+[node name="BotaoModoLupa" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelBlocoNotas" unique_id=1358159512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelBlocoNotas" unique_id=730340412]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelBlocoNotas/MarginContainer" unique_id=83247723]
+layout_mode = 2
+texture = ExtResource("28_q787v")
+expand_mode = 1
+
+[node name="PanelAtributos" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=124952792]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("26_dd2gs")
+
+[node name="BotaoAtributos" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelAtributos" unique_id=1653678504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelAtributos" unique_id=99495813]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelAtributos/MarginContainer" unique_id=1467512096]
+layout_mode = 2
+texture = ExtResource("29_4h502")
+expand_mode = 1
+
+[node name="PanelSalvarCustomizacao" type="Panel" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=550163158]
+custom_minimum_size = Vector2(160, 70)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("26_dd2gs")
+
+[node name="BotaoSalvar" type="Button" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao" unique_id=94939531]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
+script = ExtResource("30_qba74")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao/BotaoSalvar" unique_id=948140739]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 70.0
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao/BotaoSalvar/MarginContainer" unique_id=1263577298]
+layout_mode = 2
+texture = ExtResource("31_nvxic")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao" unique_id=652346820]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -14.0
+offset_right = -28.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Salvar"
+
+[node name="PopupMateriais" parent="." unique_id=1184658807 instance=ExtResource("32_llryr")]
+visible = false
+offset = Vector2(230, 80)
+transform = Transform2D(1, 0, 0, 1, 230, 80)
+
+[connection signal="variacao_foi_selecionada" from="." to="Bike" method="_on_oficina_variacao_foi_selecionada"]
+[connection signal="pressed" from="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao/BotaoSalvar" to="CanvasLayer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao/BotaoSalvar" method="_on_confirm_pressed"]

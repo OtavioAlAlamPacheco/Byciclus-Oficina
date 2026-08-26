@@ -38,7 +38,7 @@ func _on_tipo_foi_selecionado(id: String) -> void:
 			limpar_paineis()
 			atualizar_paineis()
 		else:
-			print("ERRO! Tipo ", id, " inexistente.")
+			push_error("Tipo ", id, " inexistente")
 
 
 func _on_variacao_foi_selecionada(_id: String):

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dstfkcxtp43od"]
+
+[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/theme_cinza_com_borda_preta.tres" id="1_j1mk0"]
+[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://Scripts/painel_variacoes_dinamicas.gd" id="1_sienp"]
+[ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://UI/Scenes/botao_variacao_peca.tscn" id="2_ro3l0"]
+[ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://Resources/Variações de peça/quadro_em_s.tres" id="4_6lkyn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hvkim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qrwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o0i5b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rk7pc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10bgh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_by0dw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k8lh8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ranvg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfmyc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u06l"]
+
+[sub_resource type="Theme" id="Theme_j43p3"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_hvkim")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_8qrwp")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_o0i5b")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_rk7pc")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_10bgh")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_by0dw")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_k8lh8")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ranvg")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_rfmyc")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_8u06l")
+
+[node name="MenuSelecaoVariacaoPeca" type="Panel" unique_id=43907126]
+custom_minimum_size = Vector2(370, 0)
+offset_right = 370.0
+offset_bottom = 364.0
+theme = ExtResource("1_j1mk0")
+script = ExtResource("1_sienp")
+
+[node name="Margem" type="MarginContainer" parent="." unique_id=1390293182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margem" unique_id=1159255786]
+layout_mode = 2
+theme = SubResource("Theme_j43p3")
+
+[node name="GridVariacoes" type="GridContainer" parent="Margem/ScrollContainer" unique_id=237405316]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("2_ro3l0")]
+layout_mode = 2
+size_flags_horizontal = 6
+resource_variacao = ExtResource("4_6lkyn")
+
+[node name="BotaoSelecaoVariacaoDePeca2" parent="Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("2_ro3l0")]
+layout_mode = 2
+size_flags_horizontal = 6
+resource_variacao = ExtResource("4_6lkyn")
