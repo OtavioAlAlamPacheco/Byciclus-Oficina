@@ -1,13 +1,12 @@
 
 extends Node3D
 
-@export var sensibilidade: float = 0.2
-@export var distancia: float = 2.5:
+@export var sensibilidade: float = 0.3
+@export var distancia: float = 1.7:
 	set(valor):
-		distancia = clamp(valor, 0.1, 4)
+		distancia = clamp(valor, 0.2, 2.0)
 		if camera:
 			camera.position.z = distancia
-			_define_offset_painel()
 
 @onready var painel_visualizacao: Panel = get_tree().get_first_node_in_group("painel_visualizacao_3d")
 @onready var camera: Camera3D = $Camera3D
@@ -23,14 +22,11 @@ var offset_painel: float
 
 func _ready() -> void:
 	call_deferred("_inicializar_posicao_camera")
-	
-	if painel_visualizacao:
-		painel_visualizacao.item_rect_changed.connect(_define_offset_painel)
+
 
 func _inicializar_posicao_camera() -> void:
 	global_position = coord_objeto_observado
 	camera.position = Vector3(0, 0, distancia)
-	_define_offset_painel()
 
 func _process(_delta: float) -> void:
 	camera.look_at(global_position, Vector3.UP)
@@ -40,8 +36,9 @@ func _unhandled_input(event: InputEvent):
 	var mouse_pos = get_viewport().get_mouse_position()
 	var sobre_painel = false
 	
-	if painel_visualizacao and painel_visualizacao.is_visible_in_tree():
-		sobre_painel = painel_visualizacao.get_global_rect().has_point(mouse_pos)
+	if get_viewport() is SubViewport:
+		var viewport_rect = Rect2(Vector2.ZERO, get_viewport().size)
+		sobre_painel = viewport_rect.has_point(mouse_pos)
 	
 	if not sobre_painel and not is_rotating:
 		return
@@ -65,28 +62,6 @@ func _unhandled_input(event: InputEvent):
 		
 		var prox_rot_x = rotation.x + deg_to_rad(-event.relative.y * sensibilidade)
 		rotation.x = clamp(prox_rot_x, deg_to_rad(-80), deg_to_rad(80))
-
-
-func _define_offset_painel() -> void:
-	if not painel_visualizacao or not painel_visualizacao.is_visible_in_tree() or not camera:
-		return
-	
-	var viewport_size = get_viewport().get_visible_rect().size
-	if viewport_size.x <= 0 or viewport_size.y <= 0:
-		return
-		
-	var rect_painel = painel_visualizacao.get_global_rect()
-	var centro_painel_x = rect_painel.position.x + (rect_painel.size.x / 2.0)
-	var centro_tela_x = viewport_size.x / 2.0
-	
-	var distancia_pixels_x = centro_painel_x - centro_tela_x
-	
-	var fov_rad = deg_to_rad(camera.fov)
-	var altura_mundo = 2.0 * distancia * tan(fov_rad / 2.0)
-	var largura_mundo = altura_mundo * (viewport_size.x / viewport_size.y)
-	
-	offset_painel = -(distancia_pixels_x / viewport_size.x) * largura_mundo
-	camera.h_offset = offset_painel
 
 
 func focar_em_nodo(nodo: Node3D) -> void:

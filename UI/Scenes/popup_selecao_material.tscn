@@ -23,7 +23,7 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.8901961, 0, 0.4745098, 0.3647059)
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1184658807 groups=["area_do_popup"]]
+[node name="PopupSelecaoMaterial" type="CanvasLayer" unique_id=1184658807 groups=["area_do_popup"]]
 script = ExtResource("1_ypoge")
 cena_slot_material = ExtResource("2_8nedq")
 

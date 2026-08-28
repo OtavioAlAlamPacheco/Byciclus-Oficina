@@ -1,12 +1,13 @@
 
-extends Node3D
+extends Control
 
 signal tipo_foi_selecionado(id: String)
 signal variacao_foi_selecionada(id: String)
 
-@export var popup_materiais: CanvasLayer
+@onready var popup_materiais: CanvasLayer = %PopupMateriais
 
-@onready var bike: Node3D = $Bike
+@onready var bike: Node3D = %Bike
+@onready var pivo_peca: Node3D = %PivoPeca
 @onready var menu_dinamico: Panel = %MenuSelecaoVariacaoPeca
 @onready var botao_modo_visualizacao: Button = %ButtonVisualizarBike
 
@@ -20,6 +21,12 @@ func _ready():
 		self.tipo_foi_selecionado.connect(menu_dinamico._on_tipo_foi_selecionado)
 		self.tipo_foi_selecionado.connect(botao_modo_visualizacao._on_tipo_foi_selecionado)
 		self.variacao_foi_selecionada.connect(menu_dinamico._on_variacao_foi_selecionada)
+	
+	if is_instance_valid(bike):
+		self.variacao_foi_selecionada.connect(bike._on_oficina_variacao_foi_selecionada)
+		
+	if is_instance_valid(pivo_peca):
+		self.variacao_foi_selecionada.connect(pivo_peca._on_oficina_variacao_foi_selecionada)
 	
 	bike.seleciona_todas_pecas()
 

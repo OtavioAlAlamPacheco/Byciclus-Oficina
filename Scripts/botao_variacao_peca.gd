@@ -14,8 +14,17 @@ extends Button
 var malha_instanciada: Node3D
 
 func _ready() -> void:
+	self.resized.connect(_ao_redimensionar)
+	
 	if resource_variacao:
 		_atualizar_malha_3d()
+
+
+func _ao_redimensionar() -> void:
+	custom_minimum_size.y = size.x
+	
+	if is_instance_valid(viewport):
+		viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 
 
 func _atualizar_malha_3d() -> void:

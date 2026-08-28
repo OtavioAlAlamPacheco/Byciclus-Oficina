@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://68u5bgnk80uk" path="res://Resources/Slots de Material/alavancas.tres" id="4_2clj4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kfnar"]
-load_path = "res://.godot/imported/Alavanca.png-2efb8e4fb5e989372023848ec5351c15.ctex"
 
 [resource]
 script = ExtResource("1_kfnar")

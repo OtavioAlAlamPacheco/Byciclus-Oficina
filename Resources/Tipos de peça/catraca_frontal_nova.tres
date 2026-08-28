@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://bobxe4vgm05cp" path="res://Resources/Slots de Material/dentes_catraca.tres" id="4_jdkma"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7qbi1"]
-load_path = "res://.godot/imported/Catraca traseira.png-a566d635f12b1577f2134ee6c014605b.ctex"
 
 [resource]
 script = ExtResource("1_7qbi1")

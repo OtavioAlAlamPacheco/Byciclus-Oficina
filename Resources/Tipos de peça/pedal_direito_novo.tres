@@ -5,7 +5,6 @@
 [ext_resource type="Resource" uid="uid://b7n22qy1lxl6r" path="res://Resources/Slots de Material/estrutura_pedal.tres" id="3_6fvxa"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_orcle"]
-load_path = "res://.godot/imported/Pedal.png-34a831030f93fb8d93d3ab7e3a20c80e.ctex"
 
 [resource]
 script = ExtResource("1_orcle")

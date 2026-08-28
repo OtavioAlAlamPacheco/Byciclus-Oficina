@@ -70,10 +70,8 @@ columns = 2
 
 [node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("2_ro3l0")]
 layout_mode = 2
-size_flags_horizontal = 6
 resource_variacao = ExtResource("4_6lkyn")
 
 [node name="BotaoSelecaoVariacaoDePeca2" parent="Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("2_ro3l0")]
 layout_mode = 2
-size_flags_horizontal = 6
 resource_variacao = ExtResource("4_6lkyn")

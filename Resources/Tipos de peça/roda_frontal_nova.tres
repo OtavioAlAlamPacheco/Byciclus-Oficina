@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://c845phj7k60r5" path="res://Resources/Slots de Material/aro.tres" id="4_qapg1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i40ti"]
-load_path = "res://.godot/imported/Roda.png-de1e0dd11945450900119a93a55657b1.ctex"
 
 [resource]
 script = ExtResource("1_i40ti")

@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bnns3rdagccdr" path="res://Textures/UI/notes.png" id="4_jrffh"]
 [ext_resource type="Theme" uid="uid://qtijxohbyamw" path="res://UI/Themes/theme_painel_amarelo_claro.tres" id="5_5gw8o"]
 [ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/theme_cinza_com_borda_preta.tres" id="5_be1o5"]
-[ext_resource type="Texture2D" uid="uid://bnslbml3oxras" path="res://Textures/UI/determination.png" id="5_jh5r5"]
 [ext_resource type="PackedScene" uid="uid://dpvea336oo531" path="res://UI/Scenes/botao_modo_visualizacao.tscn" id="5_nnosv"]
 [ext_resource type="Script" uid="uid://b001oqhh85cln" path="res://Scripts/visualizacao_peca.gd" id="5_oyckb"]
 [ext_resource type="Script" uid="uid://dx5a5rbopr8xj" path="res://UI/Scenes/menu_selecao_tipo_peca.gd" id="6_i026v"]
@@ -32,19 +31,6 @@
 [ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://Scripts/painel_variacoes_dinamicas.gd" id="20_llgsr"]
 [ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://UI/Scenes/botao_variacao_peca.tscn" id="21_4x1o7"]
 [ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://Resources/Variações de peça/quadro_em_s.tres" id="22_362vf"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vsai"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_fwo5d"]
-sky_material = SubResource("ProceduralSkyMaterial_2vsai")
-
-[sub_resource type="Environment" id="Environment_mxkdn"]
-background_mode = 2
-sky = SubResource("Sky_fwo5d")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o31fq"]
 load_path = "res://.godot/imported/Quadro.png-ff6b4bb000d62aac455c322ef198b50e.ctex"
@@ -122,50 +108,32 @@ border_width_right = 6
 border_width_bottom = 6
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jh5r5"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vsai"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[node name="Oficina" type="Node3D" unique_id=1388177298 node_paths=PackedStringArray("popup_materiais") groups=["oficina"]]
-script = ExtResource("1_klroo")
-popup_materiais = NodePath("PopupMateriais")
+[sub_resource type="Sky" id="Sky_fwo5d"]
+sky_material = SubResource("ProceduralSkyMaterial_2vsai")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1882850000]
-environment = SubResource("Environment_mxkdn")
+[sub_resource type="Environment" id="Environment_mxkdn"]
+background_mode = 2
+sky = SubResource("Sky_fwo5d")
+tonemap_mode = 2
+glow_enabled = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1683239417]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
-[node name="Bike" type="Node3D" parent="." unique_id=1697718453 groups=["bike"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
-script = ExtResource("3_2uqby")
-
-[node name="PivoPeca" type="Node3D" parent="." unique_id=789801644 groups=["bike"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
-script = ExtResource("5_oyckb")
-
-[node name="PivoCamera" type="Node3D" parent="." unique_id=68613680]
-script = ExtResource("2_nnosv")
-
-[node name="Camera3D" type="Camera3D" parent="PivoCamera" unique_id=254777566]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=137711791]
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer" unique_id=1887803547]
+[node name="InterfaceMenuOficina" type="Control" unique_id=928568082 groups=["oficina"]]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-ratio = 1.777
-
-[node name="InterfaceMenuOficina" type="Control" parent="CanvasLayer/AspectRatioContainer" unique_id=928568082]
-layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 2
+script = ExtResource("1_klroo")
 
-[node name="MargemPrincipal" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina" unique_id=1055665180]
+[node name="MargemPrincipal" type="MarginContainer" parent="." unique_id=1055665180]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -177,17 +145,17 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 40
 
-[node name="DivisaoPrincipal" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal" unique_id=346794815]
+[node name="DivisaoPrincipal" type="VBoxContainer" parent="MargemPrincipal" unique_id=346794815]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="AreaSuperior" type="HBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal" unique_id=856749768]
+[node name="AreaSuperior" type="HBoxContainer" parent="MargemPrincipal/DivisaoPrincipal" unique_id=856749768]
 custom_minimum_size = Vector2(500, 458)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 30
 
-[node name="MenuSelecaoTipoPeca" type="Panel" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=798792866]
+[node name="MenuSelecaoTipoPeca" type="Panel" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=798792866]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -195,7 +163,7 @@ size_flags_vertical = 3
 theme = ExtResource("5_be1o5")
 script = ExtResource("6_i026v")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca" unique_id=682090662]
+[node name="MarginContainer" type="MarginContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca" unique_id=682090662]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -207,194 +175,206 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 15
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer" unique_id=1173948448]
+[node name="ScrollContainer" type="ScrollContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer" unique_id=1173948448]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer" unique_id=720291616]
+[node name="MarginContainer" type="MarginContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer" unique_id=720291616]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_right = 14
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer" unique_id=1675111944]
+[node name="VBoxContainer" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer" unique_id=1675111944]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
 
-[node name="Quadro" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1637356588]
+[node name="Quadro" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1637356588]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Quadro2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=1620895171]
+[node name="Quadro2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=1620895171]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Quadro"
 
-[node name="Quadro" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=451800664 instance=ExtResource("7_llgsr")]
+[node name="Quadro" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=451800664 instance=ExtResource("7_llgsr")]
 custom_maximum_size = Vector2(176, 176)
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_o31fq")
 icon_alignment = 1
 resource_tipo = ExtResource("8_4x1o7")
 
-[node name="Garfo" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1810630001]
+[node name="Garfo" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1810630001]
 layout_mode = 2
 
-[node name="Garfo2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1899287797]
+[node name="Garfo2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1899287797]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Garfo"
 
-[node name="Garfo" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1067882421 instance=ExtResource("7_llgsr")]
+[node name="Garfo" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1067882421 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_wrrc4")
 icon_alignment = 1
 resource_tipo = ExtResource("9_362vf")
 
-[node name="Guidão" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=8070582]
+[node name="Guidão" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=8070582]
 layout_mode = 2
 
-[node name="Guidão2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=1011995977]
+[node name="Guidão2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=1011995977]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Guidão"
 
-[node name="Guidão" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=790913136 instance=ExtResource("7_llgsr")]
+[node name="Guidão" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=790913136 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_h2uy1")
 icon_alignment = 1
 resource_tipo = ExtResource("10_0j4rm")
 
-[node name="Pedal" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2046690431]
+[node name="Pedal" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2046690431]
 layout_mode = 2
 
-[node name="Pedal2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=1073041156]
+[node name="Pedal2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=1073041156]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Pedal"
 
-[node name="Pedal" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=929645557 instance=ExtResource("7_llgsr")]
+[node name="Pedal" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=929645557 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_nnjhb")
 icon_alignment = 1
 resource_tipo = ExtResource("11_k8lp3")
 
-[node name="Roda" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1553360370]
+[node name="Roda" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1553360370]
 layout_mode = 2
 
-[node name="Roda2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212998335]
+[node name="Roda2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212998335]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Roda"
 
-[node name="Roda" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212161176 instance=ExtResource("7_llgsr")]
+[node name="Roda" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212161176 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_3u33l")
 icon_alignment = 1
 resource_tipo = ExtResource("12_8mrif")
 
-[node name="Câmbio" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1106046786]
+[node name="Câmbio" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1106046786]
 layout_mode = 2
 
-[node name="Câmbio2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=1010545121]
+[node name="Câmbio2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=1010545121]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Câmbio"
 
-[node name="Câmbio" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=628305299 instance=ExtResource("7_llgsr")]
+[node name="Câmbio" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=628305299 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_1h2ha")
 icon_alignment = 1
 resource_tipo = ExtResource("13_gigl6")
 
-[node name="Catraca" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1280315097]
+[node name="Catraca" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1280315097]
 layout_mode = 2
 
-[node name="Catraca2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=1178198159]
+[node name="Catraca2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=1178198159]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Catraca"
 
-[node name="Catraca" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=645934491 instance=ExtResource("7_llgsr")]
+[node name="Catraca" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=645934491 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_002rk")
 icon_alignment = 1
 resource_tipo = ExtResource("14_omw4e")
 
-[node name="Alavanca" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=859758012]
+[node name="Alavanca" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=859758012]
 layout_mode = 2
 
-[node name="Alavanca2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1685294366]
+[node name="Alavanca2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1685294366]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Alavanca"
 
-[node name="Alavanca" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1428046115 instance=ExtResource("7_llgsr")]
+[node name="Alavanca" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1428046115 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_aep7r")
 icon_alignment = 1
 resource_tipo = ExtResource("15_13qur")
 
-[node name="Selim" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1141458803]
+[node name="Selim" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1141458803]
 layout_mode = 2
 
-[node name="Selim2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1326810294]
+[node name="Selim2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1326810294]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Selim"
 
-[node name="Selim" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1343198177 instance=ExtResource("7_llgsr")]
+[node name="Selim" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1343198177 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_xhwm0")
 icon_alignment = 1
 resource_tipo = ExtResource("16_kdqe8")
 
-[node name="Corrente" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=283767529]
+[node name="Corrente" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=283767529]
 layout_mode = 2
 
-[node name="Corrente2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=358638198]
+[node name="Corrente2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=358638198]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Corrente"
 
-[node name="Corrente" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=1625112760 instance=ExtResource("7_llgsr")]
+[node name="Corrente" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=1625112760 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_aeeor")
 icon_alignment = 1
 resource_tipo = ExtResource("17_aahn7")
 
-[node name="Freio" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=664904858]
+[node name="Freio" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=664904858]
 layout_mode = 2
 
-[node name="Freio2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1623279412]
+[node name="Freio2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1623279412]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Freio"
 
-[node name="Freio" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1880325115 instance=ExtResource("7_llgsr")]
+[node name="Freio" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1880325115 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_mc6ok")
 icon_alignment = 1
 resource_tipo = ExtResource("18_3mhoc")
 
-[node name="Pedivela" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=103455557]
+[node name="Pedivela" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=103455557]
 layout_mode = 2
 
-[node name="Pedivela2" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=214751637]
+[node name="Pedivela2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=214751637]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "Pedivela"
 
-[node name="Pedivela" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=1496953184 instance=ExtResource("7_llgsr")]
+[node name="Pedivela" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=1496953184 instance=ExtResource("7_llgsr")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_vdec8")
 icon_alignment = 1
 resource_tipo = ExtResource("19_mqbx4")
 
-[node name="MenuSelecaoVariacaoPeca" type="Panel" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1900549066]
+[node name="MenuSelecaoVariacaoPeca" type="Panel" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1900549066]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(370, 0)
 layout_mode = 2
@@ -403,23 +383,23 @@ size_flags_stretch_ratio = 4.0
 theme = ExtResource("5_be1o5")
 script = ExtResource("20_llgsr")
 
-[node name="Margem" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca" unique_id=1390293182]
+[node name="Margem" type="MarginContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca" unique_id=1390293182]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 30
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem" unique_id=1159255786]
+[node name="ScrollContainer" type="ScrollContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem" unique_id=1159255786]
 layout_mode = 2
 theme = SubResource("Theme_j43p3")
 
-[node name="GridVariacoes" type="GridContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer" unique_id=237405316]
+[node name="GridVariacoes" type="GridContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer" unique_id=237405316]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -427,221 +407,157 @@ theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 2
 
-[node name="BotaoSelecaoVariacaoDePeca" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("21_4x1o7")]
+[node name="BotaoSelecaoVariacaoDePeca" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("21_4x1o7")]
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 resource_variacao = ExtResource("22_362vf")
 
-[node name="BotaoSelecaoVariacaoDePeca2" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("21_4x1o7")]
+[node name="BotaoSelecaoVariacaoDePeca2" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("21_4x1o7")]
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 resource_variacao = ExtResource("22_362vf")
 
-[node name="Visualizacao3D" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1583975849]
+[node name="Visualizacao3D" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1583975849]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
 theme_override_constants/separation = 15
 
-[node name="BotoesAlterarTipoVisualizacao3D" type="HBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=482891790]
+[node name="BotoesAlterarTipoVisualizacao3D" type="HBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=482891790]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 0
 theme_override_constants/separation = 15
 
-[node name="ButtonVisualizarBike" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=1645765011 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("5_nnosv")]
+[node name="ButtonVisualizarBike" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=1645765011 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("5_nnosv")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 60)
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("9_q46q3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-pivo_camera = NodePath("../../../../../../../../../PivoCamera")
+theme_override_font_sizes/font_size = 24
+pivo_camera = NodePath("../../PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera")
 menu_variacao = NodePath("../../../MenuSelecaoVariacaoPeca")
 
-[node name="ButtonVisualizarPeca" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=975566529 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("5_nnosv")]
+[node name="ButtonVisualizarPeca" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=975566529 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("5_nnosv")]
+custom_minimum_size = Vector2(260, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("10_vh0a7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
 text = "Visualizar peça
 "
 modo_do_botao = "Visualizar peça"
-pivo_camera = NodePath("../../../../../../../../../PivoCamera")
+pivo_camera = NodePath("../../PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera")
 menu_variacao = NodePath("../../../MenuSelecaoVariacaoPeca")
 
-[node name="PainelVisualizacao3D" type="Panel" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=553341729 groups=["area_do_popup", "painel_visualizacao_3d"]]
+[node name="PainelVisualizacao3D" type="Panel" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=553341729 groups=["area_do_popup", "painel_visualizacao_3d"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_yku7w")
 
-[node name="AreaInferior" type="HBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal" unique_id=1080940939]
+[node name="MarginContainer" type="MarginContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D" unique_id=1655256539]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer" unique_id=1968978012]
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer" unique_id=686197672]
+handle_input_locally = false
+size = Vector2i(858, 819)
+render_target_update_mode = 4
+
+[node name="Oficina" type="Node3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport" unique_id=1388177298]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1882850000]
+environment = SubResource("Environment_mxkdn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1683239417]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Bike" type="Node3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1697718453 groups=["bike"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
+script = ExtResource("3_2uqby")
+
+[node name="PivoPeca" type="Node3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=789801644 groups=["bike"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
+script = ExtResource("5_oyckb")
+
+[node name="PivoCamera" type="Node3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=68613680]
+script = ExtResource("2_nnosv")
+
+[node name="Camera3D" type="Camera3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera" unique_id=254777566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+
+[node name="AreaInferior" type="HBoxContainer" parent="MargemPrincipal/DivisaoPrincipal" unique_id=1080940939]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 80
 
-[node name="Control" type="Control" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=557879658]
+[node name="Control" type="Control" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=557879658]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=1882818258]
+[node name="HBoxContainer" type="HBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=1882818258]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
+theme_override_constants/separation = 96
 
-[node name="PanelLupa" type="Panel" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1355493149]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-size_flags_horizontal = 6
-theme = ExtResource("5_5gw8o")
-
-[node name="BotaoModoLupa" type="Button" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelLupa" unique_id=1727145433]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelLupa" unique_id=1945201828]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelLupa/MarginContainer" unique_id=767604641]
-layout_mode = 2
-texture = ExtResource("3_etqxk")
-expand_mode = 1
-
-[node name="PanelBlocoNotas" type="Panel" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1140895590]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-size_flags_horizontal = 6
-theme = ExtResource("5_5gw8o")
-
-[node name="BotaoModoLupa" type="Button" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelBlocoNotas" unique_id=1358159512]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelBlocoNotas" unique_id=730340412]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelBlocoNotas/MarginContainer" unique_id=83247723]
-layout_mode = 2
-texture = ExtResource("4_jrffh")
-expand_mode = 1
-
-[node name="PanelAtributos" type="Panel" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=124952792]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-size_flags_horizontal = 6
-theme = ExtResource("5_5gw8o")
-
-[node name="BotaoAtributos" type="Button" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelAtributos" unique_id=1653678504]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelAtributos" unique_id=99495813]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 6
-theme_override_constants/margin_bottom = 6
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/PanelAtributos/MarginContainer" unique_id=1467512096]
-layout_mode = 2
-texture = ExtResource("5_jh5r5")
-expand_mode = 1
-
-[node name="PanelSalvarCustomizacao" type="Panel" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=550163158]
-custom_minimum_size = Vector2(160, 70)
+[node name="BotaoModoLupa" type="Button" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1727145433]
+custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_horizontal = 10
+offset_transform_enabled = true
 theme = ExtResource("5_5gw8o")
+icon = ExtResource("3_etqxk")
+expand_icon = true
 
-[node name="BotaoSalvar" type="Button" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao" unique_id=94939531]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jh5r5")
+[node name="BotaoModoLupa2" type="Button" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1358159512]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("5_5gw8o")
+icon = ExtResource("4_jrffh")
+expand_icon = true
+
+[node name="BotaoSalvar" type="Button" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=94939531]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+size_flags_horizontal = 10
+offset_transform_enabled = true
+theme = ExtResource("5_5gw8o")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Salvar"
+icon = ExtResource("15_retln")
+alignment = 0
+expand_icon = true
 script = ExtResource("14_ukybt")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao/BotaoSalvar" unique_id=948140739]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 70.0
-grow_vertical = 2
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 6
-theme_override_constants/margin_bottom = 6
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao/BotaoSalvar/MarginContainer" unique_id=1263577298]
-layout_mode = 2
-texture = ExtResource("15_retln")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao" unique_id=652346820]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -88.0
-offset_top = -14.0
-offset_right = -28.0
-offset_bottom = 14.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Salvar"
-
 [node name="PopupMateriais" parent="." unique_id=1184658807 instance=ExtResource("13_vh0a7")]
+unique_name_in_owner = true
 visible = false
-offset = Vector2(230, 80)
-transform = Transform2D(1, 0, 0, 1, 230, 80)
+offset = Vector2(-200, 20)
+transform = Transform2D(1, 0, 0, 1, -200, 20)
 
-[connection signal="variacao_foi_selecionada" from="." to="Bike" method="_on_oficina_variacao_foi_selecionada"]
-[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao/BotaoSalvar" to="CanvasLayer/AspectRatioContainer/InterfaceMenuOficina/MargemPrincipal/DivisaoPrincipal/AreaInferior/PanelSalvarCustomizacao/BotaoSalvar" method="_on_confirm_pressed"]
+[connection signal="pressed" from="MargemPrincipal/DivisaoPrincipal/AreaInferior/BotaoSalvar" to="MargemPrincipal/DivisaoPrincipal/AreaInferior/BotaoSalvar" method="_on_confirm_pressed"]

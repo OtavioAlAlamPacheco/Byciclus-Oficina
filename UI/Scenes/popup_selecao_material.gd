@@ -1,4 +1,3 @@
-
 extends CanvasLayer
 
 @export var cena_slot_material: PackedScene
@@ -12,8 +11,13 @@ var tipo_atual: TipoPecaData
 var peca_confirmada: bool = false
 var slots_preenchidos: Dictionary = {}
 
+var resolucao_base: Vector2 = Vector2(1152.0, 648.0)
+
 
 func _ready() -> void:
+	get_tree().root.size_changed.connect(_atualizar_escala_do_painel)
+	call_deferred("_atualizar_escala_do_painel")
+	
 	hide()
 
 
@@ -60,6 +64,19 @@ func _gerar_slots() -> void:
 		var novo_slot = cena_slot_material.instantiate()
 		container_slots.add_child(novo_slot)
 		novo_slot.configurar_slot(slot_data, variacao_atual, i, self)
+
+
+func _atualizar_escala_do_painel() -> void:
+	if not is_instance_valid(painel_principal):
+		return
+		
+	var tamanho_tela = get_viewport().get_visible_rect().size
+	var fator_escala = min(tamanho_tela.x / resolucao_base.x, tamanho_tela.y / resolucao_base.y)
+	
+	painel_principal.pivot_offset = painel_principal.size / 2.0
+	painel_principal.scale = Vector2(fator_escala, fator_escala)
+	
+	painel_principal.position = (tamanho_tela - painel_principal.size) / 2.0
 
 
 func _input(event: InputEvent) -> void:
