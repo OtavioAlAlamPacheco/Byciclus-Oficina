@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7wsilnh116sg"
-path.s3tc="res://.godot/imported/M casaco.png-3e2c2f64a1bd4925d2e90a1115430bbe.s3tc.ctex"
+path.s3tc="res://.godot/imported/M casaco.png-2e047e895189c1690739d20b7a4895bd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Masks/M casaco.png"
-dest_files=["res://.godot/imported/M casaco.png-3e2c2f64a1bd4925d2e90a1115430bbe.s3tc.ctex"]
+source_file="res://textures/masks/M casaco.png"
+dest_files=["res://.godot/imported/M casaco.png-2e047e895189c1690739d20b7a4895bd.s3tc.ctex"]
 
 [params]
 

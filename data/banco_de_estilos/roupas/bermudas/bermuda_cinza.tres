@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://b2bggyycatlfa"]
+
+[ext_resource type="PackedScene" uid="uid://qy7iettkyynp" path="res://characters/roupas/TSCN/bermuda.tscn" id="1_pvjpp"]
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://scripts/estilo.data.gd" id="2_ot2kf"]
+[ext_resource type="Texture2D" uid="uid://vmqbay4lablc" path="res://characters/roupas/textures/Baking camisa de la e calca cinza.png" id="3_xxe21"]
+
+[resource]
+script = ExtResource("2_ot2kf")
+id = "Calça Cinza"
+textura = ExtResource("3_xxe21")
+packed_scene = ExtResource("1_pvjpp")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://db487jbufkgj1"]
-
-[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://Scripts/Data/tipo_peca_data.gd" id="1_b2ewd"]
-[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="2_56vnx"]
-
-[resource]
-script = ExtResource("1_b2ewd")
-id = "Fio freio traseiro"
-metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

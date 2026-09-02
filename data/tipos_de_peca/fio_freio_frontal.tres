@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://jkrv4df6j2l4"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://data/scripts_dos_data/tipo_peca_data.gd" id="1_qoklp"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="2_wxk24"]
+
+[resource]
+script = ExtResource("1_qoklp")
+id = "Fio freio frontal"
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

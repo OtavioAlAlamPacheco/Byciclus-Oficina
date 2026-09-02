@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://dox1brby1vi56"]
+
+[ext_resource type="Material" uid="uid://l2f7bbo2i80q" path="res://assets/materials_tres/aluninio_reciclado.tres" id="1_r1sro"]
+[ext_resource type="Material" uid="uid://dbb2s100lr7oq" path="res://assets/materials_tres/arboform.tres" id="2_ufxpv"]
+[ext_resource type="Material" uid="uid://c4lgm271n1eo3" path="res://assets/materials_tres/carbono_forjado_reciclado.tres" id="3_ey25e"]
+[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://assets/materials_tres/plastico_reciclado_bege.tres" id="4_v6fjx"]
+[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://assets/materials_tres/plastico_reciclado_preto.tres" id="5_inkga"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="7_eo5sm"]
+
+[resource]
+script = ExtResource("7_eo5sm")
+nome_do_slot = "Liga"
+materiais_disponiveis = Array[Material]([ExtResource("1_r1sro"), ExtResource("2_ufxpv"), ExtResource("3_ey25e"), ExtResource("4_v6fjx"), ExtResource("5_inkga")])
+metadata/_custom_type_script = "uid://40uqmfcprus7"

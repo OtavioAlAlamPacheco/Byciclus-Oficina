@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://bvqts6sg7yfqv"]
+
+[ext_resource type="PackedScene" uid="uid://ylu13k621j2c" path="res://ui/scenes_e_scripts/botao_tipo_peca.tscn" id="1_2h50s"]
+[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://ui/themes/panels/theme_cinza_com_borda_preta.tres" id="1_3jqky"]
+[ext_resource type="Script" uid="uid://dx5a5rbopr8xj" path="res://ui/scenes_e_scripts/menu_selecao_tipo_peca.gd" id="1_x5p1u"]
+[ext_resource type="Resource" uid="uid://s2yc3qesd6q8" path="res://data/tipos_de_peca/quadro_novo.tres" id="5_5e76v"]
+[ext_resource type="Resource" uid="uid://mvsidns63sta" path="res://data/tipos_de_peca/garfo_novo.tres" id="6_47nqw"]
+[ext_resource type="Resource" uid="uid://c7iqj3w4ps6r8" path="res://data/tipos_de_peca/guidao_novo.tres" id="7_5u04t"]
+[ext_resource type="Resource" uid="uid://5i45hi6sws6d" path="res://data/tipos_de_peca/catraca_traseira_nova.tres" id="9_54bdy"]
+[ext_resource type="Resource" uid="uid://dukl8y7o6vchy" path="res://data/tipos_de_peca/alavanca_esquerda_nova.tres" id="10_si7vu"]
+[ext_resource type="Resource" uid="uid://b3ytn4axxhufe" path="res://data/tipos_de_peca/selim_novo.tres" id="11_fa267"]
+[ext_resource type="Resource" uid="uid://cioyaq3f1qwh0" path="res://data/tipos_de_peca/corrente_nova.tres" id="12_p8jpj"]
+[ext_resource type="Resource" uid="uid://ciw7ybt0cvt4g" path="res://data/tipos_de_peca/roda_traseira_nova.tres" id="13_5e76v"]
+[ext_resource type="Resource" uid="uid://dm0on1ousno3d" path="res://data/tipos_de_peca/cambio_novo.tres" id="13_ta4os"]
+[ext_resource type="Resource" uid="uid://ckah60fv0km1j" path="res://data/tipos_de_peca/pedal_esquerdo_novo.tres" id="14_54bdy"]
+[ext_resource type="Resource" uid="uid://b1g1t3tx2j0cg" path="res://data/tipos_de_peca/pedivela_nova.tres" id="15_si7vu"]
+[ext_resource type="Resource" uid="uid://uctaaa1psnra" path="res://data/tipos_de_peca/freio_traseiro_novo.tres" id="16_fa267"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1c3m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2sri"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ia6wt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gj186"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wmo6"]
+
+[sub_resource type="Theme" id="Theme_yteoy"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_b1c3m")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_g2sri")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ia6wt")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_gj186")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_5wmo6")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o31fq"]
+load_path = "res://.godot/imported/Quadro.png-ff6b4bb000d62aac455c322ef198b50e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wrrc4"]
+load_path = "res://.godot/imported/Garfo.png-85f1877831b2485023c8af00583c6cbc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h2uy1"]
+load_path = "res://.godot/imported/Guidao.png-788696042aae6ef256a402e50a0ec484.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nnjhb"]
+load_path = "res://.godot/imported/Pedal.png-34a831030f93fb8d93d3ab7e3a20c80e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3u33l"]
+load_path = "res://.godot/imported/Roda.png-de1e0dd11945450900119a93a55657b1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1h2ha"]
+load_path = "res://.godot/imported/Cambio traseiro.png-89594382759889a8d2e806fe1977c1ec.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_002rk"]
+load_path = "res://.godot/imported/Catraca traseira.png-a566d635f12b1577f2134ee6c014605b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aep7r"]
+load_path = "res://.godot/imported/Alavanca.png-2efb8e4fb5e989372023848ec5351c15.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xhwm0"]
+load_path = "res://.godot/imported/Selim.png-0a6b359f1d7badc7b1658df093c0b88a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aeeor"]
+load_path = "res://.godot/imported/Corrente.png-b3257e43d5181425c118feea66197a63.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mc6ok"]
+load_path = "res://.godot/imported/Freio.png-fa4f2286c081d78c36abaff52030b998.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vdec8"]
+load_path = "res://.godot/imported/Pedivela.png-b8f38ef5267f6c09d89d5acb7c200126.ctex"
+
+[node name="Panel" type="Panel" unique_id=1327616481]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 458.0
+size_flags_vertical = 3
+theme = ExtResource("1_3jqky")
+script = ExtResource("1_x5p1u")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=682090662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1173948448]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = SubResource("Theme_yteoy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=1675111944]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Quadro" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=451800664 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_o31fq")
+icon_alignment = 1
+resource_tipo = ExtResource("5_5e76v")
+
+[node name="Garfo" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1067882421 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_wrrc4")
+icon_alignment = 1
+resource_tipo = ExtResource("6_47nqw")
+
+[node name="Guidão" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=790913136 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_h2uy1")
+icon_alignment = 1
+resource_tipo = ExtResource("7_5u04t")
+
+[node name="Pedal" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=929645557 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_nnjhb")
+icon_alignment = 1
+resource_tipo = ExtResource("14_54bdy")
+
+[node name="Roda" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=212161176 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_3u33l")
+icon_alignment = 1
+resource_tipo = ExtResource("13_5e76v")
+
+[node name="Câmbio" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=628305299 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_1h2ha")
+icon_alignment = 1
+resource_tipo = ExtResource("13_ta4os")
+
+[node name="Catraca" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=645934491 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_002rk")
+icon_alignment = 1
+resource_tipo = ExtResource("9_54bdy")
+
+[node name="Alavanca" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1428046115 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_aep7r")
+icon_alignment = 1
+resource_tipo = ExtResource("10_si7vu")
+
+[node name="Selim" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1343198177 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_xhwm0")
+icon_alignment = 1
+resource_tipo = ExtResource("11_fa267")
+
+[node name="Corrente" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1625112760 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_aeeor")
+icon_alignment = 1
+resource_tipo = ExtResource("12_p8jpj")
+
+[node name="Freio" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1880325115 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_mc6ok")
+icon_alignment = 1
+resource_tipo = ExtResource("16_fa267")
+
+[node name="Pedivela" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1496953184 instance=ExtResource("1_2h50s")]
+layout_mode = 2
+icon = SubResource("CompressedTexture2D_vdec8")
+icon_alignment = 1
+resource_tipo = ExtResource("15_si7vu")

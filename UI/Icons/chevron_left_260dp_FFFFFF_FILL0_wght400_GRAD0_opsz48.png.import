@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdjg2h7kt07n5"
-path="res://.godot/imported/chevron_left_260dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png-35ed518b43f266c88cc756f8da56b354.ctex"
+path="res://.godot/imported/chevron_left_260dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png-b20a16f11b4b0692cc0db5a8fa33fa6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Icons/chevron_left_260dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png"
-dest_files=["res://.godot/imported/chevron_left_260dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png-35ed518b43f266c88cc756f8da56b354.ctex"]
+source_file="res://ui/icons/chevron_left_260dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png"
+dest_files=["res://.godot/imported/chevron_left_260dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png-b20a16f11b4b0692cc0db5a8fa33fa6b.ctex"]
 
 [params]
 

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://b3ytn4axxhufe"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://data/scripts_dos_data/tipo_peca_data.gd" id="1_xhwm0"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="2_xiub8"]
+[ext_resource type="Resource" uid="uid://dykmn6xic42cl" path="res://data/slots_de_material/banco_selim.tres" id="3_xiub8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xhwm0"]
+load_path = "res://.godot/imported/Selim.png-0a6b359f1d7badc7b1658df093c0b88a.ctex"
+
+[resource]
+script = ExtResource("1_xhwm0")
+id = "Selim"
+silhueta_texture = SubResource("CompressedTexture2D_xhwm0")
+slots_e_materiais = Array[ExtResource("2_xiub8")]([ExtResource("3_xiub8")])
+posicao_camera = Vector3(0.25667143, 0.092066936, 0.023714185)
+rotacao_camera = Vector3(-0.3102981, 1.5707964, -1.4016327e-08)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

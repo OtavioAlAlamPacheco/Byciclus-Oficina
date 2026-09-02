@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://b1lfy4usuiq0n"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://data/scripts_dos_data/tipo_peca_data.gd" id="1_fv6lw"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="2_gta8j"]
+[ext_resource type="Resource" uid="uid://q34b6qv421ns" path="res://data/slots_de_material/estrutura_alavancas_cambio_freio.tres" id="3_phsfd"]
+[ext_resource type="Resource" uid="uid://68u5bgnk80uk" path="res://data/slots_de_material/alavancas.tres" id="4_kf1s5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kfnar"]
+
+[resource]
+script = ExtResource("1_fv6lw")
+id = "Alavanca direita"
+silhueta_texture = SubResource("CompressedTexture2D_kfnar")
+slots_e_materiais = Array[ExtResource("2_gta8j")]([ExtResource("3_phsfd"), ExtResource("4_kf1s5")])
+posicao_camera = Vector3(0.018737882, 0.008412212, -0.11345105)
+rotacao_camera = Vector3(-0.33925128, -3.1415925, -3.085103e-08)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

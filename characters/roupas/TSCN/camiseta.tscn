@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b8bvtfabv3kky"]
+
+[ext_resource type="PackedScene" uid="uid://b0fuso40lx2be" path="res://characters/roupas/GLB/Camiseta.glb" id="1_5e247"]
+[ext_resource type="Shader" uid="uid://cb6syk15ofrl7" path="res://assets/shaders/roupa_shader.gdshader" id="2_2q2ii"]
+[ext_resource type="Texture2D" uid="uid://b4o6cg41go1sk" path="res://textures/masks/M camiseta.png" id="3_xld6y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5q56q"]
+render_priority = 0
+shader = ExtResource("2_2q2ii")
+shader_parameter/mask_roupa = ExtResource("3_xld6y")
+
+[node name="Camiseta" instance=ExtResource("1_5e247")]
+
+[node name="Camisa curta" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.86238265, 0)
+"blend_shapes/Masculino 2" = 1.0
+surface_material_override/0 = SubResource("ShaderMaterial_5q56q")

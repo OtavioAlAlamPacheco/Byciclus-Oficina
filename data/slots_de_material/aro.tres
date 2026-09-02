@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://c845phj7k60r5"]
+
+[ext_resource type="Material" uid="uid://cmaiungqq67mn" path="res://assets/materials_tres/bambu_estrutural.tres" id="1_ur7jw"]
+[ext_resource type="Material" uid="uid://l2f7bbo2i80q" path="res://assets/materials_tres/aluninio_reciclado.tres" id="1_xk7at"]
+[ext_resource type="Material" uid="uid://c4lgm271n1eo3" path="res://assets/materials_tres/carbono_forjado_reciclado.tres" id="3_smvqj"]
+[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://assets/materials_tres/plastico_reciclado_bege.tres" id="4_4vykq"]
+[ext_resource type="Material" uid="uid://mt5alj3q1p28" path="res://assets/materials_tres/madeira_de_demolicao_laminada.tres" id="4_smvqj"]
+[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://assets/materials_tres/plastico_reciclado_preto.tres" id="5_ds4qb"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="6_nheqy"]
+
+[resource]
+script = ExtResource("6_nheqy")
+nome_do_slot = "Aro"
+materiais_disponiveis = Array[Material]([ExtResource("1_ur7jw"), ExtResource("1_xk7at"), ExtResource("3_smvqj"), ExtResource("4_smvqj"), ExtResource("4_4vykq"), ExtResource("5_ds4qb")])
+metadata/_custom_type_script = "uid://40uqmfcprus7"

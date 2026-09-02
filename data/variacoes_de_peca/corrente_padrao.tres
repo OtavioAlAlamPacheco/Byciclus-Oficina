@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://bb3gmvostkdu3"]
+
+[ext_resource type="PackedScene" uid="uid://bsam5jj4wscwc" path="res://objects/pecas/correntes/corrente.tscn" id="1_2j1lk"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://data/scripts_dos_data/variacao_peca_data.gd" id="1_dot6a"]
+[ext_resource type="Resource" uid="uid://cioyaq3f1qwh0" path="res://data/tipos_de_peca/corrente_nova.tres" id="3_ivvd2"]
+
+[resource]
+script = ExtResource("1_dot6a")
+id = "Corrente padrão"
+tipo = ExtResource("3_ivvd2")
+cena_mesh = ExtResource("1_2j1lk")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

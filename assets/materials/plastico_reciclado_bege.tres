@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://do8r24dctwc85"]
-
-[ext_resource type="Texture2D" uid="uid://i5ivbqdky33d" path="res://Textures/Materials/plastico_bege_color.png" id="1_su6vp"]
-[ext_resource type="Texture2D" uid="uid://ortmq568qjjq" path="res://Textures/Materials/plastico_bege_roughness.png" id="2_u2i7e"]
-
-[resource]
-albedo_texture = ExtResource("1_su6vp")
-roughness_texture = ExtResource("2_u2i7e")

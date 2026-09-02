@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://cbvl8y27dg1f1"]
+
+[ext_resource type="Material" uid="uid://dbb2s100lr7oq" path="res://assets/materials_tres/arboform.tres" id="1_c8n66"]
+[ext_resource type="Material" uid="uid://blsyobkackj3u" path="res://assets/materials_tres/borracha_taraxagum.tres" id="2_68tci"]
+[ext_resource type="Material" uid="uid://bqu7vb3838e27" path="res://assets/materials_tres/cortica_expandida.tres" id="3_xlvkg"]
+[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://assets/materials_tres/plastico_reciclado_bege.tres" id="4_1oi5x"]
+[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://assets/materials_tres/plastico_reciclado_preto.tres" id="5_n7ttc"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="7_c4wd4"]
+
+[resource]
+script = ExtResource("7_c4wd4")
+nome_do_slot = "Manete"
+materiais_disponiveis = Array[Material]([ExtResource("1_c8n66"), ExtResource("2_68tci"), ExtResource("3_xlvkg"), ExtResource("4_1oi5x"), ExtResource("5_n7ttc")])
+metadata/_custom_type_script = "uid://40uqmfcprus7"

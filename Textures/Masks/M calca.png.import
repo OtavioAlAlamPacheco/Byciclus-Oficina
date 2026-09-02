@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://of8l15jcyutf"
-path.s3tc="res://.godot/imported/M calca.png-d78a594573641b1cba1a5626a059c65c.s3tc.ctex"
+path.s3tc="res://.godot/imported/M calca.png-4e4aa60343f77840e6e28b609d57453e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Masks/M calca.png"
-dest_files=["res://.godot/imported/M calca.png-d78a594573641b1cba1a5626a059c65c.s3tc.ctex"]
+source_file="res://textures/masks/M calca.png"
+dest_files=["res://.godot/imported/M calca.png-4e4aa60343f77840e6e28b609d57453e.s3tc.ctex"]
 
 [params]
 

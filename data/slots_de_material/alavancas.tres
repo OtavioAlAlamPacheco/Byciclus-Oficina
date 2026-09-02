@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://68u5bgnk80uk"]
+
+[ext_resource type="Material" uid="uid://l2f7bbo2i80q" path="res://assets/materials_tres/aluninio_reciclado.tres" id="1_wl82g"]
+[ext_resource type="Material" uid="uid://dbb2s100lr7oq" path="res://assets/materials_tres/arboform.tres" id="2_wwn5n"]
+[ext_resource type="Material" uid="uid://c4lgm271n1eo3" path="res://assets/materials_tres/carbono_forjado_reciclado.tres" id="3_bkxvo"]
+[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://assets/materials_tres/plastico_reciclado_bege.tres" id="4_yqe2o"]
+[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://assets/materials_tres/plastico_reciclado_preto.tres" id="5_ga8o3"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="7_q7qr1"]
+
+[resource]
+script = ExtResource("7_q7qr1")
+nome_do_slot = "Alavancas"
+materiais_disponiveis = Array[Material]([ExtResource("1_wl82g"), ExtResource("2_wwn5n"), ExtResource("3_bkxvo"), ExtResource("4_yqe2o"), ExtResource("5_ga8o3")])
+metadata/_custom_type_script = "uid://40uqmfcprus7"

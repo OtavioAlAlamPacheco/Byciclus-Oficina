@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://dwntxwo0k3iqi"]
+
+[ext_resource type="PackedScene" uid="uid://dqeyq6qoo43hu" path="res://characters/roupas/TSCN/camisa.tscn" id="1_thkmo"]
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://scripts/estilo.data.gd" id="2_jfe3w"]
+[ext_resource type="Texture2D" uid="uid://i3v54mvthhev" path="res://characters/roupas/textures/Baking camisa estampada (flores Wild Soul) e calca amarela.png" id="3_jfe3w"]
+
+[resource]
+script = ExtResource("2_jfe3w")
+id = "Camisa Estampada (Flores)"
+textura = ExtResource("3_jfe3w")
+packed_scene = ExtResource("1_thkmo")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

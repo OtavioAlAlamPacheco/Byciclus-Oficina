@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://clccisn5b37x5"]
+
+[ext_resource type="Shader" uid="uid://by0fcln0uoie1" path="res://assets/shaders/personagem_shader.gdshader" id="1_7pgy1"]
+[ext_resource type="Texture2D" uid="uid://s130iyu1jn42" path="res://textures/masks/M cabelo.png" id="2_33ug8"]
+[ext_resource type="Texture2D" uid="uid://bd8nrwqincm6f" path="res://textures/masks/M calcado.png" id="2_xkhpy"]
+[ext_resource type="Texture2D" uid="uid://b4o6cg41go1sk" path="res://textures/masks/M camiseta.png" id="4_sgf33"]
+[ext_resource type="Texture2D" uid="uid://of8l15jcyutf" path="res://textures/masks/M calca.png" id="4_ug7ke"]
+[ext_resource type="Texture2D" uid="uid://d12qqswmn0tqx" path="res://characters/expressoes/Boca/E Boca 4 neutro.png" id="6_vwlph"]
+[ext_resource type="Texture2D" uid="uid://w2hskv3tjurs" path="res://characters/roupas/textures/Baking terno e jeans.png" id="7_8oddg"]
+[ext_resource type="Texture2D" uid="uid://r26esc54elch" path="res://characters/roupas/textures/Baking camisa listrada e calca branca.png" id="8_vwlph"]
+[ext_resource type="Texture2D" uid="uid://cmwayxolfcoby" path="res://characters/expressoes/Nariz/E Nariz 2.png" id="11_a7j26"]
+[ext_resource type="Texture2D" uid="uid://bodcwf7he8fpk" path="res://characters/expressoes/Olhos/E Olhos 1 neutro ou surpresa.png" id="11_ug7ke"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7pgy1")
+shader_parameter/cor_pele = Color(0.8502606, 0.58964646, 0.44575143, 1)
+shader_parameter/textura_olhos = ExtResource("11_ug7ke")
+shader_parameter/textura_nariz = ExtResource("11_a7j26")
+shader_parameter/textura_boca = ExtResource("6_vwlph")
+shader_parameter/mask_calca = ExtResource("4_ug7ke")
+shader_parameter/textura_calca = ExtResource("7_8oddg")
+shader_parameter/mask_camisa = ExtResource("4_sgf33")
+shader_parameter/textura_camisa = ExtResource("8_vwlph")
+shader_parameter/mask_bota = ExtResource("2_xkhpy")
+shader_parameter/textura_bota = ExtResource("7_8oddg")
+shader_parameter/mask_cabelo = ExtResource("2_33ug8")
+shader_parameter/cor_do_cabelo = Color(0, 0, 0, 1)

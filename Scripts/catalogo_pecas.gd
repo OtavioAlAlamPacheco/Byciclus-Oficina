@@ -1,7 +1,7 @@
 
 extends Node
 
-var banco_de_dados: BancoDePecasData = preload("res://Resources/banco_de_pecas.tres")
+var banco_de_dados: BancoDePecasData = preload("uid://cvsj3i3wqb7ui")
 const BancoDePecasData = preload("uid://cvsj3i3wqb7ui")
 
 var variacoes_por_tipo: Dictionary = {

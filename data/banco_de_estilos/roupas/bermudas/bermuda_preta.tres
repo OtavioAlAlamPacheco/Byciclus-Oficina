@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://cdslq1klfc8ff"]
+
+[ext_resource type="PackedScene" uid="uid://qy7iettkyynp" path="res://characters/roupas/TSCN/bermuda.tscn" id="1_2x3w6"]
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://scripts/estilo.data.gd" id="2_hb1sv"]
+[ext_resource type="Texture2D" uid="uid://br3mkq8co2pvt" path="res://characters/roupas/textures/Baking camisa costurada e calca preta.png" id="3_2y622"]
+
+[resource]
+script = ExtResource("2_hb1sv")
+id = "Calça Preta"
+textura = ExtResource("3_2y622")
+packed_scene = ExtResource("1_2x3w6")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://cioyaq3f1qwh0"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://data/scripts_dos_data/tipo_peca_data.gd" id="1_aeeor"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="2_3idl7"]
+[ext_resource type="Resource" uid="uid://xwc0527b035q" path="res://data/slots_de_material/estrutura_corrente.tres" id="3_3idl7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aeeor"]
+load_path = "res://.godot/imported/Corrente.png-b3257e43d5181425c118feea66197a63.ctex"
+
+[resource]
+script = ExtResource("1_aeeor")
+id = "Corrente"
+silhueta_texture = SubResource("CompressedTexture2D_aeeor")
+slots_e_materiais = Array[ExtResource("2_3idl7")]([ExtResource("3_3idl7")])
+posicao_camera = Vector3(0.48135298, -0.04882334, 0.2859655)
+rotacao_camera = Vector3(0, 1.5707964, 0)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

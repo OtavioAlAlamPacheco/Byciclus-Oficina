@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://cjmhjf3jeyq3x"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://data/scripts_dos_data/tipo_peca_data.gd" id="1_i40ti"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="2_xbmdm"]
+[ext_resource type="Resource" uid="uid://nq8dbqe7yibw" path="res://data/slots_de_material/borracha_roda.tres" id="3_fuo4m"]
+[ext_resource type="Resource" uid="uid://c845phj7k60r5" path="res://data/slots_de_material/aro.tres" id="4_qapg1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i40ti"]
+
+[resource]
+script = ExtResource("1_i40ti")
+id = "Roda frontal"
+silhueta_texture = SubResource("CompressedTexture2D_i40ti")
+slots_e_materiais = Array[ExtResource("2_xbmdm")]([ExtResource("3_fuo4m"), ExtResource("4_qapg1")])
+posicao_camera = Vector3(0.6, 0, 0)
+rotacao_camera = Vector3(0, 1.5707964, 0)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

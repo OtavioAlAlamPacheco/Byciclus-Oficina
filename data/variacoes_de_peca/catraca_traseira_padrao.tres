@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://dkdawpjs500v0"]
+
+[ext_resource type="PackedScene" uid="uid://gidd5345gq68" path="res://objects/pecas/catracas/catraca_traseira.tscn" id="1_vool0"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://data/scripts_dos_data/variacao_peca_data.gd" id="2_vpte8"]
+[ext_resource type="Resource" uid="uid://5i45hi6sws6d" path="res://data/tipos_de_peca/catraca_traseira_nova.tres" id="3_el2eb"]
+
+[resource]
+script = ExtResource("2_vpte8")
+id = "Catraca traseira padrão"
+tipo = ExtResource("3_el2eb")
+cena_mesh = ExtResource("1_vool0")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

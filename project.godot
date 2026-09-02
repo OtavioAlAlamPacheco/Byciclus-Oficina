@@ -17,12 +17,12 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Byciclus Otavio"
 run/main_scene="uid://c7karwshlck76"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://ui/icons/icon.svg"
 
 [autoload]
 
-CatalogoPecas="*res://Scripts/catalogo_pecas.gd"
-PerfilPersonagem="*res://perfil_personagem.gd"
+CatalogoPecas="*res://scripts/catalogo_pecas.gd"
+PerfilPersonagem="*res://characters/perfil_personagem.gd"
 
 [display]
 

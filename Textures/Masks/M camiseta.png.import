@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4o6cg41go1sk"
-path.s3tc="res://.godot/imported/M camiseta.png-7709942fa7b0338f728194072ab4a4a1.s3tc.ctex"
+path.s3tc="res://.godot/imported/M camiseta.png-18e83f434d24e4c42a67a3bbd09bc2ca.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Masks/M camiseta.png"
-dest_files=["res://.godot/imported/M camiseta.png-7709942fa7b0338f728194072ab4a4a1.s3tc.ctex"]
+source_file="res://textures/masks/M camiseta.png"
+dest_files=["res://.godot/imported/M camiseta.png-18e83f434d24e4c42a67a3bbd09bc2ca.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bc77phj03moko"]
+
+[ext_resource type="Script" uid="uid://c6axgw736sne0" path="res://scripts/slot_de_selecao_do_material.gd" id="1_agmiv"]
+[ext_resource type="PackedScene" uid="uid://cwxjdire2rln0" path="res://ui/scenes_e_scripts/botao_selecao_material.tscn" id="2_agmiv"]
+
+[node name="MenuSlot" type="VBoxContainer" unique_id=1607293685]
+custom_minimum_size = Vector2(330, 170)
+offset_right = 330.0
+offset_bottom = 170.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_agmiv")
+cena_botao_material = ExtResource("2_agmiv")
+
+[node name="Label" type="Label" parent="." unique_id=1996840478]
+layout_mode = 2
+text = "Selecione o material para (nome do slot)"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=502480923]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot" type="HBoxContainer" parent="ScrollContainer" unique_id=1149619801]
+custom_minimum_size = Vector2(0, 140)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3

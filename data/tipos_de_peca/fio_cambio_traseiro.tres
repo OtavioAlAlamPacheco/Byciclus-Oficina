@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://d2vgr0o0j04nh"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://data/scripts_dos_data/tipo_peca_data.gd" id="1_7ss8n"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="2_v6h5k"]
+
+[resource]
+script = ExtResource("1_7ss8n")
+id = "Fio cambio traseiro"
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://h63n8c7x812"]
+
+[ext_resource type="PackedScene" uid="uid://c8kvjsc35egwb" path="res://objects/pecas/quadros/quadro_deslocado.tscn" id="1_jwc6k"]
+[ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://data/scripts_dos_data/variacao_peca_data.gd" id="1_mpr0i"]
+[ext_resource type="Resource" uid="uid://s2yc3qesd6q8" path="res://data/tipos_de_peca/quadro_novo.tres" id="3_1qxe3"]
+
+[resource]
+script = ExtResource("1_mpr0i")
+id = "Quadro deslocado"
+tipo = ExtResource("3_1qxe3")
+cena_mesh = ExtResource("1_jwc6k")
+metadata/_custom_type_script = "uid://dvalrr1ryd4hs"

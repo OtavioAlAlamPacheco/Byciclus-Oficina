@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://c6sodbp84pjq5"]
+
+[ext_resource type="PackedScene" uid="uid://b6lrv13c1jar6" path="res://characters/roupas/TSCN/casaco.tscn" id="1_vr1hj"]
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://scripts/estilo.data.gd" id="2_r0opn"]
+[ext_resource type="Texture2D" uid="uid://geuot1ljx5oy" path="res://characters/roupas/textures/Baking casaco de la.png" id="3_0nkhc"]
+
+[resource]
+script = ExtResource("2_r0opn")
+id = "Casaco de Lã"
+textura = ExtResource("3_0nkhc")
+packed_scene = ExtResource("1_vr1hj")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

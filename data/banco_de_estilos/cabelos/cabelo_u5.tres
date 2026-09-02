@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://dtik6fp1h8egj"]
+
+[ext_resource type="PackedScene" uid="uid://3lg6fodgw0b" path="res://characters/cabelos/TSCN/cabelo_u5.tscn" id="1_ewt8t"]
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://scripts/estilo.data.gd" id="1_kxai0"]
+
+[resource]
+script = ExtResource("1_kxai0")
+id = "Cabelo Unissex 5"
+packed_scene = ExtResource("1_ewt8t")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

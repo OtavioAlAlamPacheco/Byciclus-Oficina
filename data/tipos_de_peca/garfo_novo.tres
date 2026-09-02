@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://mvsidns63sta"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://data/scripts_dos_data/tipo_peca_data.gd" id="1_wrrc4"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="2_nfjsr"]
+[ext_resource type="Resource" uid="uid://d05kqo36qap4s" path="res://data/slots_de_material/estrutura_quadro_garfo_guidao.tres" id="3_tptnl"]
+[ext_resource type="Resource" uid="uid://bb632kqb5lax4" path="res://data/slots_de_material/liga_quadro_garfo.tres" id="4_yhbt7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wrrc4"]
+load_path = "res://.godot/imported/Garfo.png-85f1877831b2485023c8af00583c6cbc.ctex"
+
+[resource]
+script = ExtResource("1_wrrc4")
+id = "Garfo"
+silhueta_texture = SubResource("CompressedTexture2D_wrrc4")
+slots_e_materiais = Array[ExtResource("2_nfjsr")]([ExtResource("3_tptnl"), ExtResource("4_yhbt7")])
+posicao_camera = Vector3(0, 0.022624984, -0.4055625)
+rotacao_camera = Vector3(-0.59545654, -3.1415925, -5.922783e-08)
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

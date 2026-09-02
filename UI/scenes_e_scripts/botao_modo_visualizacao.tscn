@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dpvea336oo531"]
+
+[ext_resource type="Script" uid="uid://pmt7qlvk0t3v" path="res://ui/scenes_e_scripts/botoes_modo_visualizacao.gd" id="1_ugbns"]
+
+[node name="ButtonVisualizarBicicleta" type="Button" unique_id=248744407]
+custom_minimum_size = Vector2(243, 60)
+size_flags_horizontal = 3
+text = "Visualizar bicicleta"
+script = ExtResource("1_ugbns")
+modo_do_botao = "Visualizar bicicleta"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

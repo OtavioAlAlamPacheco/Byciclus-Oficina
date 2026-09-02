@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="TipoPecaData" format=3 uid="uid://ciw7ybt0cvt4g"]
+
+[ext_resource type="Script" uid="uid://cbt0or6x2lkfr" path="res://data/scripts_dos_data/tipo_peca_data.gd" id="1_3u33l"]
+[ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://data/scripts_dos_data/slot_material_data.gd" id="2_xb0at"]
+[ext_resource type="Resource" uid="uid://nq8dbqe7yibw" path="res://data/slots_de_material/borracha_roda.tres" id="3_pb1hb"]
+[ext_resource type="Resource" uid="uid://c845phj7k60r5" path="res://data/slots_de_material/aro.tres" id="4_thing"]
+[ext_resource type="Resource" uid="uid://cjmhjf3jeyq3x" path="res://data/tipos_de_peca/roda_frontal_nova.tres" id="5_thing"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3u33l"]
+load_path = "res://.godot/imported/Roda.png-de1e0dd11945450900119a93a55657b1.ctex"
+
+[resource]
+script = ExtResource("1_3u33l")
+id = "Roda traseira"
+silhueta_texture = SubResource("CompressedTexture2D_3u33l")
+slots_e_materiais = Array[ExtResource("2_xb0at")]([ExtResource("3_pb1hb"), ExtResource("4_thing")])
+posicao_camera = Vector3(0.6, 0, 0)
+rotacao_camera = Vector3(0, 1.5707964, 0)
+tipo_sincronizado = ExtResource("5_thing")
+metadata/_custom_type_script = "uid://cbt0or6x2lkfr"

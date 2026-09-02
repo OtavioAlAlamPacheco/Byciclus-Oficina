@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://b3u03a8mfnmtb"]
+
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://scripts/estilo.data.gd" id="1_wrqxt"]
+[ext_resource type="Texture2D" uid="uid://cmwayxolfcoby" path="res://characters/expressoes/Nariz/E Nariz 2.png" id="2_cn35u"]
+
+[resource]
+script = ExtResource("1_wrqxt")
+id = "Nariz 2"
+textura = ExtResource("2_cn35u")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

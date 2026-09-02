@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cnevchmk1o1pq"]
+
+[ext_resource type="Script" uid="uid://cjribsyasl85r" path="res://ui/scenes_e_scripts/popup_selecao_material.gd" id="1_ypoge"]
+[ext_resource type="PackedScene" uid="uid://bc77phj03moko" path="res://scripts/slot_de_selecao_do_material.tscn" id="2_8nedq"]
+[ext_resource type="Theme" uid="uid://b50dv326tcdxx" path="res://ui/themes/panels/theme_painel_verde_claro_2.tres" id="3_slofq"]
+[ext_resource type="Texture2D" uid="uid://yp8j87kfycy7" path="res://ui/icons/cross.png" id="4_slofq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tp88"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slofq"]
+bg_color = Color(0.23921569, 0, 0.10980392, 0.14509805)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8901961, 0, 0.4745098, 0.3647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bep1d"]
+bg_color = Color(0.48565203, 1.6845763e-07, 0.24787945, 0.105882354)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8901961, 0, 0.4745098, 0.3647059)
+
+[node name="PopupSelecaoMaterial" type="CanvasLayer" unique_id=1184658807 groups=["area_do_popup"]]
+script = ExtResource("1_ypoge")
+cena_slot_material = ExtResource("2_8nedq")
+
+[node name="Panel" type="Panel" parent="." unique_id=1477025330 groups=["area_do_popup"]]
+custom_minimum_size = Vector2(372, 454)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_slofq")
+
+[node name="Margem" type="MarginContainer" parent="Panel" unique_id=1548302507]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Margem" unique_id=1516061128]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Margem/ScrollContainer" unique_id=743439725]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Button" type="Button" parent="Panel" unique_id=981325092]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 325.0
+offset_top = 6.0
+offset_right = 2373.0
+offset_bottom = 2054.0
+scale = Vector2(0.0199411, 0.0199411)
+theme_override_icons/icon = ExtResource("4_slofq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1tp88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_slofq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bep1d")
+
+[connection signal="pressed" from="Panel/Button" to="." method="fechar_popup"]
