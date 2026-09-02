@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ylu13k621j2c"]
 
-[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/Themes/theme_botao_nao_selecionado_oficina.tres" id="1_nnegq"]
+[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/Themes/Buttons/theme_botao_nao_selecionado_oficina.tres" id="1_nnegq"]
 [ext_resource type="Script" uid="uid://cg4g80ljatk8v" path="res://Scripts/botao_tipo_peca.gd" id="2_qn1pb"]
 
 [node name="BotaoSelecaoPeca2" type="Button" unique_id=451800664]
 custom_minimum_size = Vector2(60, 60)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3

@@ -1,8 +1,8 @@
 
 extends Panel
 
-const THEME_BOTAO_NAO_SELECIONADO = preload("uid://btfmvlloabut6")
-const THEME_BOTAO_SELECIONADO = preload("uid://cexiw2525vqhn")
+const THEME_BOTAO_NAO_SELECIONADO = preload("uid://xtha0ihy5e14")
+const THEME_BOTAO_SELECIONADO = preload("uid://drfnkf2566lvj")
 
 @onready var vbox_botoes: VBoxContainer = $MarginContainer/ScrollContainer/MarginContainer/VBoxContainer
 

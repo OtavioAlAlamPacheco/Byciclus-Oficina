@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EstiloData" load_steps=4 format=3 uid="uid://i3sq7fdrwnli"]
+
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="1_1v42i"]
+[ext_resource type="PackedScene" uid="uid://w5txvutduayi" path="res://Personagem/Roupas/TSCN/calca.tscn" id="1_b1i23"]
+[ext_resource type="Texture2D" uid="uid://c80xcbloucm48" path="res://Textures/Roupas/Baking camisa estampada (bike) e calca roxa.png" id="2_u1c4l"]
+
+[resource]
+script = ExtResource("1_1v42i")
+id = "Calça Roxa"
+textura = ExtResource("2_u1c4l")
+packed_scene = ExtResource("1_b1i23")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

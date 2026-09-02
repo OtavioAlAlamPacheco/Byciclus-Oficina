@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cu5tt8uouag3e"]
+
+[ext_resource type="Script" uid="uid://cjhmvxr73v5ll" path="res://Scripts/botao_selecao_estilo.gd" id="1_nbi3n"]
+[ext_resource type="Theme" uid="uid://c7gd2euo4hdjr" path="res://UI/Themes/Panels/theme_painel_marrom_avermelhado.tres" id="1_pib3i"]
+[ext_resource type="PackedScene" uid="uid://bo6svstcpw2d1" path="res://UI/Scenes e scripts/preview_estilo.tscn" id="2_nbi3n"]
+[ext_resource type="Texture2D" uid="uid://bc5w1qxi4vlv8" path="res://Icons/cross.png" id="3_ra8r6"]
+
+[node name="Button" type="Button" unique_id=935626459]
+custom_minimum_size = Vector2(120, 120)
+clip_contents = true
+size_flags_vertical = 4
+theme = ExtResource("1_pib3i")
+script = ExtResource("1_nbi3n")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=826098699]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=15685862]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(120, 120)
+render_target_update_mode = 4
+
+[node name="PreviewEstilo" parent="SubViewportContainer/SubViewport" unique_id=632987155 instance=ExtResource("2_nbi3n")]
+
+[node name="RemoverEstilo" type="TextureRect" parent="." unique_id=1037986544]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = -9.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ra8r6")
+expand_mode = 1
+
+[connection signal="button_down" from="." to="." method="_on_selecao_de_estilo"]

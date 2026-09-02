@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxaast6cvqx3f"]
+
+[ext_resource type="PackedScene" uid="uid://kvj5smbs6t33" path="res://Personagem/Cabelos/GLB/Cabelo U 1.glb" id="1_ivwru"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fya17"]
+
+[node name="Cabelo U 1" instance=ExtResource("1_ivwru")]
+
+[node name="Cabelo U 1 completo" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fya17")

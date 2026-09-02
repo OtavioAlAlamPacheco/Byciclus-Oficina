@@ -7,7 +7,13 @@ extends Panel
 
 const BOTAO_VARIACAO_PECA = preload("uid://bp00ux5jxvbmn")
 const THEME_BOTAO_NAO_SELECIONADO = preload("uid://btfmvlloabut6")
-const THEME_BOTAO_SELECIONADO = preload("uid://cexiw2525vqhn")
+const THEME_BOTAO_SELECIONADO = preload("uid://drfnkf2566lvj")
+
+# theme botao nao selecionado               uid://xtha0ihy5e14      # AQUI
+# theme botao nao selecionado (oficina)     uid://btfmvlloabut6
+
+# theme botao selecionado              uid://drfnkf2566lvj
+# theme botao selecionado (oficina)    uid://cexiw2525vqhn
 
 var id_tipo_selecionado: String
 var id_variacao_selecionada: String

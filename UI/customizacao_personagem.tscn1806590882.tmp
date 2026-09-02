@@ -1,0 +1,208 @@
+[gd_scene load_steps=7 format=3 uid="uid://c116b1fhy0642"]
+
+[ext_resource type="Script" uid="uid://o7gec4y8erj8" path="res://Scripts/customizacao_personagem.gd" id="1_wmiw5"]
+[ext_resource type="PackedScene" uid="uid://tsij2ko56k7p" path="res://Interface/selecao_estilo.tscn" id="2_a5rok"]
+[ext_resource type="PackedScene" uid="uid://ug3w7agnuwx5" path="res://Interface/preview_personagem.tscn" id="3_88d03"]
+[ext_resource type="Texture2D" uid="uid://kt26q2c1tun1" path="res://Icons/check.png" id="4_kmcrs"]
+[ext_resource type="Texture2D" uid="uid://bc5w1qxi4vlv8" path="res://Icons/cross.png" id="5_a2w42"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmiw5"]
+bg_color = Color(0.6392157, 0.6862745, 1, 1)
+
+[node name="CustomizacaoPersonagem" type="Node3D" groups=["customizacao_personagem"]]
+script = ExtResource("1_wmiw5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7647059, 0.8156863, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 64
+
+[node name="Esquerda" type="PanelContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wmiw5")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda/MarginContainer"]
+layout_mode = 2
+
+[node name="SelecaoEstilos" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Escolha uma camisa" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda/MarginContainer/ScrollContainer/SelecaoEstilos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Escolha uma camisa:"
+
+[node name="SelecaoCamisa" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda/MarginContainer/ScrollContainer/SelecaoEstilos" instance=ExtResource("2_a5rok")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+tipo_selecionado = "Camisa"
+
+[node name="Escolha uma calça" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda/MarginContainer/ScrollContainer/SelecaoEstilos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Escolha uma calça:"
+
+[node name="SelecaoCalca" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda/MarginContainer/ScrollContainer/SelecaoEstilos" instance=ExtResource("2_a5rok")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+tipo_selecionado = "Calça"
+
+[node name="Escolha um calçado" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda/MarginContainer/ScrollContainer/SelecaoEstilos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Escolha um calçado: "
+
+[node name="SelecaoCalca2" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Esquerda/MarginContainer/ScrollContainer/SelecaoEstilos" instance=ExtResource("2_a5rok")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+tipo_selecionado = "Calçado"
+
+[node name="Direita" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="RectPersonagem" type="ColorRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+color = Color(0.5254902, 0.6627451, 1, 1)
+
+[node name="SubViewportContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/RectPersonagem" instance=ExtResource("3_88d03")]
+layout_mode = 0
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+color = Color(0.7466464, 0.69691855, 1, 1)
+
+[node name="BotoesAcceptExit" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -30.0
+offset_right = 62.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect/BotoesAcceptExit"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect/BotoesAcceptExit/ColorRect"]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.029307742, 0.029307742)
+texture = ExtResource("4_kmcrs")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect/BotoesAcceptExit/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.9962362, 0.9951241)
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 20
+
+[node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect/BotoesAcceptExit/ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Salvar"
+
+[node name="ColorRect2" type="ColorRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect/BotoesAcceptExit"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect/BotoesAcceptExit/ColorRect2"]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.029307742, 0.029307742)
+texture = ExtResource("5_a2w42")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect/BotoesAcceptExit/ColorRect2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.9962362, 0.9951241)
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 8
+
+[node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Direita/ColorRect/BotoesAcceptExit/ColorRect2/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Cancelar"

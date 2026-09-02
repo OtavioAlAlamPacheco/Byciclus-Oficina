@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cnevchmk1o1pq"]
 
-[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/theme_cinza_com_borda_preta.tres" id="1_a25xv"]
 [ext_resource type="Script" uid="uid://cjribsyasl85r" path="res://UI/Scenes/popup_selecao_material.gd" id="1_ypoge"]
 [ext_resource type="PackedScene" uid="uid://bc77phj03moko" path="res://UI/Scenes/slot_de_selecao_do_material.tscn" id="2_8nedq"]
+[ext_resource type="Theme" uid="uid://b50dv326tcdxx" path="res://UI/Themes/Panels/theme_painel_verde_claro_2.tres" id="3_slofq"]
 [ext_resource type="Texture2D" uid="uid://yp8j87kfycy7" path="res://UI/Icons/cross.png" id="4_slofq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tp88"]
@@ -31,7 +31,7 @@ cena_slot_material = ExtResource("2_8nedq")
 custom_minimum_size = Vector2(372, 454)
 offset_right = 40.0
 offset_bottom = 40.0
-theme = ExtResource("1_a25xv")
+theme = ExtResource("3_slofq")
 
 [node name="Margem" type="MarginContainer" parent="Panel" unique_id=1548302507]
 layout_mode = 1

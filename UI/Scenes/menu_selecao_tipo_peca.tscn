@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvqts6sg7yfqv"]
 
 [ext_resource type="PackedScene" uid="uid://ylu13k621j2c" path="res://UI/Scenes/botao_tipo_peca.tscn" id="1_2h50s"]
-[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/theme_cinza_com_borda_preta.tres" id="1_3jqky"]
+[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/Panels/theme_cinza_com_borda_preta.tres" id="1_3jqky"]
 [ext_resource type="Script" uid="uid://dx5a5rbopr8xj" path="res://UI/Scenes/menu_selecao_tipo_peca.gd" id="1_x5p1u"]
 [ext_resource type="Resource" uid="uid://s2yc3qesd6q8" path="res://Resources/Tipos de peça/quadro_novo.tres" id="5_5e76v"]
 [ext_resource type="Resource" uid="uid://mvsidns63sta" path="res://Resources/Tipos de peça/garfo_novo.tres" id="6_47nqw"]

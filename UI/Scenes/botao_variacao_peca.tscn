@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bp00ux5jxvbmn"]
 
-[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/Themes/theme_botao_nao_selecionado_oficina.tres" id="1_cvsk5"]
+[ext_resource type="Theme" uid="uid://xtha0ihy5e14" path="res://UI/Themes/Buttons/theme_botao_nao_selecionado.tres" id="1_h1tdd"]
 [ext_resource type="Script" uid="uid://7falhxosfypi" path="res://Scripts/botao_variacao_peca.gd" id="2_f38v6"]
 
 [node name="BotaoSelecaoVariacaoDePeca" type="Button" unique_id=657219175]
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme = ExtResource("1_cvsk5")
+theme = ExtResource("1_h1tdd")
 script = ExtResource("2_f38v6")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1739311453]

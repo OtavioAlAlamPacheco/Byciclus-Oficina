@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EstiloData" load_steps=3 format=3 uid="uid://box1pvn103453"]
+
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="1_43kq1"]
+[ext_resource type="Texture2D" uid="uid://b0am82qapnsos" path="res://Textures/Expressoes/Olhos/E Olhos 2 feliz.png" id="2_17ak7"]
+
+[resource]
+script = ExtResource("1_43kq1")
+id = "Olhos Feliz"
+textura = ExtResource("2_17ak7")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

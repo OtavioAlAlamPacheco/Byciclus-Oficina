@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EstiloData" load_steps=3 format=3 uid="uid://c50j27nkf4gib"]
+
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="1_y5186"]
+[ext_resource type="Texture2D" uid="uid://hwc1l1f3xurq" path="res://Textures/Expressoes/Boca/E Boca 9 gostoso.png" id="2_20qa3"]
+
+[resource]
+script = ExtResource("1_y5186")
+id = "Boca Gostoso"
+textura = ExtResource("2_20qa3")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

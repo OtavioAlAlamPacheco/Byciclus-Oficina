@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://ug3w7agnuwx5"]
+
+[sub_resource type="GDScript" id="GDScript_kvmre"]
+script/source = "
+extends SubViewportContainer
+
+@onready var personagem: Node3D = $\"SubViewport/PreviewPersonagem/Personagem\"
+
+func aplicar_roupa_no_shader(tipo: String, textura: CompressedTexture2D, mascara: CompressedTexture2D) -> void:
+	var malha_3d: MeshInstance3D = personagem.get_node(\"Armature/Skeleton3D/Personagem\")
+	
+	if malha_3d and malha_3d.get_surface_override_material(0):
+		var material = malha_3d.get_surface_override_material(0)
+		
+		if tipo == \"Camisa\":
+			material.set_shader_parameter(\"textura_camisa\", textura)
+			if mascara:
+				material.set_shader_parameter(\"mask_camisa\", mascara)
+		
+		elif tipo == \"Camiseta\":
+			material.set_shader_parameter(\"textura_camiseta\", textura)
+			if mascara:
+				material.set_shader_parameter(\"mask_camiseta\", mascara)
+		
+		elif tipo == \"Calça\":
+			material.set_shader_parameter(\"textura_calca\", textura)
+			if mascara:
+				material.set_shader_parameter(\"mask_calca\", mascara)
+		
+		elif tipo == \"Bermuda\":
+			material.set_shader_parameter(\"textura_bermuda\", textura)
+			if mascara:
+				material.set_shader_parameter(\"mask_bermuda\", mascara)
+		
+		elif tipo == \"Casaco\":
+			material.set_shader_parameter(\"textura_casaco\", textura)
+			if mascara:
+				material.set_shader_parameter(\"mask_casaco\", mascara)
+		
+		elif tipo == \"Calçado\":
+			material.set_shader_parameter(\"textura_calcado\", textura)
+			if mascara:
+				material.set_shader_parameter(\"mask_calcado\", mascara)
+"
+
+[node name="SubViewportContainer" type="SubViewportContainer"]
+offset_right = 512.0
+offset_bottom = 512.0
+scale = Vector2(0.77994275, 0.77994275)
+size_flags_horizontal = 8
+size_flags_vertical = 4
+script = SubResource("GDScript_kvmre")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="PreviewPersonagem" type="Node3D" parent="SubViewport"]
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewport/PreviewPersonagem"]
+transform = Transform3D(1, 0, 0, 0, 0.9366722, 0.3502074, 0, -0.3502074, 0.9366722, 0, 1.3, 1)
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="SubViewport/PreviewPersonagem"]
+transform = Transform3D(1, 0, 0, 0, 0.71057844, 0.703618, 0, -0.703618, 0.71057844, -2.3841858e-07, 1.1489697, 4.4248834)
+light_energy = 1.52

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EstiloData" load_steps=3 format=3 uid="uid://111k0k3v6jr7"]
+
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="1_6x62f"]
+[ext_resource type="Texture2D" uid="uid://bm281pyns1rfn" path="res://Textures/Expressoes/Boca/E Boca 5 neutro 2.png" id="2_xn1wf"]
+
+[resource]
+script = ExtResource("1_6x62f")
+id = "Boca Neutro 2"
+textura = ExtResource("2_xn1wf")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

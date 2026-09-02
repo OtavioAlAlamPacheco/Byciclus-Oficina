@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EstiloData" load_steps=4 format=3 uid="uid://dmyiib4xlhcs1"]
+
+[ext_resource type="PackedScene" uid="uid://b6lrv13c1jar6" path="res://Personagem/Roupas/TSCN/casaco.tscn" id="1_i678h"]
+[ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="1_yb2md"]
+[ext_resource type="Texture2D" uid="uid://cyk3jme0020j5" path="res://Textures/Roupas/Baking casaco de couro.png" id="3_2x2tw"]
+
+[resource]
+script = ExtResource("1_yb2md")
+id = "Casaco de Couro"
+textura = ExtResource("3_2x2tw")
+packed_scene = ExtResource("1_i678h")
+metadata/_custom_type_script = "uid://lrhdx27y7rnp"

@@ -1,8 +1,8 @@
 
 extends Button
 
-const THEME_BOTAO_NAO_SELECIONADO = preload("uid://btfmvlloabut6")
-const THEME_BOTAO_SELECIONADO = preload("uid://cexiw2525vqhn")
+const THEME_BOTAO_NAO_SELECIONADO = preload("uid://xtha0ihy5e14")
+const THEME_BOTAO_SELECIONADO = preload("uid://drfnkf2566lvj")
 
 @export_enum("Visualizar bicicleta", "Visualizar peça") var modo_do_botao: String
 

@@ -10,8 +10,8 @@ var malha_instanciada: Node3D
 @onready var viewport: SubViewport = $SubViewportContainer/SubViewport
 @onready var camera: Camera3D = $SubViewportContainer/SubViewport/Camera3D
 
-const THEME_BOTAO_NAO_SELECIONADO = preload("uid://btfmvlloabut6")
-const THEME_BOTAO_SELECIONADO = preload("uid://cexiw2525vqhn")
+const THEME_BOTAO_NAO_SELECIONADO = preload("uid://xtha0ihy5e14")
+const THEME_BOTAO_SELECIONADO = preload("uid://drfnkf2566lvj")
 
 func _ready() -> void:
 	theme = THEME_BOTAO_NAO_SELECIONADO

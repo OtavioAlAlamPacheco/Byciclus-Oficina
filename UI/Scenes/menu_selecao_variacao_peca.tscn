@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dstfkcxtp43od"]
 
-[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/theme_cinza_com_borda_preta.tres" id="1_j1mk0"]
+[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/Panels/theme_cinza_com_borda_preta.tres" id="1_j1mk0"]
 [ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://Scripts/painel_variacoes_dinamicas.gd" id="1_sienp"]
 [ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://UI/Scenes/botao_variacao_peca.tscn" id="2_ro3l0"]
 [ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://Resources/Variações de peça/quadro_em_s.tres" id="4_6lkyn"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwxjdire2rln0"]
 
-[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/Themes/theme_botao_nao_selecionado_oficina.tres" id="1_8aihf"]
+[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/Themes/Buttons/theme_botao_nao_selecionado_oficina.tres" id="1_8aihf"]
 [ext_resource type="Script" uid="uid://gi3myee7b51i" path="res://Scripts/botao_selecao_material.gd" id="2_vby3u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8aihf"]

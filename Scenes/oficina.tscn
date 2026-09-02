@@ -1,36 +1,41 @@
-[gd_scene format=3 uid="uid://baqkowpxm02qq"]
+[gd_scene format=3 uid="uid://c7karwshlck76"]
 
-[ext_resource type="Script" uid="uid://cumbmuctq17x6" path="res://Scripts/oficina.gd" id="1_klroo"]
-[ext_resource type="Script" uid="uid://bdeuj15iwvsbx" path="res://Scripts/pivo_camera.gd" id="2_nnosv"]
-[ext_resource type="Script" uid="uid://pp12ejelclfn" path="res://Scripts/visualizacao_bike.gd" id="3_2uqby"]
-[ext_resource type="Texture2D" uid="uid://c0ot01lofwxgl" path="res://Textures/UI/magnifying-glass.png" id="3_etqxk"]
-[ext_resource type="Texture2D" uid="uid://bnns3rdagccdr" path="res://Textures/UI/notes.png" id="4_jrffh"]
-[ext_resource type="Theme" uid="uid://qtijxohbyamw" path="res://UI/Themes/theme_painel_amarelo_claro.tres" id="5_5gw8o"]
-[ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://UI/Themes/theme_cinza_com_borda_preta.tres" id="5_be1o5"]
-[ext_resource type="PackedScene" uid="uid://dpvea336oo531" path="res://UI/Scenes/botao_modo_visualizacao.tscn" id="5_nnosv"]
-[ext_resource type="Script" uid="uid://b001oqhh85cln" path="res://Scripts/visualizacao_peca.gd" id="5_oyckb"]
-[ext_resource type="Script" uid="uid://dx5a5rbopr8xj" path="res://UI/Scenes/menu_selecao_tipo_peca.gd" id="6_i026v"]
-[ext_resource type="PackedScene" uid="uid://ylu13k621j2c" path="res://UI/Scenes/botao_tipo_peca.tscn" id="7_llgsr"]
-[ext_resource type="Resource" uid="uid://s2yc3qesd6q8" path="res://Resources/Tipos de peça/quadro_novo.tres" id="8_4x1o7"]
-[ext_resource type="Resource" uid="uid://mvsidns63sta" path="res://Resources/Tipos de peça/garfo_novo.tres" id="9_362vf"]
-[ext_resource type="Theme" uid="uid://cexiw2525vqhn" path="res://UI/Themes/theme_botao_selecionado_oficina.tres" id="9_q46q3"]
-[ext_resource type="Resource" uid="uid://c7iqj3w4ps6r8" path="res://Resources/Tipos de peça/guidao_novo.tres" id="10_0j4rm"]
-[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/Themes/theme_botao_nao_selecionado_oficina.tres" id="10_vh0a7"]
-[ext_resource type="Resource" uid="uid://ckah60fv0km1j" path="res://Resources/Tipos de peça/pedal_esquerdo_novo.tres" id="11_k8lp3"]
-[ext_resource type="Resource" uid="uid://ciw7ybt0cvt4g" path="res://Resources/Tipos de peça/roda_traseira_nova.tres" id="12_8mrif"]
-[ext_resource type="Resource" uid="uid://dm0on1ousno3d" path="res://Resources/Tipos de peça/cambio_novo.tres" id="13_gigl6"]
-[ext_resource type="PackedScene" uid="uid://cnevchmk1o1pq" path="res://UI/Scenes/popup_selecao_material.tscn" id="13_vh0a7"]
-[ext_resource type="Resource" uid="uid://5i45hi6sws6d" path="res://Resources/Tipos de peça/catraca_traseira_nova.tres" id="14_omw4e"]
-[ext_resource type="Script" uid="uid://bp50mw2d7wiu7" path="res://Scenes/botao_salvar_customizacao_bike.gd" id="14_ukybt"]
-[ext_resource type="Resource" uid="uid://dukl8y7o6vchy" path="res://Resources/Tipos de peça/alavanca_esquerda_nova.tres" id="15_13qur"]
-[ext_resource type="Texture2D" uid="uid://22rnsxb5ugc1" path="res://UI/Icons/check.png" id="15_retln"]
-[ext_resource type="Resource" uid="uid://b3ytn4axxhufe" path="res://Resources/Tipos de peça/selim_novo.tres" id="16_kdqe8"]
-[ext_resource type="Resource" uid="uid://cioyaq3f1qwh0" path="res://Resources/Tipos de peça/corrente_nova.tres" id="17_aahn7"]
-[ext_resource type="Resource" uid="uid://uctaaa1psnra" path="res://Resources/Tipos de peça/freio_traseiro_novo.tres" id="18_3mhoc"]
-[ext_resource type="Resource" uid="uid://b1g1t3tx2j0cg" path="res://Resources/Tipos de peça/pedivela_nova.tres" id="19_mqbx4"]
-[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://Scripts/painel_variacoes_dinamicas.gd" id="20_llgsr"]
-[ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://UI/Scenes/botao_variacao_peca.tscn" id="21_4x1o7"]
-[ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://Resources/Variações de peça/quadro_em_s.tres" id="22_362vf"]
+[ext_resource type="Script" uid="uid://cumbmuctq17x6" path="res://Scripts/oficina.gd" id="1_k8lp3"]
+[ext_resource type="Theme" uid="uid://fhk24lcnndyo" path="res://UI/Themes/Panels/theme_painel_marrom.tres" id="2_8mrif"]
+[ext_resource type="Theme" uid="uid://b50dv326tcdxx" path="res://UI/Themes/Panels/theme_painel_verde_claro_2.tres" id="3_gigl6"]
+[ext_resource type="Script" uid="uid://dx5a5rbopr8xj" path="res://UI/Scenes/menu_selecao_tipo_peca.gd" id="4_omw4e"]
+[ext_resource type="PackedScene" uid="uid://ylu13k621j2c" path="res://UI/Scenes/botao_tipo_peca.tscn" id="5_13qur"]
+[ext_resource type="Theme" uid="uid://drfnkf2566lvj" path="res://UI/Themes/Buttons/theme_botao_selecionado.tres" id="6_kdqe8"]
+[ext_resource type="Resource" uid="uid://s2yc3qesd6q8" path="res://Resources/Tipos de peça/quadro_novo.tres" id="7_aahn7"]
+[ext_resource type="Theme" uid="uid://xtha0ihy5e14" path="res://UI/Themes/Buttons/theme_botao_nao_selecionado.tres" id="8_3mhoc"]
+[ext_resource type="Resource" uid="uid://mvsidns63sta" path="res://Resources/Tipos de peça/garfo_novo.tres" id="9_mqbx4"]
+[ext_resource type="Theme" uid="uid://qtijxohbyamw" path="res://UI/Themes/Panels/theme_painel_amarelo_claro.tres" id="10_xvnwh"]
+[ext_resource type="Resource" uid="uid://c7iqj3w4ps6r8" path="res://Resources/Tipos de peça/guidao_novo.tres" id="11_328e6"]
+[ext_resource type="Resource" uid="uid://ckah60fv0km1j" path="res://Resources/Tipos de peça/pedal_esquerdo_novo.tres" id="12_xx2n4"]
+[ext_resource type="Theme" uid="uid://cexiw2525vqhn" path="res://UI/Themes/Buttons/theme_botao_selecionado_oficina.tres" id="13_hpuuf"]
+[ext_resource type="Resource" uid="uid://ciw7ybt0cvt4g" path="res://Resources/Tipos de peça/roda_traseira_nova.tres" id="14_x5pfh"]
+[ext_resource type="Theme" uid="uid://yjqkng1tbgin" path="res://UI/Themes/Panels/theme_painel_laranja_escuro.tres" id="15_0ifoj"]
+[ext_resource type="Resource" uid="uid://dm0on1ousno3d" path="res://Resources/Tipos de peça/cambio_novo.tres" id="16_jv40j"]
+[ext_resource type="Theme" uid="uid://c7gd2euo4hdjr" path="res://UI/Themes/Panels/theme_painel_marrom_avermelhado.tres" id="17_eiceq"]
+[ext_resource type="Resource" uid="uid://5i45hi6sws6d" path="res://Resources/Tipos de peça/catraca_traseira_nova.tres" id="18_5oor8"]
+[ext_resource type="Resource" uid="uid://dukl8y7o6vchy" path="res://Resources/Tipos de peça/alavanca_esquerda_nova.tres" id="19_gg78h"]
+[ext_resource type="Resource" uid="uid://b3ytn4axxhufe" path="res://Resources/Tipos de peça/selim_novo.tres" id="20_8yntp"]
+[ext_resource type="Resource" uid="uid://cioyaq3f1qwh0" path="res://Resources/Tipos de peça/corrente_nova.tres" id="21_drdq8"]
+[ext_resource type="Resource" uid="uid://uctaaa1psnra" path="res://Resources/Tipos de peça/freio_traseiro_novo.tres" id="22_teek3"]
+[ext_resource type="Resource" uid="uid://b1g1t3tx2j0cg" path="res://Resources/Tipos de peça/pedivela_nova.tres" id="23_givht"]
+[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://Scripts/painel_variacoes_dinamicas.gd" id="24_liqah"]
+[ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://UI/Scenes/botao_variacao_peca.tscn" id="25_7w30a"]
+[ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://Resources/Variações de peça/quadro_em_s.tres" id="26_ypui6"]
+[ext_resource type="PackedScene" uid="uid://dpvea336oo531" path="res://UI/Scenes/botao_modo_visualizacao.tscn" id="27_3nr4m"]
+[ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://UI/Themes/Buttons/theme_botao_nao_selecionado_oficina.tres" id="28_ofvva"]
+[ext_resource type="Script" uid="uid://pp12ejelclfn" path="res://Scripts/visualizacao_bike.gd" id="29_is4t7"]
+[ext_resource type="Script" uid="uid://b001oqhh85cln" path="res://Scripts/visualizacao_peca.gd" id="30_cjp7g"]
+[ext_resource type="Script" uid="uid://bdeuj15iwvsbx" path="res://Scripts/pivo_camera.gd" id="31_25oyk"]
+[ext_resource type="Texture2D" uid="uid://c0ot01lofwxgl" path="res://Textures/UI/magnifying-glass.png" id="32_s0kg5"]
+[ext_resource type="Texture2D" uid="uid://bnns3rdagccdr" path="res://Textures/UI/notes.png" id="33_5g8pw"]
+[ext_resource type="Texture2D" uid="uid://22rnsxb5ugc1" path="res://UI/Icons/check.png" id="34_pn4yn"]
+[ext_resource type="Script" uid="uid://bp50mw2d7wiu7" path="res://Scenes/botao_salvar_customizacao_bike.gd" id="35_nq2ww"]
+[ext_resource type="PackedScene" uid="uid://cnevchmk1o1pq" path="res://UI/Scenes/popup_selecao_material.tscn" id="36_xte0n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o31fq"]
 load_path = "res://.godot/imported/Quadro.png-ff6b4bb000d62aac455c322ef198b50e.ctex"
@@ -100,24 +105,16 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ranvg")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_rfmyc")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_8u06l")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yku7w"]
-draw_center = false
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0, 0, 0, 1)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2vsai"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_fwo5d"]
+[sub_resource type="Sky" id="Sky_pwiwn"]
 sky_material = SubResource("ProceduralSkyMaterial_2vsai")
 
 [sub_resource type="Environment" id="Environment_mxkdn"]
 background_mode = 2
-sky = SubResource("Sky_fwo5d")
+sky = SubResource("Sky_pwiwn")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -131,9 +128,18 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-script = ExtResource("1_klroo")
+script = ExtResource("1_k8lp3")
 
-[node name="MargemPrincipal" type="MarginContainer" parent="." unique_id=1055665180]
+[node name="Background" type="Panel" parent="." unique_id=2120127444]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8mrif")
+
+[node name="MargemPrincipal" type="MarginContainer" parent="Background" unique_id=1055665180]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,25 +151,25 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 40
 
-[node name="DivisaoPrincipal" type="VBoxContainer" parent="MargemPrincipal" unique_id=346794815]
+[node name="DivisaoPrincipal" type="VBoxContainer" parent="Background/MargemPrincipal" unique_id=346794815]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="AreaSuperior" type="HBoxContainer" parent="MargemPrincipal/DivisaoPrincipal" unique_id=856749768]
+[node name="AreaSuperior" type="HBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal" unique_id=856749768]
 custom_minimum_size = Vector2(500, 458)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 30
 
-[node name="MenuSelecaoTipoPeca" type="Panel" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=798792866]
+[node name="MenuSelecaoTipoPeca" type="Panel" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=798792866]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("5_be1o5")
-script = ExtResource("6_i026v")
+theme = ExtResource("3_gigl6")
+script = ExtResource("4_omw4e")
 
-[node name="MarginContainer" type="MarginContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca" unique_id=682090662]
+[node name="MarginContainer" type="MarginContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca" unique_id=682090662]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,215 +181,223 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 15
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer" unique_id=1173948448]
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer" unique_id=1173948448]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer" unique_id=720291616]
+[node name="MarginContainer" type="MarginContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer" unique_id=720291616]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_right = 14
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 18
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer" unique_id=1675111944]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer" unique_id=1675111944]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
 
-[node name="Quadro" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1637356588]
+[node name="Quadro" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1637356588]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Quadro2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=1620895171]
+[node name="Quadro2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=1620895171]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Quadro"
 
-[node name="Quadro" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=451800664 instance=ExtResource("7_llgsr")]
+[node name="Quadro" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Quadro" unique_id=451800664 instance=ExtResource("5_13qur")]
 custom_maximum_size = Vector2(176, 176)
 layout_mode = 2
+theme = ExtResource("6_kdqe8")
 icon = SubResource("CompressedTexture2D_o31fq")
 icon_alignment = 1
-resource_tipo = ExtResource("8_4x1o7")
+resource_tipo = ExtResource("7_aahn7")
 
-[node name="Garfo" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1810630001]
+[node name="Garfo" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1810630001]
 layout_mode = 2
 
-[node name="Garfo2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1899287797]
+[node name="Garfo2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1899287797]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Garfo"
 
-[node name="Garfo" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1067882421 instance=ExtResource("7_llgsr")]
+[node name="Garfo" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Garfo" unique_id=1067882421 instance=ExtResource("5_13qur")]
 layout_mode = 2
+theme = ExtResource("8_3mhoc")
 icon = SubResource("CompressedTexture2D_wrrc4")
 icon_alignment = 1
-resource_tipo = ExtResource("9_362vf")
+resource_tipo = ExtResource("9_mqbx4")
 
-[node name="Guidão" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=8070582]
+[node name="Guidão" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=8070582]
 layout_mode = 2
 
-[node name="Guidão2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=1011995977]
+[node name="Guidão2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=1011995977]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Guidão"
 
-[node name="Guidão" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=790913136 instance=ExtResource("7_llgsr")]
+[node name="Guidão" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Guidão" unique_id=790913136 instance=ExtResource("5_13qur")]
 layout_mode = 2
+theme = ExtResource("10_xvnwh")
 icon = SubResource("CompressedTexture2D_h2uy1")
 icon_alignment = 1
-resource_tipo = ExtResource("10_0j4rm")
+resource_tipo = ExtResource("11_328e6")
 
-[node name="Pedal" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2046690431]
+[node name="Pedal" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2046690431]
 layout_mode = 2
 
-[node name="Pedal2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=1073041156]
+[node name="Pedal2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=1073041156]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Pedal"
 
-[node name="Pedal" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=929645557 instance=ExtResource("7_llgsr")]
+[node name="Pedal" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedal" unique_id=929645557 instance=ExtResource("5_13qur")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_nnjhb")
 icon_alignment = 1
-resource_tipo = ExtResource("11_k8lp3")
+resource_tipo = ExtResource("12_xx2n4")
 
-[node name="Roda" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1553360370]
+[node name="Roda" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1553360370]
 layout_mode = 2
 
-[node name="Roda2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212998335]
+[node name="Roda2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212998335]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Roda"
 
-[node name="Roda" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212161176 instance=ExtResource("7_llgsr")]
+[node name="Roda" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Roda" unique_id=212161176 instance=ExtResource("5_13qur")]
 layout_mode = 2
+theme = ExtResource("13_hpuuf")
 icon = SubResource("CompressedTexture2D_3u33l")
 icon_alignment = 1
-resource_tipo = ExtResource("12_8mrif")
+resource_tipo = ExtResource("14_x5pfh")
 
-[node name="Câmbio" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1106046786]
+[node name="Câmbio" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1106046786]
 layout_mode = 2
 
-[node name="Câmbio2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=1010545121]
+[node name="Câmbio2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=1010545121]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Câmbio"
 
-[node name="Câmbio" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=628305299 instance=ExtResource("7_llgsr")]
+[node name="Câmbio" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Câmbio" unique_id=628305299 instance=ExtResource("5_13qur")]
 layout_mode = 2
+theme = ExtResource("15_0ifoj")
 icon = SubResource("CompressedTexture2D_1h2ha")
 icon_alignment = 1
-resource_tipo = ExtResource("13_gigl6")
+resource_tipo = ExtResource("16_jv40j")
 
-[node name="Catraca" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1280315097]
+[node name="Catraca" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1280315097]
 layout_mode = 2
 
-[node name="Catraca2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=1178198159]
+[node name="Catraca2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=1178198159]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Catraca"
 
-[node name="Catraca" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=645934491 instance=ExtResource("7_llgsr")]
+[node name="Catraca" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Catraca" unique_id=645934491 instance=ExtResource("5_13qur")]
 layout_mode = 2
+theme = ExtResource("17_eiceq")
 icon = SubResource("CompressedTexture2D_002rk")
 icon_alignment = 1
-resource_tipo = ExtResource("14_omw4e")
+resource_tipo = ExtResource("18_5oor8")
 
-[node name="Alavanca" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=859758012]
+[node name="Alavanca" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=859758012]
 layout_mode = 2
 
-[node name="Alavanca2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1685294366]
+[node name="Alavanca2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1685294366]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Alavanca"
 
-[node name="Alavanca" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1428046115 instance=ExtResource("7_llgsr")]
+[node name="Alavanca" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Alavanca" unique_id=1428046115 instance=ExtResource("5_13qur")]
 layout_mode = 2
+theme = ExtResource("2_8mrif")
 icon = SubResource("CompressedTexture2D_aep7r")
 icon_alignment = 1
-resource_tipo = ExtResource("15_13qur")
+resource_tipo = ExtResource("19_gg78h")
 
-[node name="Selim" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1141458803]
+[node name="Selim" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1141458803]
 layout_mode = 2
 
-[node name="Selim2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1326810294]
+[node name="Selim2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1326810294]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Selim"
 
-[node name="Selim" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1343198177 instance=ExtResource("7_llgsr")]
+[node name="Selim" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Selim" unique_id=1343198177 instance=ExtResource("5_13qur")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_xhwm0")
 icon_alignment = 1
-resource_tipo = ExtResource("16_kdqe8")
+resource_tipo = ExtResource("20_8yntp")
 
-[node name="Corrente" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=283767529]
+[node name="Corrente" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=283767529]
 layout_mode = 2
 
-[node name="Corrente2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=358638198]
+[node name="Corrente2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=358638198]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Corrente"
 
-[node name="Corrente" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=1625112760 instance=ExtResource("7_llgsr")]
+[node name="Corrente" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Corrente" unique_id=1625112760 instance=ExtResource("5_13qur")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_aeeor")
 icon_alignment = 1
-resource_tipo = ExtResource("17_aahn7")
+resource_tipo = ExtResource("21_drdq8")
 
-[node name="Freio" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=664904858]
+[node name="Freio" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=664904858]
 layout_mode = 2
 
-[node name="Freio2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1623279412]
+[node name="Freio2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1623279412]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Freio"
 
-[node name="Freio" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1880325115 instance=ExtResource("7_llgsr")]
+[node name="Freio" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Freio" unique_id=1880325115 instance=ExtResource("5_13qur")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_mc6ok")
 icon_alignment = 1
-resource_tipo = ExtResource("18_3mhoc")
+resource_tipo = ExtResource("22_teek3")
 
-[node name="Pedivela" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=103455557]
+[node name="Pedivela" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=103455557]
 layout_mode = 2
 
-[node name="Pedivela2" type="Label" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=214751637]
+[node name="Pedivela2" type="Label" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=214751637]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Pedivela"
 
-[node name="Pedivela" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=1496953184 instance=ExtResource("7_llgsr")]
+[node name="Pedivela" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoTipoPeca/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Pedivela" unique_id=1496953184 instance=ExtResource("5_13qur")]
 layout_mode = 2
 icon = SubResource("CompressedTexture2D_vdec8")
 icon_alignment = 1
-resource_tipo = ExtResource("19_mqbx4")
+resource_tipo = ExtResource("23_givht")
 
-[node name="MenuSelecaoVariacaoPeca" type="Panel" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1900549066]
+[node name="MenuSelecaoVariacaoPeca" type="Panel" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1900549066]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(370, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
-theme = ExtResource("5_be1o5")
-script = ExtResource("20_llgsr")
+theme = ExtResource("3_gigl6")
+script = ExtResource("24_liqah")
 
-[node name="Margem" type="MarginContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca" unique_id=1390293182]
+[node name="Margem" type="MarginContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca" unique_id=1390293182]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -395,57 +409,93 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem" unique_id=1159255786]
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem" unique_id=1159255786]
 layout_mode = 2
 theme = SubResource("Theme_j43p3")
 
-[node name="GridVariacoes" type="GridContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer" unique_id=237405316]
+[node name="GridVariacoes" type="GridContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer" unique_id=237405316]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
-columns = 2
+columns = 3
 
-[node name="BotaoSelecaoVariacaoDePeca" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("21_4x1o7")]
-custom_minimum_size = Vector2(140, 300)
+[node name="BotaoSelecaoVariacaoDePeca" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("25_7w30a")]
+custom_minimum_size = Vector2(140, 195)
 layout_mode = 2
-resource_variacao = ExtResource("22_362vf")
+theme = ExtResource("6_kdqe8")
+resource_variacao = ExtResource("26_ypui6")
 
-[node name="BotaoSelecaoVariacaoDePeca2" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("21_4x1o7")]
-custom_minimum_size = Vector2(140, 300)
+[node name="BotaoSelecaoVariacaoDePeca2" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("25_7w30a")]
+custom_minimum_size = Vector2(140, 195)
 layout_mode = 2
-resource_variacao = ExtResource("22_362vf")
+resource_variacao = ExtResource("26_ypui6")
 
-[node name="Visualizacao3D" type="VBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1583975849]
+[node name="BotaoSelecaoVariacaoDePeca5" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1394975923 instance=ExtResource("25_7w30a")]
+custom_minimum_size = Vector2(140, 194)
+layout_mode = 2
+theme = ExtResource("10_xvnwh")
+resource_variacao = ExtResource("26_ypui6")
+
+[node name="BotaoSelecaoVariacaoDePeca3" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=657219175 instance=ExtResource("25_7w30a")]
+custom_minimum_size = Vector2(140, 195)
+layout_mode = 2
+resource_variacao = ExtResource("26_ypui6")
+
+[node name="BotaoSelecaoVariacaoDePeca4" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=444392045 instance=ExtResource("25_7w30a")]
+custom_minimum_size = Vector2(140, 195)
+layout_mode = 2
+theme = ExtResource("13_hpuuf")
+resource_variacao = ExtResource("26_ypui6")
+
+[node name="BotaoSelecaoVariacaoDePeca7" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=809911417 instance=ExtResource("25_7w30a")]
+custom_minimum_size = Vector2(140, 194)
+layout_mode = 2
+theme = ExtResource("15_0ifoj")
+resource_variacao = ExtResource("26_ypui6")
+
+[node name="BotaoSelecaoVariacaoDePeca8" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=208746234 instance=ExtResource("25_7w30a")]
+custom_minimum_size = Vector2(140, 195)
+layout_mode = 2
+theme = ExtResource("17_eiceq")
+resource_variacao = ExtResource("26_ypui6")
+
+[node name="BotaoSelecaoVariacaoDePeca6" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1196427162 instance=ExtResource("25_7w30a")]
+custom_minimum_size = Vector2(140, 195)
+layout_mode = 2
+theme = ExtResource("2_8mrif")
+resource_variacao = ExtResource("26_ypui6")
+
+[node name="Visualizacao3D" type="VBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior" unique_id=1583975849]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
 theme_override_constants/separation = 15
 
-[node name="BotoesAlterarTipoVisualizacao3D" type="HBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=482891790]
+[node name="BotoesAlterarTipoVisualizacao3D" type="HBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=482891790]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 0
 theme_override_constants/separation = 15
 
-[node name="ButtonVisualizarBike" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=1645765011 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("5_nnosv")]
+[node name="ButtonVisualizarBike" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=1645765011 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("27_3nr4m")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 60)
 layout_mode = 2
 size_flags_horizontal = 8
-theme = ExtResource("9_q46q3")
+theme = ExtResource("13_hpuuf")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 pivo_camera = NodePath("../../PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera")
 menu_variacao = NodePath("../../../MenuSelecaoVariacaoPeca")
 
-[node name="ButtonVisualizarPeca" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=975566529 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("5_nnosv")]
+[node name="ButtonVisualizarPeca" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=975566529 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("27_3nr4m")]
 custom_minimum_size = Vector2(260, 60)
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("10_vh0a7")
+theme = ExtResource("28_ofvva")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Visualizar peça
@@ -454,14 +504,14 @@ modo_do_botao = "Visualizar peça"
 pivo_camera = NodePath("../../PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera")
 menu_variacao = NodePath("../../../MenuSelecaoVariacaoPeca")
 
-[node name="PainelVisualizacao3D" type="Panel" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=553341729 groups=["area_do_popup", "painel_visualizacao_3d"]]
+[node name="PainelVisualizacao3D" type="Panel" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=553341729 groups=["area_do_popup", "painel_visualizacao_3d"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_yku7w")
+theme = ExtResource("17_eiceq")
 
-[node name="MarginContainer" type="MarginContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D" unique_id=1655256539]
+[node name="MarginContainer" type="MarginContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D" unique_id=1655256539]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -473,91 +523,92 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer" unique_id=1968978012]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer" unique_id=1968978012]
 layout_mode = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer" unique_id=686197672]
+[node name="SubViewport" type="SubViewport" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer" unique_id=686197672]
+transparent_bg = true
 handle_input_locally = false
 size = Vector2i(858, 819)
 render_target_update_mode = 4
 
-[node name="Oficina" type="Node3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport" unique_id=1388177298]
+[node name="Oficina" type="Node3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport" unique_id=1388177298]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1882850000]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1882850000]
 environment = SubResource("Environment_mxkdn")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1683239417]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1683239417]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Bike" type="Node3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1697718453 groups=["bike"]]
+[node name="Bike" type="Node3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=1697718453 groups=["bike"]]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
-script = ExtResource("3_2uqby")
+script = ExtResource("29_is4t7")
 
-[node name="PivoPeca" type="Node3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=789801644 groups=["bike"]]
+[node name="PivoPeca" type="Node3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=789801644 groups=["bike"]]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.0377197)
-script = ExtResource("5_oyckb")
+script = ExtResource("30_cjp7g")
 
-[node name="PivoCamera" type="Node3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=68613680]
-script = ExtResource("2_nnosv")
+[node name="PivoCamera" type="Node3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=68613680]
+script = ExtResource("31_25oyk")
 
-[node name="Camera3D" type="Camera3D" parent="MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera" unique_id=254777566]
+[node name="Camera3D" type="Camera3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera" unique_id=254777566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 
-[node name="AreaInferior" type="HBoxContainer" parent="MargemPrincipal/DivisaoPrincipal" unique_id=1080940939]
+[node name="AreaInferior" type="HBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal" unique_id=1080940939]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 80
 
-[node name="Control" type="Control" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=557879658]
+[node name="Control" type="Control" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=557879658]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.05
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=1882818258]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=1882818258]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 96
 
-[node name="BotaoModoLupa" type="Button" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1727145433]
+[node name="BotaoModoLupa" type="Button" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1727145433]
 custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_horizontal = 10
 offset_transform_enabled = true
-theme = ExtResource("5_5gw8o")
-icon = ExtResource("3_etqxk")
+theme = ExtResource("10_xvnwh")
+icon = ExtResource("32_s0kg5")
 expand_icon = true
 
-[node name="BotaoModoLupa2" type="Button" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1358159512]
+[node name="BotaoModoLupa2" type="Button" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1358159512]
 custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
 size_flags_horizontal = 2
-theme = ExtResource("5_5gw8o")
-icon = ExtResource("4_jrffh")
+theme = ExtResource("10_xvnwh")
+icon = ExtResource("33_5g8pw")
 expand_icon = true
 
-[node name="BotaoSalvar" type="Button" parent="MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=94939531]
+[node name="BotaoSalvar" type="Button" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=94939531]
 custom_minimum_size = Vector2(160, 60)
 layout_mode = 2
 size_flags_horizontal = 10
 offset_transform_enabled = true
-theme = ExtResource("5_5gw8o")
+theme = ExtResource("10_xvnwh")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Salvar"
-icon = ExtResource("15_retln")
+icon = ExtResource("34_pn4yn")
 alignment = 0
 expand_icon = true
-script = ExtResource("14_ukybt")
+script = ExtResource("35_nq2ww")
 
-[node name="PopupMateriais" parent="." unique_id=1184658807 instance=ExtResource("13_vh0a7")]
+[node name="PopupMateriais" parent="." unique_id=1184658807 instance=ExtResource("36_xte0n")]
 unique_name_in_owner = true
 visible = false
 offset = Vector2(-200, 20)
 transform = Transform2D(1, 0, 0, 1, -200, 20)
 
-[connection signal="pressed" from="MargemPrincipal/DivisaoPrincipal/AreaInferior/BotaoSalvar" to="MargemPrincipal/DivisaoPrincipal/AreaInferior/BotaoSalvar" method="_on_confirm_pressed"]
+[connection signal="pressed" from="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior/BotaoSalvar" to="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior/BotaoSalvar" method="_on_confirm_pressed"]
