@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsam5jj4wscwc"]
-
-[ext_resource type="PackedScene" uid="uid://dreptme8x7sjg" path="res://GLB/Partes bike/Corrente/corrente.glb" id="1_tii0d"]
-
-[node name="corrente" instance=ExtResource("1_tii0d")]

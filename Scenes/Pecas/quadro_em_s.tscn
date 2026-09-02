@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ck0qmo60g76t"]
-
-[ext_resource type="PackedScene" uid="uid://bck8le2aargi7" path="res://GLB/Partes bike/Quadro/quadro_em_s.glb" id="1_jr1id"]
-
-[node name="quadro_em_s" instance=ExtResource("1_jr1id")]

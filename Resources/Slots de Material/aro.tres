@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://c845phj7k60r5"]
 
-[ext_resource type="Material" uid="uid://cmaiungqq67mn" path="res://Materials/bambu_estrutural.tres" id="1_ur7jw"]
-[ext_resource type="Material" uid="uid://l2f7bbo2i80q" path="res://Materials/aluninio_reciclado.tres" id="1_xk7at"]
-[ext_resource type="Material" uid="uid://c4lgm271n1eo3" path="res://Materials/carbono_forjado_reciclado.tres" id="3_smvqj"]
-[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://Materials/plastico_reciclado_bege.tres" id="4_4vykq"]
-[ext_resource type="Material" uid="uid://mt5alj3q1p28" path="res://Materials/madeira_de_demolicao_laminada.tres" id="4_smvqj"]
-[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://Materials/plastico_reciclado_preto.tres" id="5_ds4qb"]
+[ext_resource type="Material" uid="uid://cmaiungqq67mn" path="res://assets/materials/bambu_estrutural.tres" id="1_ur7jw"]
+[ext_resource type="Material" uid="uid://l2f7bbo2i80q" path="res://assets/materials/aluninio_reciclado.tres" id="1_xk7at"]
+[ext_resource type="Material" uid="uid://c4lgm271n1eo3" path="res://assets/materials/carbono_forjado_reciclado.tres" id="3_smvqj"]
+[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://assets/materials/plastico_reciclado_bege.tres" id="4_4vykq"]
+[ext_resource type="Material" uid="uid://mt5alj3q1p28" path="res://assets/materials/madeira_de_demolicao_laminada.tres" id="4_smvqj"]
+[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://assets/materials/plastico_reciclado_preto.tres" id="5_ds4qb"]
 [ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="6_nheqy"]
 
 [resource]

@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="EstiloData" load_steps=4 format=3 uid="uid://pk1uoskv0kxb"]
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://pk1uoskv0kxb"]
 
-[ext_resource type="PackedScene" uid="uid://dqeyq6qoo43hu" path="res://Personagem/Roupas/TSCN/camisa.tscn" id="1_hxkvs"]
+[ext_resource type="PackedScene" uid="uid://dqeyq6qoo43hu" path="res://entities/Roupas/TSCN/camisa.tscn" id="1_hxkvs"]
 [ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="2_ndksx"]
 [ext_resource type="Texture2D" uid="uid://bslfuymibd6l8" path="res://Textures/Roupas/Baking pijama de bolinha.png" id="3_ndksx"]
 

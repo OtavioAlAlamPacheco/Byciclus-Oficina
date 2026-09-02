@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbetkburcfve"]
+
+[ext_resource type="PackedScene" uid="uid://cbqxuxincr8id" path="res://entities/Cabelos/GLB/Cabelo U 2.glb" id="1_y8loc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1h47t"]
+
+[node name="Cabelo U 2 liso" instance=ExtResource("1_y8loc")]
+
+[node name="Cabelo 1_063" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1h47t")

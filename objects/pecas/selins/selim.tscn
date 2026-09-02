@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cld5sxijgs2nx"]
+
+[ext_resource type="PackedScene" uid="uid://dentvbfwo4l3q" path="res://objects/pecas/selins/selim.glb" id="1_jlgbh"]
+
+[node name="selim" instance=ExtResource("1_jlgbh")]

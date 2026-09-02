@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://b2wnxsmdowjfq"]
 
 [ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_qcips"]
-[ext_resource type="PackedScene" uid="uid://c812niwcbrlf6" path="res://Scenes/Pecas/quadro_padrao.tscn" id="1_xvsd1"]
+[ext_resource type="PackedScene" uid="uid://c812niwcbrlf6" path="res://objects/pecas/quadros/quadro_padrao.tscn" id="1_xvsd1"]
 [ext_resource type="Resource" uid="uid://s2yc3qesd6q8" path="res://Resources/Tipos de peça/quadro_novo.tres" id="3_s1m3k"]
 
 [resource]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btacpf8i7okuq"]
 
 [ext_resource type="Script" uid="uid://d2j50cic6xcwn" path="res://UI/Scenes e scripts/rotacao_lateral_camera.gd" id="1_avbpv"]
-[ext_resource type="PackedScene" uid="uid://lwphiliitg52" path="res://Personagem/personagem.tscn" id="3_u48pg"]
+[ext_resource type="PackedScene" uid="uid://lwphiliitg52" path="res://entities/personagem.tscn" id="3_u48pg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_avbpv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

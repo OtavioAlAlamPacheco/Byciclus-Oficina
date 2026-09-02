@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://b3jhtio7wvtt3"]
 
 [ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_o4ibb"]
-[ext_resource type="PackedScene" uid="uid://f0mnf2paarkn" path="res://Scenes/Pecas/Roda/roda_traseira.tscn" id="1_xoed0"]
+[ext_resource type="PackedScene" uid="uid://f0mnf2paarkn" path="res://objects/pecas/rodas/roda_traseira.tscn" id="1_xoed0"]
 [ext_resource type="Resource" uid="uid://ciw7ybt0cvt4g" path="res://Resources/Tipos de peça/roda_traseira_nova.tres" id="3_lpojx"]
 
 [resource]

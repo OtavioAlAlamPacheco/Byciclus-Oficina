@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8kvjsc35egwb"]
-
-[ext_resource type="PackedScene" uid="uid://cxit8t5kf77j0" path="res://GLB/Partes bike/Quadro/quadro_deslocado.glb" id="1_6gw1c"]
-
-[node name="quadro_deslocado" instance=ExtResource("1_6gw1c")]

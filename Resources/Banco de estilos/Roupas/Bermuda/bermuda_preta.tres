@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="EstiloData" load_steps=4 format=3 uid="uid://cdslq1klfc8ff"]
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://cdslq1klfc8ff"]
 
-[ext_resource type="PackedScene" uid="uid://qy7iettkyynp" path="res://Personagem/Roupas/TSCN/bermuda.tscn" id="1_2x3w6"]
+[ext_resource type="PackedScene" uid="uid://qy7iettkyynp" path="res://entities/Roupas/TSCN/bermuda.tscn" id="1_2x3w6"]
 [ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="2_hb1sv"]
 [ext_resource type="Texture2D" uid="uid://br3mkq8co2pvt" path="res://Textures/Roupas/Baking camisa costurada e calca preta.png" id="3_2y622"]
 

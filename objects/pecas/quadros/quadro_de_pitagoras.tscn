@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cwq8cr8bsx6np"]
+
+[ext_resource type="PackedScene" uid="uid://biwup2qjra3o0" path="res://objects/pecas/quadros/quadro_de_pitagoras.glb" id="1_isncd"]
+
+[node name="quadro_de_pitagoras" instance=ExtResource("1_isncd")]

@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="EstiloData" load_steps=3 format=3 uid="uid://b1gucastds7lf"]
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://b1gucastds7lf"]
 
 [ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="1_pugnm"]
-[ext_resource type="PackedScene" uid="uid://b23sox8ipfti2" path="res://Personagem/Cabelos/TSCN/cabelo_u2_comprido1.tscn" id="1_qtp3u"]
+[ext_resource type="PackedScene" uid="uid://b23sox8ipfti2" path="res://entities/Cabelos/TSCN/cabelo_u2_comprido1.tscn" id="1_qtp3u"]
 
 [resource]
 script = ExtResource("1_pugnm")

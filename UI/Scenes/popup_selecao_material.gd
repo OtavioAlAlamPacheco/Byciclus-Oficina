@@ -1,4 +1,7 @@
+
 extends CanvasLayer
+
+signal popup_fechado	# AQUI
 
 @export var cena_slot_material: PackedScene
 
@@ -37,6 +40,7 @@ func fechar_popup() -> void:
 		if oficina and oficina.has_method("reverter_variacao"):
 			oficina.reverter_variacao()
 			
+	popup_fechado.emit()	# AQUI
 	hide()
 
 

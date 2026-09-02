@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cbxjldg4eibxm"]
+
+[ext_resource type="PackedScene" uid="uid://b1m3i2w8o8gry" path="res://objects/pecas/quadros/quadro_circular.glb" id="1_seik1"]
+
+[node name="quadro_circular" instance=ExtResource("1_seik1")]

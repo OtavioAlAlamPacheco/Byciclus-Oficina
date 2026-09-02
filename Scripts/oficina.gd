@@ -21,12 +21,16 @@ func _ready():
 		self.tipo_foi_selecionado.connect(menu_dinamico._on_tipo_foi_selecionado)
 		self.tipo_foi_selecionado.connect(botao_modo_visualizacao._on_tipo_foi_selecionado)
 		self.variacao_foi_selecionada.connect(menu_dinamico._on_variacao_foi_selecionada)
+		
+		if is_instance_valid(popup_materiais):
+			popup_materiais.popup_fechado.connect(menu_dinamico._on_popup_fechado)
 	
 	if is_instance_valid(bike):
 		self.variacao_foi_selecionada.connect(bike._on_oficina_variacao_foi_selecionada)
 		
 	if is_instance_valid(pivo_peca):
 		self.variacao_foi_selecionada.connect(pivo_peca._on_oficina_variacao_foi_selecionada)
+		pivo_peca.hide()
 	
 	bike.seleciona_todas_pecas()
 

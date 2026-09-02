@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="EstiloData" load_steps=4 format=3 uid="uid://dw7nyymejgrnd"]
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://dw7nyymejgrnd"]
 
-[ext_resource type="PackedScene" uid="uid://w5txvutduayi" path="res://Personagem/Roupas/TSCN/calca.tscn" id="1_0cce7"]
+[ext_resource type="PackedScene" uid="uid://w5txvutduayi" path="res://entities/Roupas/TSCN/calca.tscn" id="1_0cce7"]
 [ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="1_j268h"]
 [ext_resource type="Texture2D" uid="uid://nfnh4nrant7q" path="res://Textures/Roupas/Baking fumaca.png" id="2_svpok"]
 

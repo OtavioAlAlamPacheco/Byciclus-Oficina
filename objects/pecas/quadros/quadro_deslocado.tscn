@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c8kvjsc35egwb"]
+
+[ext_resource type="PackedScene" uid="uid://cxit8t5kf77j0" path="res://objects/pecas/quadros/quadro_deslocado.glb" id="1_6gw1c"]
+
+[node name="quadro_deslocado" instance=ExtResource("1_6gw1c")]

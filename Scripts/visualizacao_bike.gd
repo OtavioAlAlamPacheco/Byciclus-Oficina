@@ -37,7 +37,6 @@ func seleciona_pecas(ids: Array):
 
 
 func seleciona_peca(id: String):
-	var peca
 	var resource_variacao = CatalogoPecas.resource_das_variacoes[id]
 	var id_tipo = ""
 	if resource_variacao.tipo:
@@ -48,9 +47,9 @@ func seleciona_peca(id: String):
 			peca_data.instancia.reparent(self)
 			peca_data.instancia.transform = Transform3D.IDENTITY
 	
-	var i = 0
-	while i < pecas_instanciadas.size():
-		peca = pecas_instanciadas[i]
+	# AQUI: Loop de trás para frente garante a remoção segura sem bagunçar os índices
+	for i in range(pecas_instanciadas.size() - 1, -1, -1):
+		var peca = pecas_instanciadas[i]
 		
 		if peca.resource_tipo and peca.resource_tipo.id == id_tipo:
 			print("Substituindo peça do tipo: ", id_tipo)
@@ -59,8 +58,6 @@ func seleciona_peca(id: String):
 				peca.instancia.queue_free()
 			
 			pecas_instanciadas.remove_at(i)
-		else:
-			i += 1
 			
 	if id_tipo == "Roda":
 		_instanciar_nova_peca(resource_variacao, "roda_frontal")

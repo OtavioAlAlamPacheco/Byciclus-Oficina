@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cjhmvxr73v5ll" path="res://Scripts/botao_selecao_estilo.gd" id="1_nbi3n"]
 [ext_resource type="Theme" uid="uid://c7gd2euo4hdjr" path="res://UI/Themes/Panels/theme_painel_marrom_avermelhado.tres" id="1_pib3i"]
 [ext_resource type="PackedScene" uid="uid://bo6svstcpw2d1" path="res://UI/Scenes e scripts/preview_estilo.tscn" id="2_nbi3n"]
-[ext_resource type="Texture2D" uid="uid://bc5w1qxi4vlv8" path="res://Icons/cross.png" id="3_ra8r6"]
+[ext_resource type="Texture2D" uid="uid://bc5w1qxi4vlv8" path="res://assets/icons/cross.png" id="3_ra8r6"]
 
 [node name="Button" type="Button" unique_id=935626459]
 custom_minimum_size = Vector2(120, 120)

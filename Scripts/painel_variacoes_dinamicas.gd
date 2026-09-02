@@ -48,9 +48,13 @@ func _on_tipo_foi_selecionado(id: String) -> void:
 
 
 func _on_variacao_foi_selecionada(_id: String):
-	if Engine.is_editor_hint():
-		return
-	
+	call_deferred("_reconstruir_paineis")
+
+
+func _on_popup_fechado() -> void:
+	call_deferred("_reconstruir_paineis")
+
+func _reconstruir_paineis() -> void:
 	limpar_paineis()
 	atualizar_paineis()
 

@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="EstiloData" load_steps=4 format=3 uid="uid://cun0ldc75rylb"]
+[gd_resource type="Resource" script_class="EstiloData" format=3 uid="uid://cun0ldc75rylb"]
 
-[ext_resource type="PackedScene" uid="uid://qy7iettkyynp" path="res://Personagem/Roupas/TSCN/bermuda.tscn" id="1_2r743"]
+[ext_resource type="PackedScene" uid="uid://qy7iettkyynp" path="res://entities/Roupas/TSCN/bermuda.tscn" id="1_2r743"]
 [ext_resource type="Script" uid="uid://lrhdx27y7rnp" path="res://Scripts/estilo.data.gd" id="2_ni23o"]
 [ext_resource type="Texture2D" uid="uid://nfnh4nrant7q" path="res://Textures/Roupas/Baking fumaca.png" id="3_bagwt"]
 

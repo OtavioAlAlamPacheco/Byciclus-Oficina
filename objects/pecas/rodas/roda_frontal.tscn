@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bhqbgdks2vyvo"]
+
+[ext_resource type="PackedScene" uid="uid://cr1mvotb2m6tn" path="res://objects/pecas/rodas/roda.glb" id="1_ksf0c"]
+
+[node name="roda" instance=ExtResource("1_ksf0c")]
+
+[node name="Roda" parent="." index="0"]
+metadata/extras = {
+"socket_da_origem": "roda_frontal"
+}

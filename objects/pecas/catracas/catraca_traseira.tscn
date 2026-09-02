@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://gidd5345gq68"]
+
+[ext_resource type="PackedScene" uid="uid://deyroahw80285" path="res://objects/pecas/catracas/catraca_traseira.glb" id="1_84bmv"]
+
+[node name="catraca_traseira" instance=ExtResource("1_84bmv")]

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SlotMaterialData" format=3 uid="uid://ccgnertbcpot4"]
 
-[ext_resource type="Material" uid="uid://l2f7bbo2i80q" path="res://Materials/aluninio_reciclado.tres" id="1_6f0uv"]
-[ext_resource type="Material" uid="uid://dbb2s100lr7oq" path="res://Materials/arboform.tres" id="2_k4c0y"]
-[ext_resource type="Material" uid="uid://c4lgm271n1eo3" path="res://Materials/carbono_forjado_reciclado.tres" id="3_uriyv"]
-[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://Materials/plastico_reciclado_bege.tres" id="4_f30ih"]
-[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://Materials/plastico_reciclado_preto.tres" id="5_htq1g"]
+[ext_resource type="Material" uid="uid://l2f7bbo2i80q" path="res://assets/materials/aluninio_reciclado.tres" id="1_6f0uv"]
+[ext_resource type="Material" uid="uid://dbb2s100lr7oq" path="res://assets/materials/arboform.tres" id="2_k4c0y"]
+[ext_resource type="Material" uid="uid://c4lgm271n1eo3" path="res://assets/materials/carbono_forjado_reciclado.tres" id="3_uriyv"]
+[ext_resource type="Material" uid="uid://do8r24dctwc85" path="res://assets/materials/plastico_reciclado_bege.tres" id="4_f30ih"]
+[ext_resource type="Material" uid="uid://bjroa8tunf2xm" path="res://assets/materials/plastico_reciclado_preto.tres" id="5_htq1g"]
 [ext_resource type="Script" uid="uid://40uqmfcprus7" path="res://Scripts/Data/slot_material_data.gd" id="7_thp0b"]
 
 [resource]

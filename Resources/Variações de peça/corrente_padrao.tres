@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VariacaoPecaData" format=3 uid="uid://bb3gmvostkdu3"]
 
-[ext_resource type="PackedScene" uid="uid://bsam5jj4wscwc" path="res://Scenes/Pecas/Corrente/corrente.tscn" id="1_2j1lk"]
+[ext_resource type="PackedScene" uid="uid://bsam5jj4wscwc" path="res://objects/pecas/correntes/corrente.tscn" id="1_2j1lk"]
 [ext_resource type="Script" uid="uid://dvalrr1ryd4hs" path="res://Scripts/Data/variacao_peca_data.gd" id="1_dot6a"]
 [ext_resource type="Resource" uid="uid://cioyaq3f1qwh0" path="res://Resources/Tipos de peça/corrente_nova.tres" id="3_ivvd2"]
 

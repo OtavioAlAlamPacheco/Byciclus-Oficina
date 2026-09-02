@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhh3pk0b3f3pb"]
-
-[ext_resource type="PackedScene" uid="uid://cto8xwu1q7syt" path="res://GLB/Partes bike/Cambio traseiro/cambio_traseiro.glb" id="1_hi1b7"]
-
-[node name="cambio_traseiro" instance=ExtResource("1_hi1b7")]
