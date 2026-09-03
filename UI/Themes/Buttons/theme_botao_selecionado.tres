@@ -48,6 +48,22 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0nw6"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.2925779, 0.3487812, 0.32071975, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kw5h"]
 bg_color = Color(0.34509805, 0.40784314, 0.3764706, 1)
 border_width_left = 4
@@ -70,5 +86,7 @@ Button/font_sizes/font_size = 20
 Button/styles/hover = SubResource("StyleBoxFlat_1wtwv")
 Button/styles/normal = SubResource("StyleBoxFlat_78804")
 Button/styles/pressed = SubResource("StyleBoxFlat_fc5kt")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_78804")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_m0nw6")
 Panel/styles/panel = SubResource("StyleBoxFlat_8kw5h")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_mb3qu")

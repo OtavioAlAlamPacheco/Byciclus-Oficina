@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7karwshlck76"]
 
-[ext_resource type="Script" uid="uid://cumbmuctq17x6" path="res://scripts/oficina.gd" id="1_41x0c"]
+[ext_resource type="Script" uid="uid://cumbmuctq17x6" path="res://core/oficina.gd" id="1_41x0c"]
 [ext_resource type="Theme" uid="uid://fhk24lcnndyo" path="res://ui/themes/panels/theme_painel_marrom.tres" id="2_ysoae"]
 [ext_resource type="Theme" uid="uid://b50dv326tcdxx" path="res://ui/themes/panels/theme_painel_verde_claro_2.tres" id="3_jjajg"]
 [ext_resource type="Script" uid="uid://dx5a5rbopr8xj" path="res://ui/scenes_e_scripts/menu_selecao_tipo_peca.gd" id="4_504uk"]

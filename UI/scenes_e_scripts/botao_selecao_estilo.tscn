@@ -31,12 +31,14 @@ render_target_update_mode = 4
 [node name="PreviewEstilo" parent="SubViewportContainer/SubViewport" unique_id=632987155 instance=ExtResource("2_nbi3n")]
 
 [node name="RemoverEstilo" type="TextureRect" parent="." unique_id=1037986544]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.95172507, 0.95172507)
 texture = ExtResource("4_jvx7u")
 expand_mode = 1
 
