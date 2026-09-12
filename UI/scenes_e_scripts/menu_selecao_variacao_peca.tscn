@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dstfkcxtp43od"]
 
 [ext_resource type="Theme" uid="uid://hd1noeimu7je" path="res://ui/themes/panels/theme_cinza_com_borda_preta.tres" id="1_j1mk0"]
-[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://ui/scenes_e_scripts/painel_variacoes_dinamicas.gd" id="1_sienp"]
+[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://ui/scenes_e_scripts/menu_selecao_variacao_peca.gd" id="1_sienp"]
 [ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://ui/scenes_e_scripts/botao_variacao_peca.tscn" id="2_ro3l0"]
 [ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://data/variacoes_de_peca/quadro_em_s.tres" id="4_6lkyn"]
 
@@ -69,9 +69,11 @@ theme_override_constants/v_separation = 16
 columns = 2
 
 [node name="BotaoSelecaoVariacaoDePeca" parent="Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("2_ro3l0")]
+custom_minimum_size = Vector2(140, 157)
 layout_mode = 2
 resource_variacao = ExtResource("4_6lkyn")
 
 [node name="BotaoSelecaoVariacaoDePeca2" parent="Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("2_ro3l0")]
+custom_minimum_size = Vector2(140, 157)
 layout_mode = 2
 resource_variacao = ExtResource("4_6lkyn")

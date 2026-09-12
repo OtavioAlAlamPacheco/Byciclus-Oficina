@@ -4,6 +4,7 @@ extends Panel
 
 @onready var grid_variacoes: GridContainer = $Margem/ScrollContainer/GridVariacoes
 @onready var bike: Node3D = get_tree().get_first_node_in_group("bike")
+@onready var banco_de_pecas = preload("uid://cvsj3i3wqb7ui")
 
 const BOTAO_VARIACAO_PECA = preload("uid://bp00ux5jxvbmn")
 const THEME_BOTAO_NAO_SELECIONADO = preload("uid://btfmvlloabut6")
@@ -42,21 +43,34 @@ func _on_tipo_foi_selecionado(id: String) -> void:
 	else:
 		if CatalogoPecas.variacoes_por_tipo.has(id):
 			limpar_paineis()
-			atualizar_paineis()
+			_atualizar_paineis()
 		else:
 			push_error("Tipo ", id, " inexistente")
 
 
 func _on_variacao_foi_selecionada(_id: String):
-	call_deferred("_reconstruir_paineis")
+	if Engine.is_editor_hint():
+		return
+	
+	call_deferred("_atualizar_themes")
 
 
 func _on_popup_fechado() -> void:
-	call_deferred("_reconstruir_paineis")
+	if Engine.is_editor_hint():
+		return
+	
+	call_deferred("_atualizar_themes")
 
-func _reconstruir_paineis() -> void:
-	limpar_paineis()
-	atualizar_paineis()
+func _atualizar_themes() -> void:
+	if is_instance_valid(bike):
+		id_variacao_selecionada = bike.obter_variacao_ativa_do_tipo(id_tipo_selecionado)
+		
+	for botao in grid_variacoes.get_children():
+		if "resource_variacao" in botao and botao.resource_variacao:
+			if botao.resource_variacao.id == id_variacao_selecionada:
+				botao.theme = THEME_BOTAO_SELECIONADO
+			else:
+				botao.theme = THEME_BOTAO_NAO_SELECIONADO
 
 
 func limpar_paineis():
@@ -64,7 +78,7 @@ func limpar_paineis():
 		painel.queue_free()
 
 
-func atualizar_paineis():
+func _atualizar_paineis():
 	var variacoes: Array = CatalogoPecas.variacoes_por_tipo[id_tipo_selecionado]
 	
 	if is_instance_valid(bike):
@@ -87,11 +101,11 @@ func atualizar_paineis():
 
 
 func _atualizar_paineis_editor() -> void:
-	var banco_de_dados = preload("uid://cvsj3i3wqb7ui")
-	if not banco_de_dados:
+	if not banco_de_pecas:
+		push_error("Banco de peças não foi carregado corretamente.")
 		return
 	
-	for variacao in banco_de_dados.variacoes_disponiveis:
+	for variacao in banco_de_pecas.variacoes_disponiveis:
 		var eh_valido = false
 		if variacao and variacao.tipo and variacao.tipo.id == id_tipo_selecionado:
 			eh_valido = true

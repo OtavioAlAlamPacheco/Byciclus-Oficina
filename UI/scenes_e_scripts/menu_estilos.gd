@@ -16,20 +16,10 @@ var lista_estilos: Array[EstiloData]
 func _ready() -> void:
 	if tipo_selecionado.is_empty():
 		push_error("tipo_selecionado não possui valor atribuído no nó: " + name)
-		
+	
 	lista_estilos = estilos.obter_lista(tipo_selecionado)
 	
 	_gerar_botoes(cena_mesh_base)
-
-
-func cria_os_botoes(scene_mesh: PackedScene):
-	for estilo in lista_estilos:
-		var nome_estilo = estilo.id
-		var novo_botao = scene_botao.instantiate()
-		novo_botao.name = nome_estilo
-		$ListaBotoes.add_child(novo_botao)
-		
-		novo_botao.cria_o_estilo(nome_estilo, tipo_selecionado, scene_mesh)
 
 
 func _gerar_botoes(scene_mesh_base: PackedScene) -> void:

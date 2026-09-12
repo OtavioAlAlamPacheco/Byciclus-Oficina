@@ -8,7 +8,6 @@ extends Node3D
 		if camera:
 			camera.position.z = distancia
 
-@onready var painel_visualizacao: Panel = get_tree().get_first_node_in_group("painel_visualizacao_3d")
 @onready var camera: Camera3D = $Camera3D
 
 @onready var coord_objeto_observado: Vector3 = get_tree().get_first_node_in_group("bike").global_position:
@@ -21,12 +20,9 @@ var offset_painel: float
 
 
 func _ready() -> void:
-	call_deferred("_inicializar_posicao_camera")
-
-
-func _inicializar_posicao_camera() -> void:
 	global_position = coord_objeto_observado
 	camera.position = Vector3(0, 0, distancia)
+
 
 func _process(_delta: float) -> void:
 	camera.look_at(global_position, Vector3.UP)

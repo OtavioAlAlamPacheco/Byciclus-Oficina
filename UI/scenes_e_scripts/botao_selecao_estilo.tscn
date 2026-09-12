@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjhmvxr73v5ll" path="res://ui/scenes_e_scripts/botao_selecao_estilo.gd" id="1_nbi3n"]
 [ext_resource type="Theme" uid="uid://c7gd2euo4hdjr" path="res://ui/themes/panels/theme_painel_marrom_avermelhado.tres" id="1_pib3i"]
 [ext_resource type="PackedScene" uid="uid://bo6svstcpw2d1" path="res://ui/scenes_e_scripts/preview_estilo.tscn" id="2_nbi3n"]
+[ext_resource type="PackedScene" uid="uid://26t4wfqxjuan" path="res://components/componente_animacao_botoes.tscn" id="3_622is"]
 [ext_resource type="Texture2D" uid="uid://yp8j87kfycy7" path="res://ui/icons/cross.png" id="4_jvx7u"]
 
 [node name="Button" type="Button" unique_id=935626459]
@@ -11,6 +12,8 @@ clip_contents = true
 size_flags_vertical = 4
 theme = ExtResource("1_pib3i")
 script = ExtResource("1_nbi3n")
+
+[node name="ComponenteAnimacaoBotoes" parent="." unique_id=468842999 instance=ExtResource("3_622is")]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=826098699]
 layout_mode = 1

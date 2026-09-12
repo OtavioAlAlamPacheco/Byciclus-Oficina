@@ -6,20 +6,24 @@ const blend_shapes: Array = ["Robustez", "Genero", "Formato do queixo",
 	 "Profundidade do nariz", "Tamanho da orelha"]
 
 @export var eh_preview: bool = false
-var id_personagem: String = "Jogador"
+@export var id_personagem: String = "Jogador":
+	set(valor):
+		id_personagem = valor
+		if is_node_ready() and not eh_preview:
+			_on_atualizar_aparencia()
+
+@export_group("Path dos nodos")
+@export var malha_3d: MeshInstance3D
+@export var animation_player: AnimationPlayer
+@export var socket_cabelo: Node3D
 
 var banco_de_estilos: Resource = preload("uid://drru2gl1lk2r0")
-
-@onready var malha_3d: MeshInstance3D = $Armature/Skeleton3D/Personagem
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var malha_cabelo: Node3D
 var minha_aparencia: Dictionary = {}
 
 
 func _ready() -> void:
-	#tocar_animacao("Idle balançar braços", true)
-	
 	if eh_preview:
 		var customizacao = get_tree().get_first_node_in_group("customizacao_personagem")
 		if customizacao:
@@ -29,11 +33,7 @@ func _ready() -> void:
 	
 	else:
 		PerfilPersonagem.aparencia_atualizada.connect(_on_atualizar_aparencia)
-		var aparencia = PerfilPersonagem.carregar_perfil(
-			"Jogador" if id_personagem == "Jogador" else "NPC",
-			id_personagem
-		)
-		equipar_visual_completo(aparencia)
+		_on_atualizar_aparencia()
 
 
 func tocar_animacao(nome_animacao: String, em_loop: bool) -> void:
@@ -44,13 +44,10 @@ func tocar_animacao(nome_animacao: String, em_loop: bool) -> void:
 	if animation_player.has_animation(nome_animacao):
 		var animacao = animation_player.get_animation(nome_animacao)
 		
-		if em_loop:
-			animacao.loop_mode = Animation.LOOP_LINEAR
-		else:
-			animacao.loop_mode = Animation.LOOP_NONE
-			
+		animacao.loop_mode = Animation.LOOP_LINEAR if em_loop else Animation.LOOP_NONE
+		
 		animation_player.play(nome_animacao)
-			
+	
 	else:
 		push_error("Animação não mapeada: ", nome_animacao)
 
@@ -61,15 +58,15 @@ func parar_animacao() -> void:
 
 
 func _on_atualizar_aparencia() -> void:
-	var aparencia = PerfilPersonagem.carregar_perfil(
-		"Jogador" if id_personagem == "Jogador" else "NPC",
-		id_personagem
-	)
+	var tipo = "Jogador" if id_personagem.to_lower() == "jogador" else "NPC"
+	var dados_carregados = PerfilPersonagem.carregar_perfil(tipo, id_personagem)
+	var aparencia = dados_carregados.get("aparencia", {})
 	equipar_visual_completo(aparencia)
 
 
 func atualizar_mesh_cabelo(cena_cabelo: PackedScene) -> void:
-	var socket_cabelo = $Armature/Skeleton3D/SocketCabelo
+	if not socket_cabelo:
+		return
 	
 	for filho in socket_cabelo.get_children():
 		filho.queue_free()
@@ -83,12 +80,22 @@ func atualizar_mesh_cabelo(cena_cabelo: PackedScene) -> void:
 	socket_cabelo.add_child(novo_cabelo)
 	arruma_posicao_cabelo(novo_cabelo, socket_cabelo)
 	
-	malha_cabelo = novo_cabelo.get_child(0)
+	if novo_cabelo is MeshInstance3D:
+		malha_cabelo = novo_cabelo
+	elif novo_cabelo.get_child_count() > 0:
+		malha_cabelo = novo_cabelo.find_child("*", true, false) as MeshInstance3D
 
 
-func arruma_posicao_cabelo(cabelo: Node3D, socket_cabelo):
-	var skeleton: Skeleton3D = $Armature/Skeleton3D
-	var bone_idx: int = skeleton.find_bone(socket_cabelo.bone_name)
+func arruma_posicao_cabelo(cabelo: Node3D, socket_ref: Node3D):
+	var skeleton: Skeleton3D = socket_ref.get_parent() as Skeleton3D
+	if not skeleton:
+		return
+
+	var bone_name: String = ""
+	if "bone_name" in socket_ref:
+		bone_name = socket_ref.bone_name
+		
+	var bone_idx: int = skeleton.find_bone(bone_name)
 	
 	if bone_idx != -1:
 		var rest_transform: Transform3D = skeleton.get_bone_rest(bone_idx)
@@ -138,9 +145,12 @@ func equipar_estilo(categoria: String, valor: Variant) -> void:
 
 # aplica os blend shapes do corpo e rosto
 func _atualizar_blend_shapes(categoria: String, valor: Variant) -> void:
+	if not malha_3d:
+		return
+
 	var nome_blend_shape = "Genero" if categoria == "Genero" else categoria
-	
 	var blend_shape_index = malha_3d.find_blend_shape_by_name(nome_blend_shape)
+	
 	if blend_shape_index != -1:
 		if nome_blend_shape == "Genero":
 			if valor == "Feminino":
@@ -164,16 +174,19 @@ func _atualizar_cabelo(valor: Variant) -> void:
 
 
 func _garantir_material_unico() -> bool:
-	if not malha_3d:
+	if not malha_3d or not malha_3d.mesh or malha_3d.mesh.get_surface_count() == 0:
 		return false
 	
-	if not malha_3d.get_surface_override_material(0):
-		if malha_3d.mesh and malha_3d.mesh.get_surface_count() > 0:
-			var mat_original = malha_3d.mesh.surface_get_material(0)
-			if mat_original:
-				malha_3d.set_surface_override_material(0, mat_original.duplicate())
-			else:
-				return false
+	var mat_atual = malha_3d.get_surface_override_material(0)
+	
+	if mat_atual:
+		if mat_atual.resource_path != "":
+			# se não duplicar, faz todos os personagens usarem o mesmo shader
+			malha_3d.set_surface_override_material(0, mat_atual.duplicate())
+	else:
+		var mat_original = malha_3d.mesh.surface_get_material(0)
+		if mat_original:
+			malha_3d.set_surface_override_material(0, mat_original.duplicate())
 		else:
 			return false
 	
@@ -193,6 +206,10 @@ func _atualizar_cores(categoria: String, valor: Variant, material: Material) -> 
 		if is_instance_valid(malha_cabelo):
 			if malha_cabelo is MeshInstance3D:
 				var material_cabelo = malha_cabelo.get_surface_override_material(0)
+				if not material_cabelo and malha_cabelo.mesh and malha_cabelo.mesh.get_surface_count() > 0:
+					material_cabelo = malha_cabelo.mesh.surface_get_material(0).duplicate()
+					malha_cabelo.set_surface_override_material(0, material_cabelo)
+
 				if material_cabelo:
 					material_cabelo.albedo_color = cor
 				
@@ -208,17 +225,14 @@ func _atualizar_textura_rosto(categoria: String, valor: Variant, material: Mater
 		if not textura:
 			return
 	
-	match categoria:
-		"Olhos":
-			material.set_shader_parameter("textura_olhos", textura)
-		"Nariz":
-			material.set_shader_parameter("textura_nariz", textura)
-		"Boca":
-			material.set_shader_parameter("textura_boca", textura)
-		"Detalhe1":
-			material.set_shader_parameter("textura_detalhe_rosto_1", textura)
-		"Detalhe2":
-			material.set_shader_parameter("textura_detalhe_rosto_2", textura)
+	var parametros_shader = {
+		"Olhos": "textura_olhos", "Nariz": "textura_nariz", 
+		"Boca": "textura_boca", "Detalhe1": "textura_detalhe_rosto_1", 
+		"Detalhe2": "textura_detalhe_rosto_2"
+	}
+	
+	if parametros_shader.has(categoria):
+		material.set_shader_parameter(parametros_shader[categoria], textura)
 
 
 # aplica texturas e máscaras de roupas no shader
@@ -233,16 +247,12 @@ func _atualizar_roupa(categoria: String, valor: Variant, material: Material) -> 
 		
 		mascara = banco_de_estilos.mascaras_por_tipo.get(categoria, null)
 	
-	match categoria:
-		"Camisa", "Camiseta":
-			material.set_shader_parameter("textura_camisa", textura)
-			material.set_shader_parameter("mask_camisa", mascara)
-		"Calça", "Bermuda":
-			material.set_shader_parameter("textura_calca", textura)
-			material.set_shader_parameter("mask_calca", mascara)
-		"Casaco":
-			material.set_shader_parameter("textura_casaco", textura)
-			material.set_shader_parameter("mask_casaco", mascara)
-		"Calçado":
-			material.set_shader_parameter("textura_bota", textura)
-			material.set_shader_parameter("mask_bota", mascara)
+	var parametros_shader = {
+		"Camisa": ["textura_camisa", "mask_camisa"], "Camiseta": ["textura_camisa", "mask_camisa"],
+		"Calça": ["textura_calca", "mask_calca"], "Bermuda": ["textura_calca", "mask_calca"],
+		"Casaco": ["textura_casaco", "mask_casaco"], "Calçado": ["textura_bota", "mask_bota"]
+	}
+	
+	if parametros_shader.has(categoria):
+		material.set_shader_parameter(parametros_shader[categoria][0], textura)
+		material.set_shader_parameter(parametros_shader[categoria][1], mascara)

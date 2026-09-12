@@ -2,9 +2,11 @@
 
 [ext_resource type="Theme" uid="uid://xtha0ihy5e14" path="res://ui/themes/buttons/theme_botao_nao_selecionado.tres" id="1_iyoxb"]
 [ext_resource type="Script" uid="uid://7falhxosfypi" path="res://ui/scenes_e_scripts/botao_variacao_peca.gd" id="2_pbe2w"]
+[ext_resource type="PackedScene" uid="uid://26t4wfqxjuan" path="res://components/componente_animacao_botoes.tscn" id="3_pbe2w"]
 
 [node name="BotaoSelecaoVariacaoDePeca" type="Button" unique_id=657219175]
 custom_minimum_size = Vector2(140, 140)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -13,6 +15,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme = ExtResource("1_iyoxb")
 script = ExtResource("2_pbe2w")
+
+[node name="ComponenteAnimacaoBotoes" parent="." unique_id=468842999 instance=ExtResource("3_pbe2w")]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1739311453]
 clip_contents = true

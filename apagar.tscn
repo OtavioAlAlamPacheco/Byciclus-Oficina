@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://iipwr5u1l5m"]
+
+[ext_resource type="PackedScene" uid="uid://lwphiliitg52" path="res://characters/personagem.tscn" id="1_pchsn"]
+[ext_resource type="Script" uid="uid://kw4bqei8jn3c" path="res://apagar.gd" id="1_rn1nk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pchsn"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_rn1nk"]
+sky_material = SubResource("ProceduralSkyMaterial_pchsn")
+
+[sub_resource type="Environment" id="Environment_4qf8b"]
+background_mode = 2
+sky = SubResource("Sky_rn1nk")
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=1367542496]
+script = ExtResource("1_rn1nk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=118821936]
+environment = SubResource("Environment_4qf8b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=762857845]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=145072606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+size = Vector3(20, 0.1, 20)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1125861506]
+transform = Transform3D(0.42255864, 0.4154048, -0.8055329, -0.19586346, 0.90963185, 0.36634335, 0.8849189, 0.0029728785, 0.46573544, -0.85259104, 1.2343485, 1.4634026)
+
+[node name="Personagem 1" parent="." unique_id=868994736 instance=ExtResource("1_pchsn")]
+
+[node name="Personagem 2" parent="." unique_id=1205573940 instance=ExtResource("1_pchsn")]
+transform = Transform3D(0.5891908, 0, -0.80799395, 0, 1, 0, 0.80799395, 0, 0.5891908, 1.1459606, -2.3841858e-07, 0.20510805)
+id_personagem = "NPC 1"
+
+[node name="Personagem 3" parent="." unique_id=311077414 instance=ExtResource("1_pchsn")]
+transform = Transform3D(-0.23870292, 0, -0.97109264, 0, 1, 0, 0.97109264, 0, -0.23870292, 1.3562045, -2.3841858e-07, 1.4361024)
+id_personagem = "NPC 2"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1658585700]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 66
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2023770370]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1738907337]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 45
+text = "Mudar id_personagem desse personagem (tem que dar enter):"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=1229220716]
+custom_minimum_size = Vector2(0, 64.53)
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+alignment = 1
+
+[connection signal="text_submitted" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

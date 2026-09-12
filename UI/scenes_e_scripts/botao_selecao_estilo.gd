@@ -15,7 +15,7 @@ func _on_selecao_de_estilo() -> void:
 	customizacao_personagem.selecionar_estilo_local(tipo_estilo, nome_estilo)
 
 
-# essa função é usada pra instanciar o estilo dinamicamente na interface
+# essa função é usada pra instanciar o estilo no botão
 func cria_o_estilo(nome: String, tipo: String, scene: PackedScene):
 	nome_estilo = nome
 	tipo_estilo = tipo
@@ -154,7 +154,6 @@ func centraliza_a_camera(novo_estilo, tipo: String):
 			camera_preview_estilo.position = Vector3(0.0, 0.05, 0.80)
 			camera_preview_estilo.rotation = Vector3(0.05, 0.0, 0.0)
 			camera_preview_estilo.fov = 35.0
-		
 		"Olhos", "Boca", "Nariz", "Detalhe1", "Detalhe2", "Cabelo":
 			camera_preview_estilo.position = Vector3(0.0, 1.4, 0.8) 
 			camera_preview_estilo.rotation = Vector3(0.0, 0.0, 0.0)
@@ -173,9 +172,11 @@ func get_nodo_malha(nodo_root: Node) -> MeshInstance3D:
 	return null
 
 
+# se for um cabelo, muda a cor dele
 func _on_preview_alterado(categoria: String, valor: Variant) -> void:
 	if categoria == "Cor Cabelo" and tipo_estilo == "Cabelo" and is_instance_valid(estilo_instanciado):
 		var malha_3d: MeshInstance3D = get_nodo_malha(estilo_instanciado)
+		
 		if malha_3d and malha_3d.get_surface_override_material(0):
 			var material = malha_3d.get_surface_override_material(0)
 			

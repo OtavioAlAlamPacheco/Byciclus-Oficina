@@ -33,6 +33,7 @@ func _gui_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 		_atualizar_cor(event.position)
 
+
 func _atualizar_cor(posicao_mouse: Vector2) -> void:
 	var clipping = posicao_mouse.clamp(Vector2.ZERO, size)
 	

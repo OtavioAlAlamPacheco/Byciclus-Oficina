@@ -5,10 +5,9 @@ signal tipo_foi_selecionado(id: String)
 signal variacao_foi_selecionada(id: String)
 
 @onready var popup_materiais: CanvasLayer = %PopupMateriais
-
 @onready var bike: Node3D = %Bike
 @onready var pivo_peca: Node3D = %PivoPeca
-@onready var menu_dinamico: Panel = %MenuSelecaoVariacaoPeca
+@onready var menu_variacao_peca: Panel = %MenuSelecaoVariacaoPeca
 @onready var botao_modo_visualizacao: Button = %ButtonVisualizarBike
 
 var modo_visualizacao: String = "Visualizar bicicleta"
@@ -17,13 +16,13 @@ var dados_backup_peca: Dictionary = {}
 
 
 func _ready():
-	if menu_dinamico:
-		self.tipo_foi_selecionado.connect(menu_dinamico._on_tipo_foi_selecionado)
+	if menu_variacao_peca:
+		self.tipo_foi_selecionado.connect(menu_variacao_peca._on_tipo_foi_selecionado)
 		self.tipo_foi_selecionado.connect(botao_modo_visualizacao._on_tipo_foi_selecionado)
-		self.variacao_foi_selecionada.connect(menu_dinamico._on_variacao_foi_selecionada)
+		self.variacao_foi_selecionada.connect(menu_variacao_peca._on_variacao_foi_selecionada)
 		
 		if is_instance_valid(popup_materiais):
-			popup_materiais.popup_fechado.connect(menu_dinamico._on_popup_fechado)
+			popup_materiais.popup_fechado.connect(menu_variacao_peca._on_popup_fechado)
 	
 	if is_instance_valid(bike):
 		self.variacao_foi_selecionada.connect(bike._on_oficina_variacao_foi_selecionada)

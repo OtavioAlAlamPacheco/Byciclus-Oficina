@@ -19,7 +19,7 @@ func salvar_perfil(tipo: String, novo_nome: String, nova_aparencia: Dictionary):
 		
 	var dados := {"nome": nome_final, "aparencia": aparencia_final}
 	
-	if tipo == "Jogador":
+	if tipo.begins_with("Jogador"):
 		_escrever_arquivo("PerfilJogador", "Dados", dados)
 		aparencia_atualizada.emit()
 	elif tipo == "NPC" and nome_final != "":
@@ -29,7 +29,7 @@ func salvar_perfil(tipo: String, novo_nome: String, nova_aparencia: Dictionary):
 
 
 func carregar_perfil(tipo: String, nome_alvo: String = "") -> Dictionary:
-	if tipo == "Jogador":
+	if tipo.to_lower().begins_with("jogador"):
 		return _ler_arquivo("PerfilJogador", "Dados")
 	elif tipo == "NPC":
 		if nome_alvo != "":
@@ -57,6 +57,7 @@ func _escrever_arquivo(secao: String, chave: String, dados: Dictionary):
 	else:
 		print("Arquivo salvo com sucesso.")
 
+
 func _ler_arquivo(secao: String, chave: String) -> Dictionary:
 	var dados_padrao := {"nome": "(Nome do personagem)", "aparencia": {}}
 	var config := ConfigFile.new()
@@ -66,6 +67,7 @@ func _ler_arquivo(secao: String, chave: String) -> Dictionary:
 		return config.get_value(secao, chave, dados_padrao)
 	
 	return dados_padrao
+
 
 func obter_nomes_npcs_salvos() -> Array:
 	var nomes_encontrados: Array = []

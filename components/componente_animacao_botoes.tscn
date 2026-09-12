@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://26t4wfqxjuan"]
+
+[ext_resource type="Script" uid="uid://eh86u3xrna0b" path="res://componente_animacao_do_control_node.gd" id="1_jd08o"]
+
+[node name="ComponenteAnimacaoBotoes" type="Node" unique_id=468842999]
+script = ExtResource("1_jd08o")

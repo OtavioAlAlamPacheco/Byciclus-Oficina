@@ -18,11 +18,11 @@
 [ext_resource type="Resource" uid="uid://cioyaq3f1qwh0" path="res://data/tipos_de_peca/corrente_nova.tres" id="16_rdv40"]
 [ext_resource type="Resource" uid="uid://uctaaa1psnra" path="res://data/tipos_de_peca/freio_traseiro_novo.tres" id="17_a2ngp"]
 [ext_resource type="Resource" uid="uid://b1g1t3tx2j0cg" path="res://data/tipos_de_peca/pedivela_nova.tres" id="18_7tffe"]
-[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://ui/scenes_e_scripts/painel_variacoes_dinamicas.gd" id="19_4rd1r"]
+[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://ui/scenes_e_scripts/menu_selecao_variacao_peca.gd" id="19_4rd1r"]
 [ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://ui/scenes_e_scripts/botao_variacao_peca.tscn" id="20_6sipo"]
 [ext_resource type="Theme" uid="uid://drfnkf2566lvj" path="res://ui/themes/buttons/theme_botao_selecionado.tres" id="21_j5l1c"]
 [ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://data/variacoes_de_peca/quadro_em_s.tres" id="22_le0pf"]
-[ext_resource type="PackedScene" uid="uid://dpvea336oo531" path="res://ui/scenes_e_scripts/botao_modo_visualizacao.tscn" id="23_x4avo"]
+[ext_resource type="PackedScene" uid="uid://bt12p8qgdb6cp" path="res://ui/scenes_e_scripts/botao_modo_visualizacao.tscn" id="23_x4avo"]
 [ext_resource type="Theme" uid="uid://c7gd2euo4hdjr" path="res://ui/themes/panels/theme_painel_marrom_avermelhado.tres" id="24_d1nfj"]
 [ext_resource type="Script" uid="uid://pp12ejelclfn" path="res://ui/scenes_e_scripts/visualizacao_bike.gd" id="25_nf0i2"]
 [ext_resource type="Script" uid="uid://b001oqhh85cln" path="res://ui/scenes_e_scripts/visualizacao_peca.gd" id="26_qfwfk"]
@@ -424,33 +424,33 @@ theme_override_constants/v_separation = 16
 columns = 2
 
 [node name="BotaoSelecaoVariacaoDePeca" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=430954064 instance=ExtResource("20_6sipo")]
-custom_minimum_size = Vector2(140, 296)
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 theme = ExtResource("21_j5l1c")
 resource_variacao = ExtResource("22_le0pf")
 
 [node name="BotaoSelecaoVariacaoDePeca2" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1258616540 instance=ExtResource("20_6sipo")]
-custom_minimum_size = Vector2(140, 296)
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 resource_variacao = ExtResource("22_le0pf")
 
 [node name="BotaoSelecaoVariacaoDePeca3" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=657219175 instance=ExtResource("20_6sipo")]
-custom_minimum_size = Vector2(140, 296)
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 resource_variacao = ExtResource("22_le0pf")
 
 [node name="BotaoSelecaoVariacaoDePeca4" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=444392045 instance=ExtResource("20_6sipo")]
-custom_minimum_size = Vector2(140, 296)
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 resource_variacao = ExtResource("22_le0pf")
 
 [node name="BotaoSelecaoVariacaoDePeca5" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1394975923 instance=ExtResource("20_6sipo")]
-custom_minimum_size = Vector2(140, 296)
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 resource_variacao = ExtResource("22_le0pf")
 
 [node name="BotaoSelecaoVariacaoDePeca6" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/MenuSelecaoVariacaoPeca/Margem/ScrollContainer/GridVariacoes" unique_id=1196427162 instance=ExtResource("20_6sipo")]
-custom_minimum_size = Vector2(140, 296)
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 resource_variacao = ExtResource("22_le0pf")
 
@@ -513,7 +513,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D2/MarginContainer/SubViewportContainer" unique_id=878192009]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(858, 819)
 render_target_update_mode = 4
 
 [node name="Oficina" type="Node3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D2/MarginContainer/SubViewportContainer/SubViewport" unique_id=616235101]

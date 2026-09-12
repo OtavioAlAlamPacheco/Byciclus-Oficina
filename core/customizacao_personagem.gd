@@ -6,10 +6,8 @@ signal perfil_carregado(aparencia: Dictionary)
 
 @export_enum("Jogador base", "Jogador estilo", "NPC") var tipo: String = "Jogador base"
 
-@onready var tab_container: TabContainer = %TabContainerPersonagem
-@onready var linha_carregar_npc: Control = $"MarginContainer/HBoxContainer/AreaEsquerda/TabContainerPersonagem/Geral/MarginContainer/SelecaoGeral/MarginContainer/Opcoes/DEV - carregar NPC"
-@onready var seletor_npc: OptionButton = $"MarginContainer/HBoxContainer/AreaEsquerda/TabContainerPersonagem/Geral/MarginContainer/SelecaoGeral/MarginContainer/Opcoes/DEV - carregar NPC/OptionButton"
 @onready var personagem: Node3D = %PreviewPersonagem/Personagem
+@onready var option_button_carregar_npc: OptionButton = $"MarginContainer/HBoxContainer/AreaEsquerda/TabContainerPersonagem/Geral/MarginContainer/SelecaoGeral/MarginContainer/Opcoes/DEV - carregar NPC/OptionButton"
 
 var estilos: Resource = preload("uid://drru2gl1lk2r0")
 var nome_em_edicao: String = "(Nome do personagem)"
@@ -17,14 +15,9 @@ var estilos_em_edicao: Dictionary = {}
 
 
 func _ready() -> void:
-	_atualizar_visibilidade_abas()
 	_selecionar_expressoes_base()
-	_configurar_linha_npc()
 	
-	var nome_alvo = ""
-	if tipo == "NPC":
-		nome_alvo = nome_em_edicao
-		
+	var nome_alvo = "NPC" if tipo == "NPC" else ""
 	var dados_carregados = PerfilPersonagem.carregar_perfil(tipo, nome_alvo)
 	
 	if dados_carregados.has("nome"):
@@ -34,24 +27,19 @@ func _ready() -> void:
 	if dados_carregados.has("aparencia") and not dados_carregados["aparencia"].is_empty():
 		estilos_em_edicao = dados_carregados["aparencia"].duplicate()
 		estilos_em_edicao["Nome Personagem"] = nome_em_edicao
-		
-	_preencher_valores_padrao()
-		
-	personagem.equipar_visual_completo(estilos_em_edicao)
 	
+	_preencher_valores_padrao_no_personagem()
+	personagem.equipar_visual_completo(estilos_em_edicao)
 	call_deferred("_sincronizar_interface")
-
 
 func _sincronizar_interface() -> void:
 	perfil_carregado.emit(estilos_em_edicao)
 
+
 func definir_tipo_personagem(novo_tipo: String) -> void:
 	tipo = novo_tipo
 	
-	var nome_alvo = ""
-	if tipo == "NPC":
-		nome_alvo = nome_em_edicao
-		
+	var nome_alvo = "NPC" if tipo == "NPC" else ""
 	var dados_carregados = PerfilPersonagem.carregar_perfil(tipo, nome_alvo)
 	
 	estilos_em_edicao.clear()
@@ -60,9 +48,8 @@ func definir_tipo_personagem(novo_tipo: String) -> void:
 		nome_em_edicao = dados_carregados["nome"]
 		estilos_em_edicao = dados_carregados["aparencia"].duplicate()
 		estilos_em_edicao["Nome Personagem"] = nome_em_edicao
-		
-	_preencher_valores_padrao()
-		
+	
+	_preencher_valores_padrao_no_personagem()
 	personagem.equipar_visual_completo(estilos_em_edicao)
 	perfil_carregado.emit(estilos_em_edicao)
 
@@ -97,11 +84,12 @@ func _atualizar_estilos_em_edicao(categoria, valor):
 
 
 func confirmar_alteracoes() -> void:
-	_preencher_valores_padrao()
+	_preencher_valores_padrao_no_personagem()
 	PerfilPersonagem.salvar_perfil(tipo, nome_em_edicao, estilos_em_edicao)
 
 
-func _preencher_valores_padrao() -> void:
+# se tiver informações nulas na config do personagem, preenche-as. Exemplo - se está usando camisa, não está usando camiseta
+func _preencher_valores_padrao_no_personagem() -> void:
 	var categorias = [
 		"Camisa", "Camiseta", "Calça", "Bermuda", "Casaco", "Calçado",
 		"Cabelo", "Cor Cabelo", "Cor Pele", "Olhos", "Boca", "Nariz",
@@ -125,36 +113,6 @@ func _preencher_valores_padrao() -> void:
 				estilos_em_edicao[categoria] = ""
 
 
-func _atualizar_visibilidade_abas() -> void:
-	if not is_instance_valid(tab_container):
-		return
-		
-	var aba_geral = 0
-	var aba_cabelo = 1
-	var aba_roupas = 2
-	var aba_expressoes = 3
-	
-	if tipo == "Jogador base":
-		tab_container.set_tab_hidden(aba_geral, false)
-		tab_container.set_tab_hidden(aba_cabelo, false)
-		tab_container.set_tab_hidden(aba_roupas, false)
-		tab_container.set_tab_hidden(aba_expressoes, true)
-		tab_container.current_tab = aba_geral
-		
-	elif tipo == "Jogador estilo":
-		tab_container.set_tab_hidden(aba_geral, true)
-		tab_container.set_tab_hidden(aba_cabelo, false)
-		tab_container.set_tab_hidden(aba_roupas, false)
-		tab_container.set_tab_hidden(aba_expressoes, true)
-		tab_container.current_tab = aba_cabelo
-		
-	elif tipo == "NPC":
-		tab_container.set_tab_hidden(aba_geral, false)
-		tab_container.set_tab_hidden(aba_cabelo, false)
-		tab_container.set_tab_hidden(aba_roupas, false)
-		tab_container.set_tab_hidden(aba_expressoes, false)
-		tab_container.current_tab = aba_geral
-
 func _selecionar_expressoes_base() -> void:
 	estilos_em_edicao["Boca"] = "uid://cctqonfb2nydq"
 	estilos_em_edicao["Nariz"] = "uid://b3u03a8mfnmtb"
@@ -165,34 +123,8 @@ func _selecionar_expressoes_base() -> void:
 	preview_alterado.emit("Olhos", estilos_em_edicao["Olhos"])
 
 
-func _configurar_linha_npc() -> void:
-	if not is_instance_valid(linha_carregar_npc) or not is_instance_valid(seletor_npc):
-		return
-		
-	if tipo == "NPC":
-		linha_carregar_npc.show()
-		_popular_lista_npcs()
-		
-		if not seletor_npc.item_selected.is_connected(_on_npc_selecionado):
-			seletor_npc.item_selected.connect(_on_npc_selecionado)
-	else:
-		linha_carregar_npc.hide()
-
-
-func _popular_lista_npcs() -> void:
-	seletor_npc.clear()
-	seletor_npc.add_item("Selecione um NPC...")
-	seletor_npc.set_item_disabled(0, true)
-	
-	var nomes = PerfilPersonagem.obter_nomes_npcs_salvos()
-	for nome in nomes:
-		seletor_npc.add_item(nome)
-		
-	seletor_npc.select(-1)
-
-
 func _on_npc_selecionado(index: int) -> void:
-	var nome_npc = seletor_npc.get_item_text(index)
+	var nome_npc = option_button_carregar_npc.get_item_text(index)
 	var dados_npc = PerfilPersonagem.carregar_perfil("NPC", nome_npc)
 	
 	if not dados_npc.is_empty():

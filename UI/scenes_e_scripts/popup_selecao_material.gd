@@ -28,10 +28,29 @@ func abrir_popup(tipo: TipoPecaData, variacao: VariacaoPecaData) -> void:
 	tipo_atual = tipo
 	variacao_atual = variacao
 	peca_confirmada = false
+	
 	slots_preenchidos.clear()
 	_limpar_slots()
 	_gerar_slots()
+	_atualizar_escala_do_painel()
+	aplicar_tween_popup()
 	show()
+
+
+func aplicar_tween_popup() -> void:
+	var escala_alvo = painel_principal.scale
+	var posicao_alvo = painel_principal.position
+	
+	painel_principal.scale = Vector2(0.05, 0.05)
+	painel_principal.modulate = Color(1, 1, 1, 0)	
+	painel_principal.position = posicao_alvo + Vector2(0, 50)
+	
+	var tween = create_tween()
+	tween.set_parallel(true)
+	
+	tween.tween_property(painel_principal, "scale", escala_alvo, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(painel_principal, "modulate", Color(1, 1, 1, 1), 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(painel_principal, "position", posicao_alvo, 0.35).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 
 
 func fechar_popup() -> void:
@@ -40,6 +59,22 @@ func fechar_popup() -> void:
 		if oficina and oficina.has_method("reverter_variacao"):
 			oficina.reverter_variacao()
 			
+	_aplicar_tween_fechamento()
+
+
+func _aplicar_tween_fechamento() -> void:
+	var tween = create_tween()
+	tween.set_parallel(true)
+	
+	var posicao_alvo = painel_principal.position + Vector2(0, 50)
+	
+	tween.tween_property(painel_principal, "scale", Vector2(0.05, 0.05), 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_property(painel_principal, "modulate", Color(1, 1, 1, 0), 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(painel_principal, "position", posicao_alvo, 0.25).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tween.chain().tween_callback(_finalizar_fechamento)
+
+
+func _finalizar_fechamento() -> void:
 	popup_fechado.emit()
 	hide()
 

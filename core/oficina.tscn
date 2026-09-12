@@ -23,16 +23,17 @@
 [ext_resource type="Resource" uid="uid://cioyaq3f1qwh0" path="res://data/tipos_de_peca/corrente_nova.tres" id="21_yueob"]
 [ext_resource type="Resource" uid="uid://uctaaa1psnra" path="res://data/tipos_de_peca/freio_traseiro_novo.tres" id="22_f81vj"]
 [ext_resource type="Resource" uid="uid://b1g1t3tx2j0cg" path="res://data/tipos_de_peca/pedivela_nova.tres" id="23_t1w0k"]
-[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://ui/scenes_e_scripts/painel_variacoes_dinamicas.gd" id="24_fnu4f"]
+[ext_resource type="Script" uid="uid://cujmouo73nsug" path="res://ui/scenes_e_scripts/menu_selecao_variacao_peca.gd" id="24_fnu4f"]
 [ext_resource type="PackedScene" uid="uid://bp00ux5jxvbmn" path="res://ui/scenes_e_scripts/botao_variacao_peca.tscn" id="25_wiujh"]
 [ext_resource type="Resource" uid="uid://x16oacp8ugal" path="res://data/variacoes_de_peca/quadro_em_s.tres" id="26_u34wv"]
-[ext_resource type="PackedScene" uid="uid://dpvea336oo531" path="res://ui/scenes_e_scripts/botao_modo_visualizacao.tscn" id="27_8bu2a"]
+[ext_resource type="PackedScene" uid="uid://bt12p8qgdb6cp" path="res://ui/scenes_e_scripts/botao_modo_visualizacao.tscn" id="27_8bu2a"]
 [ext_resource type="Theme" uid="uid://btfmvlloabut6" path="res://ui/themes/buttons/theme_botao_nao_selecionado_oficina.tres" id="28_fqg11"]
 [ext_resource type="Script" uid="uid://pp12ejelclfn" path="res://ui/scenes_e_scripts/visualizacao_bike.gd" id="29_e6l7i"]
 [ext_resource type="Script" uid="uid://b001oqhh85cln" path="res://ui/scenes_e_scripts/visualizacao_peca.gd" id="30_nnkf8"]
 [ext_resource type="Script" uid="uid://bdeuj15iwvsbx" path="res://ui/scenes_e_scripts/pivo_camera.gd" id="31_5jxbl"]
 [ext_resource type="Texture2D" uid="uid://c0ot01lofwxgl" path="res://ui/icons/magnifying-glass.png" id="32_3rwgf"]
 [ext_resource type="Texture2D" uid="uid://bnns3rdagccdr" path="res://ui/icons/notes.png" id="33_hjrvl"]
+[ext_resource type="PackedScene" uid="uid://26t4wfqxjuan" path="res://components/componente_animacao_botoes.tscn" id="33_ysoae"]
 [ext_resource type="Texture2D" uid="uid://22rnsxb5ugc1" path="res://ui/icons/check.png" id="34_143t5"]
 [ext_resource type="Script" uid="uid://bp50mw2d7wiu7" path="res://ui/scenes_e_scripts/botao_salvar_customizacao_bike.gd" id="35_bt24r"]
 [ext_resource type="PackedScene" uid="uid://cnevchmk1o1pq" path="res://ui/scenes_e_scripts/popup_selecao_material.tscn" id="36_l8fgs"]
@@ -480,7 +481,7 @@ size_flags_horizontal = 4
 mouse_filter = 0
 theme_override_constants/separation = 15
 
-[node name="ButtonVisualizarBike" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=1645765011 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("27_8bu2a")]
+[node name="ButtonVisualizarBike" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=1645765011 groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("27_8bu2a")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 60)
 layout_mode = 2
@@ -488,10 +489,8 @@ size_flags_horizontal = 8
 theme = ExtResource("13_3f4ob")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-pivo_camera = NodePath("../../PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera")
-menu_variacao = NodePath("../../../MenuSelecaoVariacaoPeca")
 
-[node name="ButtonVisualizarPeca" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=975566529 node_paths=PackedStringArray("pivo_camera", "menu_variacao") groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("27_8bu2a")]
+[node name="ButtonVisualizarPeca" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/BotoesAlterarTipoVisualizacao3D" unique_id=975566529 groups=["area_do_popup", "botao_modo_visualizacao"] instance=ExtResource("27_8bu2a")]
 custom_minimum_size = Vector2(260, 60)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -501,8 +500,6 @@ theme_override_font_sizes/font_size = 24
 text = "Visualizar peça
 "
 modo_do_botao = "Visualizar peça"
-pivo_camera = NodePath("../../PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera")
-menu_variacao = NodePath("../../../MenuSelecaoVariacaoPeca")
 
 [node name="PainelVisualizacao3D" type="Panel" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D" unique_id=553341729 groups=["area_do_popup", "painel_visualizacao_3d"]]
 layout_mode = 2
@@ -553,6 +550,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4221687, 0.076324105, -4.03
 script = ExtResource("30_nnkf8")
 
 [node name="PivoCamera" type="Node3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina" unique_id=68613680]
+unique_name_in_owner = true
 script = ExtResource("31_5jxbl")
 
 [node name="Camera3D" type="Camera3D" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaSuperior/Visualizacao3D/PainelVisualizacao3D/MarginContainer/SubViewportContainer/SubViewport/Oficina/PivoCamera" unique_id=254777566]
@@ -583,6 +581,8 @@ theme = ExtResource("10_vmrey")
 icon = ExtResource("32_3rwgf")
 expand_icon = true
 
+[node name="ComponenteAnimacaoBotoes" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/BotaoModoLupa" unique_id=1731403883 instance=ExtResource("33_ysoae")]
+
 [node name="BotaoModoLupa2" type="Button" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer" unique_id=1358159512]
 custom_minimum_size = Vector2(70, 60)
 layout_mode = 2
@@ -590,6 +590,8 @@ size_flags_horizontal = 2
 theme = ExtResource("10_vmrey")
 icon = ExtResource("33_hjrvl")
 expand_icon = true
+
+[node name="ComponenteAnimacaoBotoes" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior/HBoxContainer/BotaoModoLupa2" unique_id=241341526 instance=ExtResource("33_ysoae")]
 
 [node name="BotaoSalvar" type="Button" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior" unique_id=94939531]
 custom_minimum_size = Vector2(160, 60)
@@ -604,6 +606,8 @@ icon = ExtResource("34_143t5")
 alignment = 0
 expand_icon = true
 script = ExtResource("35_bt24r")
+
+[node name="ComponenteAnimacaoBotoes" parent="Background/MargemPrincipal/DivisaoPrincipal/AreaInferior/BotaoSalvar" unique_id=1848217874 instance=ExtResource("33_ysoae")]
 
 [node name="PopupMateriais" parent="." unique_id=1184658807 instance=ExtResource("36_l8fgs")]
 unique_name_in_owner = true

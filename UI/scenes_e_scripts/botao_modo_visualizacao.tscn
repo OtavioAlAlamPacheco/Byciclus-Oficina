@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://dpvea336oo531"]
+[gd_scene format=3 uid="uid://bt12p8qgdb6cp"]
 
 [ext_resource type="Script" uid="uid://pmt7qlvk0t3v" path="res://ui/scenes_e_scripts/botoes_modo_visualizacao.gd" id="1_ugbns"]
+[ext_resource type="PackedScene" uid="uid://26t4wfqxjuan" path="res://components/componente_animacao_botoes.tscn" id="2_nv3gm"]
 
 [node name="ButtonVisualizarBicicleta" type="Button" unique_id=248744407]
 custom_minimum_size = Vector2(243, 60)
@@ -8,5 +9,7 @@ size_flags_horizontal = 3
 text = "Visualizar bicicleta"
 script = ExtResource("1_ugbns")
 modo_do_botao = "Visualizar bicicleta"
+
+[node name="ComponenteAnimacaoBotoes" parent="." unique_id=468842999 instance=ExtResource("2_nv3gm")]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
